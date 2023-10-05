@@ -94,6 +94,7 @@ body.side-panel-left.side-push-panel.side-panel-open.stretched
     rgba(252, 176, 69, 1) 100%
   );
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .button.button-border {
@@ -158,9 +159,11 @@ body.side-panel-left.side-push-panel.side-panel-open.stretched
 }
 .parallax .fslider * {
   -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
 }
 .parallax .fslider .flex-control-paging * {
   -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
 }
 .parallax .testimonial .testi-content p {
   line-height: 1.6 !important;
@@ -296,6 +299,7 @@ textarea.border-form-control {
   display: block;
   overflow: hidden;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .con-switch .con-default,
 .con-switch .con-show {
