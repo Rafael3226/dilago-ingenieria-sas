@@ -39,7 +39,6 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/util.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
 
-    <link rel="icon" href="./assets/img/icon.png" />
     <title>Dilago Ingenieria</title>
   </head>
   <body
@@ -68,7 +67,7 @@
                 <a href="#">
                   <img
                     class="logo-dark logo-default"
-                    src="./assets/img/logo-dark.png"
+                    src="./assets/img/logo.png"
                     alt="Dilago Logo"
                   />
                 </a>
@@ -202,14 +201,12 @@
         <div class="content-wrap py-0">
           <section class="bg1-pattern p-t-120 p-b-105">
             <div class="container">
-              <div class="t-center">
-                <span class="tit2 t-center"> Nuestra </span>
-                <h3 class="tit5 t-center">Historia</h3>
-              </div>
-              <div class="row py-6">
-                <div class="col-md-6 d-flex align-items-center">
-                  <div class="t-center p-b-30">
-                    <p class="t-center m-b-30 m-l-10 m-r-10">
+              <div class="row">
+                <div class="col-md-6 p-t-45 p-b-30">
+                  <div class="t-center">
+                    <span class="tit2 t-center"> Nuestra </span>
+                    <h3 class="tit3 t-center m-b-35 m-t-5">Historia</h3>
+                    <p class="t-center m-b-22 size3 m-l-r-auto">
                       Somos una empresa de Ingeniería, especializada en
                       capacitaciones técnicas, consultorías, suministro de
                       personal y equipos en el campo de ensayos no destructivos,
@@ -226,8 +223,8 @@
                     </a>
                   </div>
                 </div>
-                <div class="col-md-6 d-flex align-items-center">
-                  <div class="size3 bo-rad-10 hov-img-zoom m-l-r-auto">
+                <div class="col-md-6 p-b-30 d-flex align-items-center">
+                  <div class="size2 bo-rad-10 hov-img-zoom m-l-r-auto">
                     <img src="./assets/img/FOT-22.png" alt="IMG-OUR" />
                   </div>
                 </div>
@@ -237,12 +234,10 @@
           <section class="section-intro">
             <div
               class="header-intro parallax100 t-center p-t-135 p-b-158"
-              style="background-image: url('./assets/img/bg-refinery-02.jpg')"
+              style="background-image: url('./assets/img/bg-intro-01.jpg')"
             >
-              <span class="tit2 p-l-15 p-r-15"> Descubre nuestras </span>
-              <h3 class="tit4 t-center p-l-15 p-r-15 p-t-3">
-                Lineas de Negocio
-              </h3>
+              <span class="tit2 p-l-15 p-r-15"> Discover </span>
+              <h3 class="tit4 t-center p-l-15 p-r-15 p-t-3">Pato Place</h3>
             </div>
             <div class="content-intro bg-white p-t-77 p-b-70">
               <div class="container">
@@ -812,5 +807,57 @@
     </div>
     <script src="./assets/js/functions.bundle.js"></script>
     <script src="./assets/js/plugins.min.js"></script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
   </body>
 </html>
