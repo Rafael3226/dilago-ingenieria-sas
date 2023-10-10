@@ -33,7 +33,9 @@ import Header from "../components/Header.astro";
       <slot />
       <Footer />
     </div>
-    <script src="../scripts/functions.bundle.js"></script>
-    <script src="../scripts/plugins.min.js"></script>
+    <script is:inline src="/node_modules/jquery/dist/jquery.js"></script>
+    <script is:inline src="/node_modules/owl.carousel/dist/owl.carousel.min.js"
+    ></script>
+    <script is:inline src="/public/assets/js/clients-carousel.js"></script>
   </body>
 </html>
