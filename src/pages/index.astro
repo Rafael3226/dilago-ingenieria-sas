@@ -1,4 +1,5 @@
 ---
+import Landing from "../components/Landing.astro";
 import Layout from "../layouts/Layout.astro";
 import HistorySection from "../components/home/HistorySection.astro";
 import BussinesSection from "../components/home/BussinesSection.astro";
@@ -8,69 +9,7 @@ import ContactSection from "../components/home/ContactSection.astro";
 ---
 
 <Layout>
-  <section
-    id="section-home"
-    class="slider-element slider-parallax dark min-vh-100 include-header slider-parallax-visible"
-    style="margin-top: -71px"
-  >
-    <div
-      class="slider-inner"
-      style="
-  background-image: url('assets/img/refinery.jpg');
-  background-size: cover;
-  background-position: center center;
-  transform: translate3d(0px, 0px, 0px);
-  height: 796px;
-  "
-    >
-      <div class="vertical-middle slider-element-fade" style="opacity: 1.23241">
-        <div class="container text-center py-5">
-          <div class="emphasis-title">
-            <h1>
-              <span
-                class="text-rotater nocolor"
-                data-separator="|"
-                data-rotate="fadeIn"
-                data-speed="6000"
-              >
-                <span
-                  class="t-rotate fw-bold font-body opm-large-word morphext"
-                >
-                  <span class="animated fadeIn">Bienvenidos.</span>
-                </span>
-              </span>
-            </h1>
-          </div>
-          <a
-            href="./assets/pdf/Presentación corporativa.pdf"
-            class="button button-border button-light button-circle"
-            download>Descargar Brochure</a
-          >
-        </div>
-      </div>
-      <div class="video-wrap">
-        <div
-          class="video-overlay"
-          style="
-    background-color: rgba(0, 0, 0, 0.55);
-    --darkreader-inline-bgcolor: rgba(0, 0, 0, 0.55);
-    "
-          data-darkreader-inline-bgcolor=""
-        >
-        </div>
-      </div>
-      <a
-        href="#"
-        data-scrollto="#section-history"
-        data-easing="easeInOutExpo"
-        data-speed="1250"
-        data-offset="65"
-        class="one-page-arrow dark"
-        data-bs-theme="dark"
-        ><i class="bi-chevron-down infinite animated fadeInDown"></i></a
-      >
-    </div>
-  </section>
+  <Landing />
   <section id="content">
     <div class="content-wrap py-0">
       <HistorySection />

@@ -22,7 +22,7 @@ import Header from "../components/Header.astro";
       href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
     />
 
-    <link rel="icon" href="./assets/img/icon.png" />
+    <link rel="icon" href="/public/assets/img/icon.png" />
     <title>Dilago Ingeniería</title>
   </head>
   <body
@@ -33,6 +33,8 @@ import Header from "../components/Header.astro";
       <slot />
       <Footer />
     </div>
+    <script is:inline src="/public/assets/js/functions.bundle.js"></script>
+    <script is:inline src="/public/assets/js/plugins.min.js"></script>
     <script is:inline src="/node_modules/jquery/dist/jquery.js"></script>
     <script is:inline src="/node_modules/owl.carousel/dist/owl.carousel.min.js"
     ></script>
