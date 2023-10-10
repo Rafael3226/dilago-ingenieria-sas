@@ -765,7 +765,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
   word-spacing: 10px;
 }
 
-.tit11 {
+.tit2 {
   font-family: Courgette;
   font-size: 30px;
   line-height: 1.2;
@@ -1490,6 +1490,11 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 .bg4-pattern {
   background-image: url(../../assets/img/pattern4.png);
+  background-repeat: repeat;
+}
+
+.bg5-pattern {
+  background-image: url(../../assets/img/pattern5.png);
   background-repeat: repeat;
 }
 
