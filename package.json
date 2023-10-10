@@ -1,0 +1,17 @@
+{
+  "name": "lunar-luminosity",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^3.2.4",
+    "jquery": "^3.7.1",
+    "owl.carousel": "^2.3.4"
+  }
+}

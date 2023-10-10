@@ -1,0 +1,39 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+---
+
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="author" content="" />
+    <meta name="description" content="Dilago Ingeniería pagina web" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-icons.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/onepage.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/home.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/util.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+
+    <link rel="icon" href="./assets/img/icon.png" />
+    <title>Dilago Ingeniería</title>
+  </head>
+  <body
+    class="stretched side-push-panel device-xxl device-up-xxl device-up-xl device-up-lg device-up-md device-up-sm device-up-xs is-expanded-menu has-plugin-hoveranimation has-plugin-html5video has-plugin-onepage has-plugin-bootstrap has-plugin-isotope has-plugin-flexslider has-plugin-carousel has-plugin-textrotator has-plugin-form template-contactform-ready has-plugin-scrolldetect has-plugin-gmap has-plugin-cookie has-plugin-bscomponents has-plugin-notify"
+  >
+    <div id="wrapper">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+    <script src="../scripts/functions.bundle.js"></script>
+    <script src="../scripts/plugins.min.js"></script>
+  </body>
+</html>
