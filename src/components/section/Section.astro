@@ -1,0 +1,18 @@
+---
+const { id } = Astro.props;
+---
+
+<section id={id} class="bg4-pattern py-6">
+  <slot name="separator" />
+  <div class="container">
+    <slot name="title" />
+    <div class="row p-t-77">
+      <div class="col-md-6 d-flex align-items-center">
+        <slot name="left" />
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <slot name="right" />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import Separator from "../section/Separator.astro";
+import Image from "../section/Image.astro";
+import Paragraph from "../section/Paragraph.astro";
+import Section from "../section/Section.astro";
+
+const id = "section-vision";
+const title = "Visión";
+const src = "assets/img/historia.jpg";
+const alt = "historia";
+const text =
+  "Posicionarnos en el mercado nacional como una compañía líder en el suministro integral de servicios, que cumplan a cabalidad las especificaciones de nuestros clientes.";
+---
+
+<Section id={id}>
+  <Separator slot="separator">{title}</Separator>
+  <Image slot="left" src={src} alt={alt} />
+  <Paragraph slot="right">{text}</Paragraph>
+</Section>

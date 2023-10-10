@@ -1,0 +1,35 @@
+---
+import Separator from "../section/Separator.astro";
+import Image from "../section/Image.astro";
+import Paragraph from "../section/Paragraph.astro";
+import Section from "../section/Section.astro";
+
+const id = "section-politicas";
+const title = "Políticas";
+const src = "assets/img/historia.jpg";
+const alt = "historia";
+const politicas = {
+  Calidad:
+    "Promovemos las buenas prácticas según los estándares requeridos, identificando que estas sean de total conformidad por parte del cliente.",
+  Transparencia:
+    " Exigimos a todos los integrantes de DILAGO INGENIERÍA S.A.S el total cumplimiento del código de ética promovido por la compañía",
+  "Mitigación de riesgos":
+    " Somos conscientes de los niveles de riesgo en las actividades desempeñadas, por lo cual se insiste en la plena identificación de estos, con el ánimo de prevenir lesiones y daños.",
+  "Cuidado del medio ambiente":
+    " Trabajamos en pro de preservar el entorno natural que nos rodea, haciendo correcta disposición de desechos y usando consumibles con emisiones permitidas.",
+  "Estilo de vida sano":
+    "Divulgamos las consecuencias que tienen los malos hábitos como el tabaco, alcohol y alucinógenos y se prohíbe el ingreso a las instalaciones de trabajo bajo los efectos de estos, así como el consumo dentro de las mismas.",
+  "Seguridad vial":
+    " Nuestra política tiene cero tolerancia con conducir en estado de embriagues o realizar alguna maniobra que atente contra la integridad de los pasajero o del mismo conductor.",
+};
+---
+
+<Section id={id}>
+  <Separator slot="separator">{title}</Separator>
+  <div slot="left">
+    <ul>
+      {Object.entries(politicas).map(([title, text]) => <li>{title} </li>)}
+    </ul>
+  </div>
+  <Image slot="right" src={src} alt={alt} />
+</Section>

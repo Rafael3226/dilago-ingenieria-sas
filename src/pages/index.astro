@@ -9,7 +9,26 @@ import ContactSection from "../components/home/ContactSection.astro";
 ---
 
 <Layout>
-  <Landing />
+  <Landing img="assets/img/refinery.jpg">
+    <div class="vertical-middle slider-element-fade">
+      <div class="container text-center py-5">
+        <div class="emphasis-title">
+          <h1>
+            <span class="nocolor">
+              <span class="fw-bold font-body opm-large-word">
+                <span class="animated fadeIn">Bienvenidos.</span>
+              </span>
+            </span>
+          </h1>
+        </div>
+        <a
+          href="./assets/pdf/Presentación corporativa.pdf"
+          class="button button-border button-light button-circle"
+          download>Descargar Brochure</a
+        >
+      </div>
+    </div>
+  </Landing>
   <section id="content">
     <div class="content-wrap py-0">
       <HistorySection />

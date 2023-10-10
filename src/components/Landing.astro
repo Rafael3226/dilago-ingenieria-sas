@@ -1,3 +1,8 @@
+---
+let { img } = Astro.props;
+img = img || "assets/img/refinery.jpg";
+---
+
 <section
   id="section-home"
   class="slider-element slider-parallax dark min-vh-100 include-header slider-parallax-visible"
@@ -5,35 +10,11 @@
 >
   <div
     class="slider-inner"
-    style="background-image: url('assets/img/refinery.jpg');
+    style={`background-image: url(${img});
         background-size: cover;
-        background-position: center center;
-        transform: translate3d(0px, 0px, 0px);
-        height: 796px;"
+        background-position: center center;`}
   >
-    <div class="vertical-middle slider-element-fade">
-      <div class="container text-center py-5">
-        <div class="emphasis-title">
-          <h1>
-            <span
-              class="text-rotater nocolor"
-              data-separator="|"
-              data-rotate="fadeIn"
-              data-speed="6000"
-            >
-              <span class="t-rotate fw-bold font-body opm-large-word morphext">
-                <span class="animated fadeIn">Bienvenidos.</span>
-              </span>
-            </span>
-          </h1>
-        </div>
-        <a
-          href="./assets/pdf/Presentación corporativa.pdf"
-          class="button button-border button-light button-circle"
-          download>Descargar Brochure</a
-        >
-      </div>
-    </div>
+    <slot />
     <div class="video-wrap">
       <div
         class="video-overlay"
@@ -44,14 +25,7 @@
       >
       </div>
     </div>
-    <a
-      href="#"
-      data-scrollto="#section-history"
-      data-easing="easeInOutExpo"
-      data-speed="1250"
-      data-offset="65"
-      class="one-page-arrow dark"
-      data-bs-theme="dark"
+    <a href="#content" class="one-page-arrow dark"
       ><i class="bi-chevron-down infinite animated fadeInDown"></i></a
     >
   </div>

@@ -1,0 +1,19 @@
+---
+import Image from "../section/Image.astro";
+import Paragraph from "../section/Paragraph.astro";
+import Section from "../section/Section.astro";
+import Title from "../section/Title.astro";
+
+const text =
+  "Suministrar servicios a las personas y/o empresas que así lo requieran, cumpliendo con la normatividad establecida y a la vanguardia de las nuevas tecnologías que contribuyan al desarrollo socioeconómico de nuestros clientes de forma segura y con responsabilidad ambiental.";
+
+const title = "Misión";
+const src = "assets/img/historia.jpg";
+const alt = "historia";
+---
+
+<Section id="section-mision">
+  <Title slot="title">{title}</Title>
+  <Paragraph slot="left">{text}</Paragraph>;
+  <Image slot="right" src={src} alt={alt} />
+</Section>
