@@ -1,6 +1,7 @@
 ---
+import BackgroundImg from "../assets/img/refinery.jpg";
 let { img } = Astro.props;
-img = img || "assets/img/refinery.jpg";
+img = img?.src || BackgroundImg.src;
 ---
 
 <section

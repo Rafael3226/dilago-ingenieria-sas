@@ -1,6 +1,7 @@
 ---
+import DefaultImage from "../../assets/img/bg-refinery-01.jpg";
 let { img } = Astro.props;
-img = img || "/assets/img/bg-refinery-01.jpg";
+img = img?.src || DefaultImage.src;
 ---
 
 <div

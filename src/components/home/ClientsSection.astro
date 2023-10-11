@@ -1,35 +1,47 @@
 ---
+import { Image } from "astro:assets";
 import Separator from "../section/Separator.astro";
+
+import CelsiaImg from "../../assets/img/clients/celsia.png";
+import ConfipetrolImg from "../../assets/img/clients/logo-confipetrol.png";
+import OhkImg from "../../assets/img/clients/logo-ohl.png";
+import MansarovarImg from "../../assets/img/clients/mansarovar.png";
+import TecnicontrolImg from "../../assets/img/clients/tecnicontrol_logo.png";
 ---
 
 <section id="section-clients">
-  <Separator img="">Clientes</Separator>
+  <Separator>Clientes</Separator>
   <div class="content-intro p-t-77 p-b-80">
     <div class="owl-carousel">
-      <img
+      <Image
         class="carousel-img"
-        src="./assets/img/clients/celsia.png"
+        src={CelsiaImg}
         alt="Clients"
+        style={{ height: "auto" }}
       />
-      <img
+      <Image
         class="carousel-img"
-        src="./assets/img/clients/logo-confipetrol.png"
+        src={ConfipetrolImg}
         alt="Clients"
+        style={{ height: "auto" }}
       />
-      <img
+      <Image
         class="carousel-img"
-        src="./assets/img/clients/logo-ohl.png"
+        src={OhkImg}
         alt="Clients"
+        style={{ height: "auto" }}
       />
-      <img
+      <Image
         class="carousel-img"
-        src="./assets/img/clients/mansarovar.png"
+        src={MansarovarImg}
         alt="Clients"
+        style={{ height: "auto" }}
       />
-      <img
+      <Image
         class="carousel-img"
-        src="./assets/img/clients/tecnicontrol_logo.png"
+        src={TecnicontrolImg}
         alt="Clients"
+        style={{ height: "auto" }}
       />
     </div>
   </div>

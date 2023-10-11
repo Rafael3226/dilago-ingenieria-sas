@@ -1,12 +1,12 @@
 ---
 import Separator from "../section/Separator.astro";
-import Image from "../section/Image.astro";
+import ImageZoom from "../section/ImageZoom.astro";
 import Paragraph from "../section/Paragraph.astro";
 import Section from "../section/Section.astro";
+import VisionImg from "../../assets/img/historia.jpg";
 
 const id = "section-vision";
 const title = "Visión";
-const src = "assets/img/historia.jpg";
 const alt = "historia";
 const text =
   "Posicionarnos en el mercado nacional como una compañía líder en el suministro integral de servicios, que cumplan a cabalidad las especificaciones de nuestros clientes.";
@@ -14,6 +14,6 @@ const text =
 
 <Section id={id}>
   <Separator slot="separator">{title}</Separator>
-  <Image slot="left" src={src} alt={alt} />
+  <ImageZoom slot="left" src={VisionImg} alt={alt} />
   <Paragraph slot="right">{text}</Paragraph>
 </Section>

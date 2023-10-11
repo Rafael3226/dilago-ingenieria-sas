@@ -4,10 +4,12 @@ import Mision from "../components/about/Mision.astro";
 import Politicas from "../components/about/Politicas.astro";
 import Vision from "../components/about/Vision.astro";
 import Layout from "../layouts/Layout.astro";
+
+import HistoryImg from "../assets/img/historia.jpg";
 ---
 
 <Layout>
-  <Landing img="/assets/img/historia.jpg">
+  <Landing img={HistoryImg}>
     <div class="vertical-middle slider-element-fade">
       <div class="container text-center py-5">
         <div class="emphasis-title">

@@ -1,3 +1,8 @@
+---
+import HistoryImg from "../../assets/img/historia.jpg";
+import ImageZoom from "../section/ImageZoom.astro";
+---
+
 <section id="section-history" class="bg4-pattern p-t-120 p-b-105">
   <div class="container">
     <div class="t-center">
@@ -20,9 +25,7 @@
         </div>
       </div>
       <div class="col-md-6 d-flex align-items-center">
-        <div class="size3 bo-rad-10 hov-img-zoom m-l-r-auto">
-          <img src="./assets/img/historia.jpg" alt="IMG-OUR" />
-        </div>
+        <ImageZoom src={HistoryImg} alt="Nuestra historia imagen." />
       </div>
     </div>
   </div>

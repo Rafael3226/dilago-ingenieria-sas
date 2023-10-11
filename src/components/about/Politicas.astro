@@ -1,12 +1,12 @@
 ---
 import Separator from "../section/Separator.astro";
-import Image from "../section/Image.astro";
+import ImageZoom from "../section/ImageZoom.astro";
 import Paragraph from "../section/Paragraph.astro";
 import Section from "../section/Section.astro";
+import PoliticasImg from "../../assets/img/historia.jpg";
 
 const id = "section-politicas";
 const title = "Políticas";
-const src = "assets/img/historia.jpg";
 const alt = "historia";
 const politicas = {
   Calidad:
@@ -31,5 +31,5 @@ const politicas = {
       {Object.entries(politicas).map(([title, text]) => <li>{title} </li>)}
     </ul>
   </div>
-  <Image slot="right" src={src} alt={alt} />
+  <ImageZoom slot="right" src={PoliticasImg} alt={alt} />
 </Section>
