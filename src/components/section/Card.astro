@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+
+const { href, img, alt, title, text, className } = Astro.props;
+---
+
+<div class={className}>
+  <div class="bo-rad-10 hov-img-zoom">
+    <a href={href}>
+      <Image src={img} alt={alt} style={{ height: "auto" }} />
+    </a>
+  </div>
+  <div class="p-t-35">
+    <a href={href}><h4 class="txt5 color0-hov trans-0-4 m-b-13">{title}</h4></a>
+    <p class="m-b-20">
+      {text}
+    </p>
+    <a href={href} class="txt4">
+      VER MAS
+      <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>
