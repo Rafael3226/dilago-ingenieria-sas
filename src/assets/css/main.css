@@ -1404,12 +1404,7 @@ body {
 
 /* Add this CSS to make the images bigger */
 .owl-carousel .carousel-img {
-  filter: grayscale(100%);
   width: 100%; /* Ensure the image takes up the full width of the item */
   height: auto; /* Allow the image to maintain its aspect ratio */
   object-fit: cover; /* Maintain the aspect ratio and fill the item */
-}
-
-.owl-carousel .carousel-img:hover {
-  filter: grayscale(0%);
 }

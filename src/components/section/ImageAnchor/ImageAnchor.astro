@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import "./image-anchor.css";
+
+const { img, alt, href, text } = Astro.props;
+---
+
+<a href={href}>
+  <div class="a-image bo-rad-10 hov-img-zoom pos-relative m-t-30">
+    <Image src={img} alt={alt} style={{ height: "auto" }} />
+    <div class="image-overlay">
+      <span class="image-overlay-text">{text}</span>
+    </div>
+  </div>
+</a>

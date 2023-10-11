@@ -1,104 +1,106 @@
 ---
-import { Image } from "astro:assets";
+import ImageAnchor from "../section/ImageAnchor";
+import Separator from "../section/Separator.astro";
 
-import ExperienceImg1 from "../../assets/img/our-menu-01.jpg";
-import ExperienceImg2 from "../../assets/img/our-menu-05.jpg";
-import ExperienceImg3 from "../../assets/img/our-menu-13.jpg";
-import ExperienceImg4 from "../../assets/img/our-menu-08.jpg";
-import ExperienceImg5 from "../../assets/img/our-menu-10.jpg";
-import ExperienceImg6 from "../../assets/img/our-menu-16.jpg";
+import FluresentImg from "../../assets/img/experience/rotor.jpg";
+import PipesImg from "../../assets/img/experience/cover.jpg";
+import WeldingImg from "../../assets/img/experience/welding.jpg";
+import LiquidsImg from "../../assets/img/experience/liquidos.jpg";
+import TgiImg from "../../assets/img/experience/tgi.jpg";
+import ExperienceImg6 from "../../assets/img/experience/valves.jpg";
+
+const href = "/services";
+const data = [
+  {
+    img: FluresentImg,
+    alt: "",
+    text: "Inspección de rotores y compresores mediante líquidos penetrantes fluorscentes, partículas magnéticas fluorescentes y ultrasonido",
+  },
+  {
+    img: PipesImg,
+    alt: "",
+    text: "Supervisión de obra de cambio de recubrimiento de tubería TGI de 20'' PK14+400 de la UF4",
+  },
+  {
+    img: LiquidsImg,
+    alt: "",
+    text: "Ensayo de líquidos penetrantes e inspección visual a estructura",
+  },
+  {
+    img: WeldingImg,
+    alt: "",
+    text: "Calificaciones de soldadores en diversos campos del país",
+  },
+  {
+    img: TgiImg,
+    alt: "",
+    text: "Diseño de sistema de proteccción de catódica a tubería de 12'' y 10'",
+  },
+  {
+    img: ExperienceImg6,
+    alt: "",
+    text: "Suministro de válvulas y accesorios para la industria petrolera",
+  },
+];
 ---
 
-<section id="section-experience" class="bg3-pattern p-t-115 p-b-120">
-  <div class="container">
-    <div class="t-center m-b-22">
-      <h3 class="tit3 t-center m-t-2">Experiencia</h3>
-    </div>
+<section id="section-experience">
+  <Separator>Experiencia</Separator>
+  <div class="container p-t-115 p-b-120">
     <div class="row">
       <div class="col-md-8">
         <div class="row">
           <div class="col-sm-6">
-            <div
-              class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30"
-            >
-              <Image
-                src={ExperienceImg1}
-                alt="IMG-MENU"
-                style={{ height: "auto" }}
-              />
-              <a href="#" class="btn2 flex-c-m txt5 ab-c-m size4"> Lunch</a>
-            </div>
+            <ImageAnchor
+              img={data[0].img}
+              alt={data[0].alt}
+              href={href}
+              text={data[0].text}
+            />
           </div>
           <div class="col-sm-6">
-            <div
-              class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30"
-            >
-              <Image
-                src={ExperienceImg2}
-                alt="IMG-MENU"
-                style={{ height: "auto" }}
-              />
-
-              <a href="#" class="btn2 flex-c-m txt5 ab-c-m size5"> Dinner</a>
-            </div>
+            <ImageAnchor
+              img={data[1].img}
+              alt={data[1].alt}
+              href={href}
+              text={data[1].text}
+            />
           </div>
           <div class="col-12">
-            <div
-              class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30"
-            >
-              <Image
-                src={ExperienceImg3}
-                alt="IMG-MENU"
-                style={{ height: "auto" }}
-              />
-
-              <a href="#" class="btn2 flex-c-m txt5 ab-c-m size6">
-                Happy Hour
-              </a>
-            </div>
+            <ImageAnchor
+              img={data[2].img}
+              alt={data[2].alt}
+              href={href}
+              text={data[2].text}
+            />
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="row">
           <div class="col-12">
-            <div
-              class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30"
-            >
-              <Image
-                src={ExperienceImg4}
-                alt="IMG-MENU"
-                style={{ height: "auto" }}
-              />
-
-              <a href="#" class="btn2 flex-c-m txt5 ab-c-m size7"> Drink</a>
-            </div>
+            <ImageAnchor
+              img={data[3].img}
+              alt={data[3].alt}
+              href={href}
+              text={data[3].text}
+            />
           </div>
           <div class="col-12">
-            <div
-              class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30"
-            >
-              <Image
-                src={ExperienceImg5}
-                alt="IMG-MENU"
-                style={{ height: "auto" }}
-              />
-
-              <a href="#" class="btn2 flex-c-m txt5 ab-c-m size8"> Starters</a>
-            </div>
+            <ImageAnchor
+              img={data[4].img}
+              alt={data[4].alt}
+              href={href}
+              text={data[4].text}
+            />
           </div>
           <div class="col-12">
-            <div
-              class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30"
-            >
-              <Image
-                src={ExperienceImg6}
-                alt="IMG-MENU"
-                style={{ height: "auto" }}
-              />
-
-              <a href="#" class="btn2 flex-c-m txt5 ab-c-m size9"> Dessert</a>
-            </div>
+            <ImageAnchor
+              img={data[5].img}
+              alt={data[5].alt}
+              href={href}
+              text={data[5].text}
+            />
           </div>
         </div>
       </div>
