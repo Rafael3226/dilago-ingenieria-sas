@@ -10,8 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.2.4",
-    "jquery": "^3.7.1",
-    "owl.carousel": "^2.3.4"
+    "astro": "^3.2.4"
   }
 }
