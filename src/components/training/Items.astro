@@ -1,0 +1,22 @@
+---
+import ImageZoom from "../section/ImageZoom.astro";
+import Section from "../section/Section.astro";
+import PoliticasImg from "../../assets/img/historia.jpg";
+
+const id = "section-items";
+const alt = "historia";
+const items = [
+  "Capacitación y calificación en ensayos no destructivos: Inspección visual Nivel II, Ultrasonido medición de espesores, Líquidos penetrantes Nivel II, Partículas Magnéticas nivel II.",
+  "Profundización en soldadura por la asociación colombiana de soldadura y ensayos no destructivos.",
+  "Programa de capacitación y calificación de interventores para inspección de recubrimientos industriales por la asociación colombiana de corrosión y proyección.",
+];
+---
+
+<Section id={id}>
+  <div slot="right">
+    <ul style="display:flex; flex-direction: column; gap:20px;">
+      {items.map((text) => <li style="font-size:1.2rem;">{text}</li>)}
+    </ul>
+  </div>
+  <ImageZoom slot="left" src={PoliticasImg} alt={alt} />
+</Section>
