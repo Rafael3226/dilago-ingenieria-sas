@@ -15,12 +15,16 @@ const vision = {
 ---
 
 <Section id="section-mision">
-  <div slot="left">
+  <div slot="left" class="p-t-50 p-b-50">
     <Title slot="title">{mision.title}</Title>
-    <Paragraph slot="left" isJustify={false}>{mision.text}</Paragraph>;
+    <Paragraph slot="left" isJustify={false} className="p-t-50">
+      {mision.text}
+    </Paragraph>;
   </div>
-  <div slot="right">
+  <div slot="right" class="p-t-50 p-b-50">
     <Title slot="title">{vision.title}</Title>
-    <Paragraph slot="left" isJustify={false}>{vision.text}</Paragraph>;
+    <Paragraph slot="left" isJustify={false} className="p-t-50">
+      {vision.text}
+    </Paragraph>;
   </div>
 </Section>

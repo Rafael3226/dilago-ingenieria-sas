@@ -1,8 +1,19 @@
 ---
-const { isTextCenter = true, isJustify = true } = Astro.props;
+const {
+  className = "",
+  style = "",
+  isTextCenter = true,
+  isJustify = true,
+} = Astro.props;
 
-const newClass = isTextCenter ? " t-center" : "";
-const newStyle = isJustify ? " text-align: justify;" : "";
+let newClass = "";
+newClass += className;
+newClass += isTextCenter ? " t-center" : "";
+
+let newStyle = "";
+newStyle += style;
+newStyle += " font-size: 1.2em;";
+newStyle += isJustify ? " text-align: justify;" : "";
 ---
 
-<p class={newClass} style={`font-size: 1.2em; ${newStyle}`}><slot /></p>
+<p class={newClass} style={newStyle}><slot /></p>
