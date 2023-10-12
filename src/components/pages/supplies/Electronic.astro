@@ -1,0 +1,20 @@
+---
+import Separator from "../../section/Separator.astro";
+import ImageZoom from "../../section/ImageZoom.astro";
+import Paragraph from "../../section/Paragraph.astro";
+import Section from "../../section/Section.astro";
+import VisionImg from "../../../assets/img/historia.jpg";
+
+const id = "section-supplies-electronics";
+const title = "Suministro de instrumentación y equipo electrónico";
+const alt = "suministros electrónicos";
+const text =
+  "Somos importadores directos de instrumentación para la industria como indicadores y transmisores de presión, temperatura y flujo, adicionalmente de relevadores o relé, termopozos y otros.";
+
+---
+
+<Section id={id}>
+  <Separator slot="separator">{title}</Separator>
+  <ImageZoom slot="left" src={VisionImg} alt={alt} />
+  <Paragraph slot="right">{text}</Paragraph>
+</Section>

@@ -12765,7 +12765,7 @@ fieldset:disabled .btn {
   }
 }
 :root {
-  --cnvs-themecolor: #EE323E;
+  --cnvs-themecolor: #ee323e;
   --cnvs-themecolor-rgb: 26, 188, 156;
   --bs-link-color: var(--cnvs-themecolor);
   --bs-link-color-rgb: var(--cnvs-themecolor-rgb);
@@ -31466,4 +31466,10 @@ body.dark {
 .dark #copyrights {
   color: rgba(255, 255, 255, 0.4);
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.owl-stage {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
 }

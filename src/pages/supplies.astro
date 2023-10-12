@@ -1,7 +1,11 @@
 ---
-import Landing from "../components/Landing.astro";
 import Layout from "../layouts/Layout.astro";
+import Landing from "../components/Landing.astro";
 import TitleXL from "../components/basic/TitleXL.astro";
+
+import Mechanical from "../components/pages/supplies/Mechanical.astro";
+import Electronic from "../components/pages/supplies/Electronic.astro";
+import Suppliers from "../components/pages/supplies/Suppliers.astro";
 
 import SuppliesImg from "../assets/img/supplies-01.jpeg";
 ---
@@ -11,6 +15,10 @@ import SuppliesImg from "../assets/img/supplies-01.jpeg";
     <TitleXL>Suministros</TitleXL>
   </Landing>
   <section id="content">
-    <div class="content-wrap py-0"></div>
+    <div class="content-wrap py-0">
+      <Mechanical />
+      <Electronic />
+      <Suppliers />
+    </div>
   </section>
 </Layout>

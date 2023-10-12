@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Separator from "../../section/Separator.astro";
 
 import CelsiaImg from "../../../assets/img/clients/celsia.png";
@@ -7,42 +6,18 @@ import ConfipetrolImg from "../../../assets/img/clients/logo-confipetrol.png";
 import OhkImg from "../../../assets/img/clients/logo-ohl.png";
 import MansarovarImg from "../../../assets/img/clients/mansarovar.png";
 import TecnicontrolImg from "../../../assets/img/clients/tecnicontrol_logo.png";
+import Carousel from "../../section/Carousel.astro";
+
+const images = [
+  CelsiaImg,
+  ConfipetrolImg,
+  OhkImg,
+  MansarovarImg,
+  TecnicontrolImg,
+];
 ---
 
 <section id="section-clients">
   <Separator>Clientes</Separator>
-  <div class="content-intro p-t-77 p-b-80">
-    <div class="owl-carousel">
-      <Image
-        class="carousel-img"
-        src={CelsiaImg}
-        alt="Clients"
-        style={{ height: "auto" }}
-      />
-      <Image
-        class="carousel-img"
-        src={ConfipetrolImg}
-        alt="Clients"
-        style={{ height: "auto" }}
-      />
-      <Image
-        class="carousel-img"
-        src={OhkImg}
-        alt="Clients"
-        style={{ height: "auto" }}
-      />
-      <Image
-        class="carousel-img"
-        src={MansarovarImg}
-        alt="Clients"
-        style={{ height: "auto" }}
-      />
-      <Image
-        class="carousel-img"
-        src={TecnicontrolImg}
-        alt="Clients"
-        style={{ height: "auto" }}
-      />
-    </div>
-  </div>
+  <Carousel images={images} alt="Client" />
 </section>
