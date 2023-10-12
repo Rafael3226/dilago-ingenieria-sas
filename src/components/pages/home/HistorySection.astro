@@ -1,34 +1,36 @@
 ---
 import HistoryImg from "../../../assets/img/historia.jpg";
 import ImageZoom from "../../section/ImageZoom.astro";
+import Paragraph from "../../section/Paragraph.astro";
+import Section from "../../section/Section.astro";
+import Separator from "../../section/Separator.astro";
+import Title from "../../section/Title.astro";
+
+const id = "section-history";
+const title = "Historia";
+
+const paragraphs = [
+  "Dilago ingeniería nace en el año 2015 en Barrancabermeja inicialmente con el objetivo de cubrir la demanda local y regional en capacitaciones técnicas para el sector energético, actualmente y debido al crecimiento corporativo decide expandir su alcance a tres líneas de negocios; capacitaciones técnicas, suministros y servicios.",
+  "Dentro de sus áreas se puede evidenciar experiencia en diseño e inspección de sistemas de protección catódica, calificación de procedimientos de soldadura y soldadores, Ensayos no destructivos a equipo estático y rotativo, elaboración de estudios de QRA, Pruebas hidrostáticas, Suministro de materiales mecánicos, eléctricos y electrónicos y calificación técnica de personal.",
+  "En Dilago ingeniería sas su principal objetivo es alcanzar la satisfacción del cliente de una manera eficiente y ética, cumpliendo las regulaciones gubernamentales y normativas que se requieran.",
+];
+const href = "./about.html";
 ---
 
-<section id="section-history" class="bg4-pattern p-t-120 p-b-105">
-  <div class="container">
-    <div class="t-center">
-      <h3 class="tit5 t-center">Historia</h3>
-    </div>
-    <div class="row py-6">
-      <div class="col-md-6 d-flex align-items-center">
-        <div class="t-center p-b-30">
-          <p class="t-center m-b-30 m-l-10 m-r-10">
-            Somos una empresa cuya razón social esta enfocada a proveer diseños
-            de protección catódica, calificación de procedimientos de soldadura,
-            ensayos no destructivos, supervisión de obras, estudios y análisis
-            de riesgos en ductos, suministro de personal, insumos y equipos que
-            presta sus servicios principalmente al sector energético, cuyo
-            principal objetivo es alcanzar la satisfacción del cliente de una
-            manera eficiente.
-          </p>
-          <a href="./about.html" class="txt4">
-            VER MAS
-            <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-6 d-flex align-items-center">
-        <ImageZoom src={HistoryImg} alt="Nuestra historia imagen." />
-      </div>
+<Section id={id}>
+  <Separator slot="separator">{title}</Separator>
+  <div slot="left" class="d-flex flex-column gap-3">
+    <Paragraph>{paragraphs[0]}</Paragraph>
+    <Paragraph>{paragraphs[1]}</Paragraph>
+  </div>
+  <ImageZoom slot="right" src={HistoryImg} alt="Nuestra historia imagen." />
+  <div slot="bottom">
+    <Paragraph>{paragraphs[2]}</Paragraph>
+    <div class="text-center p-3">
+      <a href={href} class="txt4">
+        VER MAS
+        <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+      </a>
     </div>
   </div>
-</section>
+</Section>

@@ -1,19 +1,19 @@
 ---
-const { id } = Astro.props;
+const { id, className } = Astro.props;
 ---
 
-<section id={id}>
+<section id={id} class={className}>
   <slot name="separator" />
   <div class="container py-6">
     <slot name="title" />
     <div class="row p-t-50">
-      <div class="col-md-6 d-flex align-items-center">
+      <div class="col-md-6">
         <slot name="left" />
       </div>
-      <div class="col-md-6 d-flex align-items-center">
+      <div class="col-md-6">
         <slot name="right" />
       </div>
-      <div class="col-md-12 align-items-center">
+      <div class="col-md-12">
         <slot name="bottom" />
       </div>
     </div>

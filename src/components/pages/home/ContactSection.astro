@@ -1,9 +1,11 @@
+---
+import Separator from "../../section/Separator.astro";
+---
+
 <section id="section-contact">
+  <Separator>Envia un Mensaje</Separator>
   <div class="content-intro bg-white p-t-77 p-b-70">
     <div class="container">
-      <div class="t-center m-b-22">
-        <h3 class="tit5 t-center m-t-2">Envia un Mensaje</h3>
-      </div>
       <div class="mt-5 row">
         <div class="col-lg-6 px-5">
           <div>
@@ -17,22 +19,13 @@
                   action=""
                   method="post"
                 >
-                  <div class="col-md-6 mb-4">
+                  <div class="col-md-12 mb-4">
                     <input
                       type="text"
                       id="template-contactform-name"
                       name="template-contactform-name"
                       class="form-control border-form-control required"
                       placeholder="Nombre"
-                    />
-                  </div>
-                  <div class="col-md-6 mb-4">
-                    <input
-                      type="text"
-                      id="template-contactform-phone"
-                      name="template-contactform-phone"
-                      class="form-control border-form-control"
-                      placeholder="Telefono"
                     />
                   </div>
                   <div class="w-100"></div>
@@ -43,16 +36,6 @@
                       name="template-contactform-email"
                       class="required email form-control border-form-control"
                       placeholder="Correo"
-                    />
-                  </div>
-                  <div class="w-100"></div>
-                  <div class="col-md-12 mb-4">
-                    <input
-                      type="text"
-                      id="template-contactform-subject"
-                      name="subject"
-                      class="required form-control border-form-control"
-                      placeholder="Asunto"
                     />
                   </div>
                   <div class="w-100"></div>
@@ -106,9 +89,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
     </div>
   </div>
 </section>
