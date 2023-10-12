@@ -1,10 +1,10 @@
 ---
 import ImageZoom from "../section/ImageZoom.astro";
 import Section from "../section/Section.astro";
-import PoliticasImg from "../../assets/img/historia.jpg";
+import Img from "../../assets/img/historia.jpg";
 
 const id = "section-items";
-const alt = "historia";
+const alt = "items";
 const items = [
   "Capacitación y calificación en ensayos no destructivos: Inspección visual Nivel II, Ultrasonido medición de espesores, Líquidos penetrantes Nivel II, Partículas Magnéticas nivel II.",
   "Profundización en soldadura por la asociación colombiana de soldadura y ensayos no destructivos.",
@@ -18,5 +18,5 @@ const items = [
       {items.map((text) => <li style="font-size:1.2rem;">{text}</li>)}
     </ul>
   </div>
-  <ImageZoom slot="left" src={PoliticasImg} alt={alt} />
+  <ImageZoom slot="left" src={Img} alt={alt} />
 </Section>
