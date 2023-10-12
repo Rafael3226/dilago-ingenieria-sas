@@ -2,6 +2,7 @@
 import ImageZoom from "../../section/ImageZoom.astro";
 import Section from "../../section/Section.astro";
 import Img from "../../../assets/img/historia.jpg";
+import TextList from "../../section/TextList.astro";
 
 const id = "section-items";
 const alt = "items";
@@ -13,10 +14,6 @@ const items = [
 ---
 
 <Section id={id}>
-  <div slot="right">
-    <ul style="display:flex; flex-direction: column; gap:20px;">
-      {items.map((text) => <li style="font-size:1.2rem;">{text}</li>)}
-    </ul>
-  </div>
+  <TextList slot="right" items={items} />
   <ImageZoom slot="left" src={Img} alt={alt} />
 </Section>

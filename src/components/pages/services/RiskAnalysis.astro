@@ -1,0 +1,26 @@
+---
+import Separator from "../../section/Separator.astro";
+import ImageZoom from "../../section/ImageZoom.astro";
+import Paragraph from "../../section/Paragraph.astro";
+import Section from "../../section/Section.astro";
+import VisionImg from "../../../assets/img/historia.jpg";
+import TextList from "../../section/TextList.astro";
+
+const id = "section-services-risk-analysis";
+const title = "Análisis de riesgos";
+const text =
+  "Quantified Risk Assessment (QRA) Metodología cuantitativa que analiza de forma trazable los riesgos y consecuencias que pueden surgir debido a incidentes en los sistemas, dichas consecuencias pueden ser de carácter poblacional, ambientales o estructurales. Con el fin de hacer posible dichos cálculos DILAGO INGENIERIA S.A.S cuenta con herramientas digitales como:";
+const items = [
+  "Software PHAST v 7.11 de GL DNV para el análisis de consecuencias.",
+  "Software SAFETI (PHAST RISK) v 6.7 de GL DNV para el análisis probabilístico, análisis de consecuencias, estimación de riesgos individual y social (curvas FN)",
+];
+---
+
+<Section id={id}>
+  <Separator slot="separator">{title}</Separator>
+  <ImageZoom slot="left" src={VisionImg} alt={title} />
+  <div slot="right">
+    <Paragraph isTextCenter={false}>{text}</Paragraph>
+    <TextList items={items} style="padding-top: 30px;" />
+  </div>
+</Section>

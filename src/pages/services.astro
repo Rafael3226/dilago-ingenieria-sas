@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Landing from "../components/Landing.astro";
+import TitleXL from "../components/basic/TitleXL.astro";
+
+import {
+  CathodicProtection,
+  HydrostaticTesting,
+  Inspections,
+  LoadAnalysis,
+  NonDestructiveTesting,
+  RiskAnalysis,
+  WeldingQuality,
+} from "../components/pages/services";
+
+import ServicesImg from "../assets/img/services-01.jpeg";
+---
+
+<Layout>
+  <Landing img={ServicesImg}>
+    <TitleXL>Servicios</TitleXL>
+  </Landing>
+  <section id="content">
+    <div class="content-wrap py-0">
+      <LoadAnalysis />
+      <RiskAnalysis />
+      <WeldingQuality />
+      <CathodicProtection />
+      <NonDestructiveTesting />
+      <Inspections />
+      <HydrostaticTesting />
+    </div>
+  </section>
+</Layout>

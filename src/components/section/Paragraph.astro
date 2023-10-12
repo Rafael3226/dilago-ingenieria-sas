@@ -1,1 +1,7 @@
-<p class="t-center" style="font-size: 1.2em;"><slot /></p>
+---
+const { isTextCenter = true } = Astro.props;
+
+const newClass = isTextCenter ? "t-center" : "";
+---
+
+<p class={newClass} style="font-size: 1.2em;"><slot /></p>

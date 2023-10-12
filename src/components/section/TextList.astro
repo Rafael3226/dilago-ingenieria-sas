@@ -1,0 +1,7 @@
+---
+const { items, style } = Astro.props;
+---
+
+<ul style={`display:flex; flex-direction: column; gap:20px; ${style}`}>
+  {items.map((text) => <li style="font-size:1.2rem;">{text}</li>)}
+</ul>
