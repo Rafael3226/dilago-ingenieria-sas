@@ -1,0 +1,26 @@
+---
+import Paragraph from "../../section/Paragraph.astro";
+import Section from "../../section/Section.astro";
+import Title from "../../section/Title.astro";
+
+const mision = {
+  title: "Misión",
+  text: "Suministrar servicios a las personas y/o empresas que así lo requieran, cumpliendo con la normatividad establecida y a la vanguardia de las nuevas tecnologías que contribuyan al desarrollo socioeconómico de nuestros clientes de forma segura y con responsabilidad ambiental.",
+};
+
+const vision = {
+  title: "Visión",
+  text: "Posicionarnos en el mercado nacional como una compañía líder en el suministro integral de servicios y suministros, que cumplan a cabalidad las especificaciones de nuestros clientes.",
+};
+---
+
+<Section id="section-mision">
+  <div slot="left">
+    <Title slot="title">{mision.title}</Title>
+    <Paragraph slot="left" isJustify={false}>{mision.text}</Paragraph>;
+  </div>
+  <div slot="right">
+    <Title slot="title">{vision.title}</Title>
+    <Paragraph slot="left" isJustify={false}>{vision.text}</Paragraph>;
+  </div>
+</Section>
