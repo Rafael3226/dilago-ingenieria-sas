@@ -25,8 +25,8 @@ const politicas = {
 
 <Section id={id}>
   <Separator slot="separator">{title}</Separator>
-  <div slot="left">
-    <ul>
+  <div slot="left" class="h-100 d-flex flex-column justify-content-center">
+    <ul class="h-60 d-flex row align-items-center gap-1">
       {Object.entries(politicas).map(([title, text]) => <li>{title} </li>)}
     </ul>
   </div>
