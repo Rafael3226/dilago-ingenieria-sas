@@ -3,31 +3,35 @@ import Separator from "../../section/Separator.astro";
 import ImageZoom from "../../section/ImageZoom.astro";
 import Section from "../../section/Section.astro";
 import PoliticasImg from "../../../assets/img/historia.jpg";
+import Paragraph from "../../section/Paragraph.astro";
 
 const id = "section-politicas";
 const title = "Políticas";
 const alt = "historia";
 const politicas = {
-  Calidad:
-    "Promovemos las buenas prácticas según los estándares requeridos, identificando que estas sean de total conformidad por parte del cliente.",
-  Transparencia:
-    " Exigimos a todos los integrantes de DILAGO INGENIERÍA S.A.S el total cumplimiento del código de ética promovido por la compañía",
-  "Mitigación de riesgos":
-    " Somos conscientes de los niveles de riesgo en las actividades desempeñadas, por lo cual se insiste en la plena identificación de estos, con el ánimo de prevenir lesiones y daños.",
-  "Cuidado del medio ambiente":
-    " Trabajamos en pro de preservar el entorno natural que nos rodea, haciendo correcta disposición de desechos y usando consumibles con emisiones permitidas.",
-  "Estilo de vida sano":
-    "Divulgamos las consecuencias que tienen los malos hábitos como el tabaco, alcohol y alucinógenos y se prohíbe el ingreso a las instalaciones de trabajo bajo los efectos de estos, así como el consumo dentro de las mismas.",
-  "Seguridad vial":
-    " Nuestra política tiene cero tolerancia con conducir en estado de embriagues o realizar alguna maniobra que atente contra la integridad de los pasajero o del mismo conductor.",
+  "Política de calidad": "",
+  "Política de seguridad vial": "",
+  "Política HSE": "",
+  "Política de no alcohol, drogas y tabaquismo": "",
+  "Política de prevención de acoso laboral": "",
+  "Política anticorrupción": "",
+  "Política de responsabilidad socia": "",
+  "Política contratación personal": "",
+  "Política de desconexión laboral": "",
 };
 ---
 
 <Section id={id}>
   <Separator slot="separator">{title}</Separator>
   <div slot="left" class="h-100 d-flex flex-column justify-content-center">
-    <ul class="h-60 d-flex row align-items-center gap-1">
-      {Object.entries(politicas).map(([title, text]) => <li>{title} </li>)}
+    <ul class="d-flex row align-items-center gap-1">
+      {
+        Object.entries(politicas).map(([title, text]) => (
+          <li>
+            <Paragraph>{title}</Paragraph>
+          </li>
+        ))
+      }
     </ul>
   </div>
   <ImageZoom slot="right" src={PoliticasImg} alt={alt} />
