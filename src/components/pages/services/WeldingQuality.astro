@@ -1,204 +1,57 @@
 ---
+import ImageZoom from "../../section/ImageZoom.astro";
 import Separator from "../../section/Separator.astro";
+import TextList from "../../section/TextList.astro";
 
-const id = "section-services-welding-quality";
-const title = "Calidad en soldaduras (WPS, PQR Y WPQ)";
+import WeldingImg from "../../../assets/img/historia.jpg";
+
+const weldingData = {
+  id: "section-services-welding-quality",
+  title: "CALIFICACIÓN DE SOLDADURAS",
+  description: [
+    "Especificación del procedimiento de soldadura (WPS)",
+    "En este documento se plasman las variables esenciales y no esenciales que involucran la soldadura, para esto es necesario la participación del inspector de soldadura, supervisor de soldadura y un soldador.",
+  ],
+  image: WeldingImg, // Replace with the actual image source
+  imageAlt: "Imagen de calificación de soldaduras",
+  servicesHeader:
+    "Para la calificación de procedimientos de soldaduras se ofrecen los siguientes servicios:",
+  servicesList: [
+    "Pruebas de tensión",
+    "Ensayos de doblez",
+    "Inspección visual",
+    "Radiografía",
+    "Partículas magnéticas",
+    "Ultrasonido",
+    "Ensayos de dureza",
+    "Pruebas de doblez",
+    "Identificación positiva de materiales (PMI)",
+    "Macroataque",
+  ],
+  pqrHeader: "Calificación de procedimientos de soldadura (PQR)",
+  pqrDescription:
+    "Cada procedimiento debe estar respaldado por pruebas verificables y a su vez estas se deben registrar con los factores esenciales y relevantes en el proceso. DILAGO INGENIERIA S.A.S cuenta con personal altamente calificado para desarrollar WPS según códigos como ASME, API Y AWS.",
+  soldadoresHeader: "Calificación de soldadores (PQR)",
+  soldadoresDescription:
+    "La destreza o aptitud que tenga el soldador es de fundamental relevancia a la hora de completar y conseguir con éxito un procedimiento de soldadura, para esto es necesario que el operario demuestre sus capacidades realizando soldadura específicas según API, ASME o AWS exijan. En DILAGO INGENIERÍA S.A.S contamos con personal idóneo como CWI o ICS o inspector ACOSEND para realizar dichas calificaciones si así el cliente lo requiere.",
+};
 ---
 
-<section id={id}>
-  <Separator slot="separator">{title}</Separator>
+<section id={weldingData.id}>
+  <Separator slot="separator">{weldingData.title}</Separator>
   <div slot="bottom" class="container p-t-22">
     <div class="p-2 p-sm-1 p-md-3 p-lg-5">
-      <h3 style="text-align: center">
-        <strong>Especificación del procedimiento de soldadura (WPS)</strong>
-      </h3>
-      <p style="text-align: justify">
-        En este documento se plasman las variables esenciales y no esenciales
-        que involucran la soldadura, para esto es necesario la participación del
-        inspector de soldadura, supervisor de soldadura y en última instancia,
-        pero no en menor grado, al soldador. Una vez que contemos con el equipo
-        humano de procede a la selección de materiales dependiendo de la norma
-        exigible para proceder enseguida con la calificación del procedimiento
-        de soldadura (PQR)
-      </p>
-      <p><strong>Por qué desarrollar un WPS?</strong></p>
-      <ul>
-        <li>
-          <p>
-            Disminución del riesgo por medio de procedimientos de soldadura
-            acertados
-          </p>
-        </li>
-        <li>
-          <p>
-            Mantener las dimensiones controlando la distorsión y reducir las
-            tensiones residuales y localizadas
-          </p>
-        </li>
-        <li>
-          <p>Cumplimiento de exigencias legales y de gobiernos locales</p>
-        </li>
-        <li>
-          <p>
-            Reducción de costos en posibles reprocesos por malos procedimientos
-            de soldadura.
-          </p>
-        </li>
-        <li>
-          <p>
-            Aumento de imagen de favorabilidad hacia su empresa por su apropiado
-            sistema de gestión en la calidad.
-          </p>
-        </li>
-      </ul>
-      <p>
-        Variables que se encuentran en la Especificación del Procedimiento de
-        Soldadura (WPS).
-      </p>
-      <ul>
-        <li><p>Uniones</p></li>
-        <li><p>Metal base.</p></li>
-        <li><p>Metales de Aporte.</p></li>
-        <li><p>Posición.</p></li>
-        <li><p>Precalentamiento.</p></li>
-        <li><p>Tratamiento térmico después de soldar.</p></li>
-        <li><p>Gas (Atmosfera de protección).</p></li>
-        <li><p>Características eléctricas.</p></li>
-        <li>
-          <p>
-            Se anota la corriente de soldadura y si es alterna (ca) o directa
-            (cd).
-          </p>
-        </li>
-        <li><p>Técnica.</p></li>
-        <li><p>Registro de clasificación de procedimientos</p></li>
-      </ul>
-      <p>
-        <strong
-          >Para la calificación de procedimientos de soldaduras se ofrecen los
-          siguientes servicios:
-        </strong>
-      </p>
-      <ul>
-        <li><p>Pruebas de tensión</p></li>
-        <li><p>Ensayos de doblez</p></li>
-        <li><p>Inspección visual</p></li>
-        <li><p>Radiografía</p></li>
-        <li><p>Partículas magnéticas</p></li>
-        <li><p>Ultrasonido</p></li>
-        <li><p>Ensayos de dureza</p></li>
-        <li><p>Pruebas de doblez</p></li>
-        <li><p>Identificación positiva de materiales (PMI)</p></li>
-        <li><p>Macroataque</p></li>
-      </ul>
-      <h3 style="text-align: center">
-        <strong>Calificación de procedimientos de soldadura (PQR)</strong>
-      </h3>
-      <p style="text-align: justify">
-        Cada procedimiento debe estar respaldado por pruebas verificables, y a
-        su vez estas se deben registrar con los factores esenciales y relevantes
-        en el proceso Aquellos factores que deben registrarse y, si se alteran
-        de cualquier modo, el procedimiento debe volverse a probar y a
-        recalificar en DILAGO INGENIERIA S.A.S contamos con personal altamente
-        calificado para desarrollar WPS según códigos como ASME, API Y AWS.
-      </p>
-      <p style="text-align: justify">
-        Los tres códigos más utilizados amparan las calderas y recipientes a
-        presión, puentes y edificios y la soldadura de tuberías de conducción a
-        campo traviesa.
-      </p>
-      <p style="text-align: justify">
-        <strong>Calderas y recipientes a presión según ASME sección IX</strong>
-      </p>
-      <p style="text-align: justify">
-        Este código afirma lo siguiente a la responsabilidad: “cada fabricante o
-        contratista es responsable de las soldaduras ejecutadas por su
-        organización y debe llevar a cabo las pruebas para calificar los
-        procedimientos de soldadura que use en la construcción de las partes
-        soldadas fabricadas según este código, y el desempeño de los soldadores
-        y operadores, así como quienes apliquen estos procedimientos de
-        soldadura y calificación de la aptitud de los soldadores y operadores, o
-        quienes apliquen estos procedimientos”
-      </p>
-      <p style="text-align: justify">
-        Se deberá llevar una trazabilidad de los resultados por medio de
-        registros obtenidos del WPS y su respectivo PQR que a su vez servirá
-        como criterio para que los operarios realicen una correcta práctica de
-        soldadura.
-      </p>
-      <p style="text-align: justify">
-        Hay tres tipos de variables esenciales para las especificaciones WPS.
-        Las “variables esenciales” son aquellas en las que un cambio se
-        considera que afecta las propiedades mecanicas de la unión soldada o de
-        la construcción soldada. Las “variables esenciales suplementarias” son
-        necesarias para metales en los que hay que hacer prueba de impacto. Las
-        “variables no esenciales” son aquellas en las cuales un cambio puede
-        efectuarse en el WPS sin recalificación.
-      </p>
-      <p style="text-align: justify">
-        <strong>Soldadura Estructural según AWS D1.1</strong>
-      </p>
-      <p style="text-align: justify">
-        No son tan complicados los requisitos del código estructural de la AWS
-        D1.1 como los del código ASME Sección IX de recipientes a presión. Sin
-        embargo “cada fabricante o contratista debe efectuarse de las pruebas
-        necesarias de acuerdo a este código para calificar los procedimientos de
-        soldadura.
-      </p>
-      <p style="text-align: justify">
-        La AWS permite el uso de procedimientos precalificados de soldadura los
-        cuales se deben apegar en todos sus aspectos al código.
-      </p>
-      <p style="text-align: justify">
-        Por “precalificada” la AWS entiende que puede estar exenta de pruebas o
-        calificaciones siempre que se apeguen en todos sus aspectos a los
-        requisitos aplicables del código.
-      </p>
-      <p style="text-align: justify">
-        <strong>Tuberías a Campo Traviesa según API 1104</strong>
-      </p>
-      <p style="text-align: justify">
-        La norma API 1104 para soldar tuberías e instalaciones relacionadas pide
-        la calificación de procedimiento y de soldador. La especificación del
-        procedimiento incluye el proceso, el material del metal base, el tamaño
-        del tubo, su diámetro y el espesor de pared, los detalles de unión, el
-        tipo de metal base, el tamaño del tubo, su diámetro y el espesor de su
-        pared, los detalles de la unión, el tipo de metal de aporte, tamaño y
-        numero de pasos y las características eléctricas empleadas. Para
-        soldadura, la posición para soldar, el tipo de fundente, etc.
-      </p>
-      <h3 style="text-align: center">
-        <strong>Calificación de soldadores (PQR)</strong>
-      </h3>
-      <p style="text-align: justify">
-        La destreza o aptitud que tenga el soldador es de fundamental relevancia
-        a la hora de completar y conseguir con éxito un procedimiento de
-        soldadura, para esto es necesario que el operario demuestre sus
-        capacidades realizando soldadura especificas según API , ASME o AWS
-        exijan
-      </p>
-      <p style="text-align: justify">
-        El soldador que prepara los especímenes del registro de calificación de
-        procedimientos que pasan los requisitos del código está calificado
-        personalmente dentro de sus variables de calificación. Todos los demás
-        soldadores y trabajadores están calificados mediante pruebas específicas
-        de soldadura, que están diseñadas para determinar su capacidad para
-        ejecutar las soldaduras pedidas en el WPS y que se emplean en el
-        trabajo.
-      </p>
-      <p style="text-align: justify">
-        El registro de las pruebas de calificación del trabajador o soldador
-        debe incluir las variables esenciales, el tipo de prueba y los
-        resultados de ella, así como la calificación para cada trabajador o
-        soldador. A cada soldador y trabajador se le asigna un número, letra o
-        símbolo, con el fin de identificar el trabajo de cada persona conocido
-        como “estampe”.
-      </p>
-      <p style="text-align: justify">
-        En <strong>DILAGO INGENIERÍA S.A.S</strong> contamos con personal idóneo
-        como CWI o ICS para realizar dichas calificaciones si así el cliente lo
-        exige.
-      </p>
+      <TextList items={weldingData.description} />
+      <ImageZoom src={weldingData.image} alt={weldingData.imageAlt} />
+
+      <h4>{weldingData.servicesHeader}</h4>
+      <TextList items={weldingData.servicesList} />
+
+      <h4>{weldingData.pqrHeader}</h4>
+      <p>{weldingData.pqrDescription}</p>
+
+      <h4>{weldingData.soldadoresHeader}</h4>
+      <p>{weldingData.soldadoresDescription}</p>
     </div>
   </div>
 </section>
