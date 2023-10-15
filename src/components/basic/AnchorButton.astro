@@ -1,0 +1,10 @@
+---
+const { className="", href = "", download = false } = Astro.props;
+
+---
+
+<a
+  href={href}
+  class={`button button-border button-circle ${className}`}
+  download={download}><slot /></a
+>
