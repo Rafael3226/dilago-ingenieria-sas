@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import WhatsappIcon from "../components/WhatsappIcon.astro";
 
 import "../assets/css/style.css";
 import "../assets/css/font-icons.css";
@@ -8,6 +9,7 @@ import "../assets/css/onepage.css";
 import "../assets/css/home.css";
 import "../assets/css/util.css";
 import "../assets/css/main.css";
+import "../assets/css/new.css";
 
 import IconImg from "../assets/img/icon.png";
 ---
@@ -29,6 +31,7 @@ import IconImg from "../assets/img/icon.png";
     <div id="wrapper">
       <Header />
       <slot />
+      <WhatsappIcon />
       <Footer />
     </div>
     <script is:inline src="/js/functions.bundle.js"></script>
