@@ -3,17 +3,30 @@ import ImageZoom from "../../section/ImageZoom.astro";
 import Section from "../../section/Section.astro";
 import Img from "../../../assets/img/historia.jpg";
 import TextList from "../../section/TextList.astro";
+import AnchorButton from "../../basic/AnchorButton.astro";
 
 const id = "section-items";
 const alt = "items";
 const items = [
-  "Capacitación y calificación en ensayos no destructivos: Inspección visual Nivel II, Ultrasonido medición de espesores, Líquidos penetrantes Nivel II, Partículas Magnéticas nivel II.",
-  "Profundización en soldadura por la asociación colombiana de soldadura y ensayos no destructivos.",
-  "Programa de capacitación y calificación de interventores para inspección de recubrimientos industriales por la asociación colombiana de corrosión y proyección.",
+  "Capacitación y calificación en ensayos no destructivos: Inspección visual Nivel II, Ultrasonido medición de espesores, Líquidos penetrantes Nivel II, Partículas Magnéticas nivel II. Ente calificador: Nivel lll ASNT",
+  "Profundización en soldadura. Ente calificador: ACOSEND (Asociación colombiana de soldadura y ensayos no destructivos)",
+  "Programa de capacitación y calificación de interventores para inspección de recubrimientos industriales. Ente calificador: ASCOR (Asociación colombiana de corrosión y proyección)",
 ];
+
+const brochure = {
+  title: "Descargar Brochure",
+  href: "./assets/pdf/Presentación corporativa.pdf",
+};
 ---
 
 <Section id={id}>
-  <TextList slot="right" items={items} />
+  <div slot="right">
+    <TextList items={items} />
+    <div class="text-center">
+      <AnchorButton href={brochure.href} download dark>
+        {brochure.title}
+      </AnchorButton>
+    </div>
+  </div>
   <ImageZoom slot="left" src={Img} alt={alt} />
 </Section>

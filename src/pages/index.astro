@@ -8,6 +8,12 @@ import ContactSection from "../components/pages/home/ContactSection.astro";
 import HistorySection from "../components/pages/home/HistorySection.astro";
 
 import RefineryImg from "../assets/img/refinery.jpg";
+import AnchorButton from "../components/basic/AnchorButton.astro";
+
+const brochure = {
+  title: "Descargar Brochure",
+  href: "./assets/pdf/Presentación corporativa.pdf",
+};
 ---
 
 <Layout>
@@ -23,11 +29,9 @@ import RefineryImg from "../assets/img/refinery.jpg";
             </span>
           </h1>
         </div>
-        <a
-          href="./assets/pdf/Presentación corporativa.pdf"
-          class="button button-border button-light button-circle"
-          download>Descargar Brochure</a
-        >
+        <AnchorButton className="button-light" href={brochure.href} download>
+          {brochure.title}
+        </AnchorButton>
       </div>
     </div>
   </Landing>
