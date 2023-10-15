@@ -1,10 +1,10 @@
 ---
 import ImageZoom from "../../section/ImageZoom.astro";
 import Section from "../../section/Section.astro";
-import Title from "../../section/Title.astro";
 import TextList from "../../section/TextList.astro";
 
 import MisionImg from "../../../assets/img/historia.jpg";
+import Separator from "../../section/Separator.astro";
 
 const id = "section-services-load-analysis";
 const title = "Análisis de carga";
@@ -17,7 +17,7 @@ const items = [
 ---
 
 <Section id={id}>
-  <Title slot="title">{title}</Title>
+  <Separator slot="separator">{title}</Separator>
   <TextList slot="left" items={items} />
   <ImageZoom slot="right" src={MisionImg} alt={title} />
 </Section>

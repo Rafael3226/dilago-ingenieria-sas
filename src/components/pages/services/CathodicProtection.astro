@@ -1,60 +1,57 @@
 ---
-import Separator from "../../section/Separator.astro";
+import ImageZoom from "../../section/ImageZoom.astro";
+import TextList from "../../section/TextList.astro";
+import Title from "../../section/Title.astro";
 
-const id = "section-services-welding-quality";
-const title = "Sistemas de protección catódica";
+import CathodicImg from "../../../assets/img/historia.jpg";
+
+const contentData = {
+  id: "section-services-welding-quality",
+  title: "Sistemas de protección catódica",
+  description: [
+    "Diseño e inspección de sistemas de protección catódica a líneas, tanques, recipientes y estructuras metálicas que se encuentren sometidas a fenómenos de corrosión.",
+    "Nuestros diseños están avalados por un profesional NACE CP4 según la necesidad del cliente.",
+  ],
+  image: CathodicImg,
+  imageAlt: "Imagen de protección catódica",
+  evaluationHeader:
+    "Evaluación, Diagnóstico, mantenimiento, recalibración de sistemas de protección catódica.",
+  evaluationList: [
+    "Estudios ECDA (External Corrosion Direct Assessment).",
+    'Estudios de potenciales a intervalos cortos "ON-OFF" CIS (Close Intervalo Survey).',
+    "Diagnóstico y reparación de rectificadores.",
+    "Análisis de aislamiento eléctrico de tuberías.",
+    "Detección y mitigación de interferencias.",
+    "Marcaciones con GPS submétrico.",
+    "Estudio de suelos.",
+    "Estudios Geoeléctricos.",
+    "Mantenimiento de estaciones de monitoreo.",
+    "Limpieza de estructuras mediante chorro a presión.",
+  ],
+  inspectionHeader: "Inspección en sistemas de protección catódica.",
+  inspectionList: [
+    "PCM (Pipeline Current Mapper).",
+    "DCVG (Direct Current Voltage Gradient).",
+    "Continuidad del revestimiento.",
+    "Pruebas de adherencia.",
+    "Espesores de placa metálica y recubrimiento.",
+    "Espesores de película seca y húmeda.",
+  ],
+};
 ---
 
-<section id={id}>
-  <Separator slot="separator">{title}</Separator>
+<section id={contentData.id}>
+  <div class="p-t-50">
+    <Title slot="title">{contentData.title}</Title>
+  </div>
   <div slot="bottom" class="container p-t-22">
     <div class="p-2 p-sm-1 p-md-3 p-lg-5">
-      <div>
-        <h3 style="text-align: center;">
-          <strong>
-            Diseño, inspección, mantenimiento, construcción y puesta en marcha
-            de sistemas de protección catódica
-          </strong>
-        </h3>
-        <p style="text-align: justify;">
-          La Protección Catódica es una técnica para reducir o eliminar la
-          generación de corrosión de un metal (tanque, tubería, etc), haciendo
-          que la superficie de este funcione completamente como cátodo cuando se
-          encuentra sumergido o enterrado en un electrolito. Esto se consigue
-          mediante la aplicación de corriente directa o la unión con un material
-          de sacrificio.
-        </p>
-        <p style="text-align: justify;">
-          En DILAGO INGENIERIA SAS ofrecemos los servicios de diseño,
-          instalación, puesta en marcha, inspección y evaluación de Sistemas de
-          Protección Catódica para:
-        </p>
-        <br />
-        <p>
-          • Ductos<br />
-           • Tanques enterrados<br />
-           • Fondo de tanques atmosféricos<br />
-           • Estaciones de bombeo, refinerías, plantas de almacenamiento.<br />
-           • Muelles<br />
-           • Plataformas marinas<br />
-        </p>
-        <br />
-        <p>
-          Para llevar a cabo las actividades anteriormente mencionadas contamos
-          con los siguientes estudios:
-        </p>
-        <ul>
-          <li><p>Inspección CIPS</p></li>
-          <li><p>Medición de Kits de aislamiento</p></li>
-          <li><p>Levantamiento de Perfil de Resistividades</p></li>
-          <li><p>Evaluación de interferencias AC/DC</p></li>
-          <li>
-            <p>
-              Caracterización y Evaluación de la actividad corrosiva del suelo
-            </p>
-          </li>
-        </ul>
-      </div>
+      <TextList items={contentData.description} />
+      <ImageZoom src={contentData.image} alt={contentData.imageAlt} />
+      <h4>{contentData.evaluationHeader}</h4>
+      <TextList items={contentData.evaluationList} />
+      <h4>{contentData.inspectionHeader}</h4>
+      <TextList items={contentData.inspectionList} />
     </div>
   </div>
 </section>
