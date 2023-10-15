@@ -1,133 +1,49 @@
 ---
+import ImageZoom from "../../section/ImageZoom.astro";
 import Separator from "../../section/Separator.astro";
+import TextList from "../../section/TextList.astro";
 
-const id = "section-services-nondestructive-testing";
-const title = "Ensayos no destructivos";
+import NDTImg from "../../../assets/img/historia.jpg";
+
+const ndtData = {
+  id: "section-services-nondestructive-testing",
+  title: "Ensayos no destructivos",
+  description: [
+    "Se denomina ensayo no destructivo a cualquier tipo de prueba practicada a un material que no altere de forma permanente sus propiedades físicas, químicas, mecánicas o dimensionales. Los ensayos no destructivos implican un daño imperceptible o nulo.",
+    "Se denomina así a toda prueba que se realice sobre un material sin afectarlo metalúrgicamente, se realizan con el fin de determinar el estado geométrico, mecánico o químico de la pieza para verificar si cumple con los estándares de calidad de su código de fabricación o para detectar discontinuidades que puedan resultar en defectos.",
+  ],
+  image: NDTImg, // Replace with the actual image source
+  imageAlt: "Imagen de ensayos no destructivos",
+  methods: {
+    "Inspección visual":
+      "Permite observar salpicaduras, existencia de cenizas, distorsiones por excesivo calentamiento, grietas. Es adecuada para todos los materiales.",
+    "Líquidos Penetrantes":
+      "Consiste en aplicar un líquido coloreado o fluorescente a la superficie en estudio, el cual penetra en cualquier discontinuidad que pudiera existir debido al fenómeno de capilaridad. Después de un determinado tiempo se remueve el exceso de líquido y se aplica un revelador, el cual absorbe el líquido que ha penetrado en las discontinuidades y sobre la capa del revelador se delinea el contorno de éstas.",
+    "Partículas Magnéticas":
+      " Es un método de prueba no destructivo para la detección de imperfecciones sobre o justamente debajo de la superficie de metales ferrosos que también se puede aplicar en soldadura. Es una técnica rápida y confiable para detección y localización de grietas superficiales.",
+    "Ultrasonido Scan A/B/C":
+      " El ensayo ultrasónico se basa en el fenómeno de reflexión de ondas acústicas cuando encuentran obstáculos a su propagación. La onda será reflejada retornando hasta su fuente generadora, si el obstáculo está en una posición normal en relación al haz incidente.",
+    "Ultrasonido convencional y Phased Array":
+      " La tecnología phased array utiliza elementos de ultrasonidos múltiples y retardos electrónicos para crear haces que se pueden dirigir, escanear, barrer y enfocar electrónicamente para lograr inspecciones rápidas, almacenamientos completos de datos e inspecciones con ángulos múltiples. La tecnología phased array permite obtener mediciones precisas y resultados más confiables.",
+  },
+};
 ---
 
-<section id={id}>
-  <Separator slot="separator">{title}</Separator>
+<section id={ndtData.id}>
+  <Separator slot="separator">{ndtData.title}</Separator>
   <div slot="bottom" class="container p-t-22">
     <div class="p-2 p-sm-1 p-md-3 p-lg-5">
       <div class="entry-content" itemprop="text">
-        <h3></h3>
-        <h3 style="text-align: center;">
-          <strong>Ensayos no destructivos</strong>
-        </h3>
-        <p style="text-align: justify;">
-          <img
-            class="wp-image-326 alignleft"
-            src="http://dilagoingenieriasas.com/wp-content/uploads/2017/09/FOT-22-300x178.png"
-            alt=""
-            width="346"
-            height="205"
-            srcset="https://dilagoingenieriasas.com/wp-content/uploads/2017/09/FOT-22-300x178.png 300w, https://dilagoingenieriasas.com/wp-content/uploads/2017/09/FOT-22.png 590w"
-            sizes="(max-width: 346px) 100vw, 346px"
-          />Se denomina ensayo no destructivo (también llamado END, o en inglés
-          NDT de non<br />
-           destructive testing) a cualquier tipo de prueba practicada a un
-          material que no altere de forma permanente sus propiedades físicas,
-          químicas, mecánicas o dimensionales. Los ensayos no destructivos
-          implican un daño imperceptible o nulo.<br />
-           Se denomina así a toda prueba que se realice sobre un material sin
-          afectarlo metalúrgicamente no mecánicamente, se realizan con el fin de
-          determinar el estado geométrico, mecánico o químico de la pieza para
-          verificar si cumple con las reglas de aplicación que correspondan.
-        </p>
-        <p style="text-align: justify;">
-          En DILAGO INGENIERIA SAS ofrecemos una amplia gama de Ensayos No
-          Destructivos de última tecnología, los cuales nos permiten realizar el
-          diagnostico de integridad de diferentes equipos, estos Ensayos son:
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Boroscopia</strong>: Las inspecciones boroscópicas son
-          inspecciones visuales en lugares inaccesibles para el ojo humano con
-          la ayuda de un equipo óptico, el boroscopio. Se desarrolló en el área
-          industrial a raíz del éxito de las endoscopias en humanos y animales.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Radiografía</strong>: ensayo no destructivo de tipo físico
-          utilizado para inspeccionar materiales en busca de discontinuidades
-          macroscópicas y variaciones en su estructura interna.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Ensayo dureza</strong>: El propósito principal de un ensayo
-          de dureza es determinar la idoneidad de un material, o el tratamiento
-          concreto al cual el material ha sido sometido.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Corrientes de Eddy</strong>: Implica la utilización de
-          radiación gamma o rayos-X (muy penetrantes) para examinar los defectos
-          internos. Se requieren máquinas con fuentes de radiación que
-          atraviesan el material y producen una “imagen negativa” en una
-          película o film. La radiografía muestra la solidez interna de los
-          materiales examinados. Las posibles imperfecciones se muestran como
-          cambios en la densidad en la película de la misma manera que se
-          aprecian los “huesos rotos”.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Inspección visual</strong>: Permite observar salpicaduras,
-          existencia de cenizas, distorsiones por excesivo calentamiento,
-          grietas, Es adecuada para todos los materiales.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Líquidos Penetrantes</strong>: consiste en aplicar un
-          líquido coloreado o fluorescente a la superficie en estudio, el cual
-          penetra en cualquier discontinuidad que pudiera existir debido al
-          fenómeno de capilaridad. Después de un determinado tiempo se remueve
-          el exceso de líquido y se aplica un revelador, el cual absorbe el
-          líquido que ha penetrado en las discontinuidades y sobre la capa del
-          revelador se delinea el contorno de éstas.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Metalografía</strong>: A través de este estudio se pueden
-          determinar características como el tamaño de grano, distribución de
-          las fases que componen la aleación, inclusiones no metálicas como
-          sopladuras, micro cavidades de contracción, escorias, etc., que pueden
-          modificar las propiedades mecánicas del metal.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Ultra sonido convencional</strong>: La inspección por
-          ultrasonido se define como un procedimiento de inspección no
-          destructivo de tipo mecánico, y su funcionamiento se basa en la
-          impedancia acústica, la que se manifiesta como el producto de la
-          velocidad máxima de propagación del sonido entre la densidad del
-          material.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Pahased Array</strong>: La tecnología phased array utiliza
-          elementos de ultrasonidos múltiples y retardos electrónicos para crear
-          haces que se pueden dirigir, escanear, barrer y enfocar
-          electrónicamente para lograr inspecciones rápidas, almacenamientos
-          completos de datos e inspecciones con ángulos múltiples. La tecnología
-          phased array permite obtener mediciones precisas y resultados más
-          confiables.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Partículas Magnéticas</strong>: es un método de prueba no
-          destructivo para la detección de imperfecciones sobre o justamente
-          debajo de la superficie de metales ferrosos que también se puede
-          aplicar en soldadura. Es una técnica rápida y confiable para detección
-          y localización de grietas superficiales.
-        </p>
-        <p style="text-align: justify;">
-          •<strong> TOFD</strong>: La técnica TOFD permite efectuar inspecciones
-          rápidas de soldaduras con un excelente nivel de detección y
-          dimensionamiento. La técnica de difracción ofrece una capacidad de
-          dimensionamiento fundamental con relativa indiferencia al ángulo
-          biselar o a la orientación del defecto. Por otra parte, esta técnica
-          puede usarse sola o junto con otras técnicas para ensayos no
-          destructivos.
-        </p>
-        <p style="text-align: justify;">
-          • <strong>Ultrasonido Scan A/B/C</strong>: El ensayo ultrasónico se
-          basa en el fenómeno de reflexión de ondas acústicas cuando encuentran
-          obstáculos a su propagación.
-        </p>
-        <p style="text-align: justify;">
-          La onda será reflejada retornando hasta su fuente generadora, si el
-          obstáculo está en una posición normal en relación al haz incidente.
-        </p>
+        <TextList items={ndtData.description} />
+        <ImageZoom src={ndtData.image} alt={ndtData.imageAlt} />
+        {
+          Object.entries(ndtData.methods).map(([title, content]) => (
+            <div>
+              <h4>{title}</h4>
+              <p>{content}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
