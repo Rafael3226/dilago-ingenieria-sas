@@ -5,23 +5,14 @@ import Layout from "../layouts/Layout.astro";
 
 import HistoryImg from "../assets/img/historia.jpg";
 import MisionVision from "../components/pages/about/MisionVision.astro";
+import TitleXL from "../components/basic/TitleXL.astro";
+
+const title = "Nuestra Historia.";
 ---
 
 <Layout>
   <Landing img={HistoryImg}>
-    <div class="vertical-middle slider-element-fade">
-      <div class="container text-center py-5">
-        <div class="emphasis-title">
-          <h1>
-            <span class="nocolor">
-              <span class="fw-bold font-body opm-large-word">
-                <span class="animated fadeIn">Nuestra Historia.</span>
-              </span>
-            </span>
-          </h1>
-        </div>
-      </div>
-    </div>
+    <TitleXL>{title}</TitleXL>
   </Landing>
   <section id="content">
     <div class="content-wrap py-0">
