@@ -30,3 +30,7 @@
 .whatsapp-anchor:hover {
   transform: scale(1.1); /* Slightly scale up on hover */
 }
+
+.landing-height {
+  min-height: calc(100vh - 71px);
+}
