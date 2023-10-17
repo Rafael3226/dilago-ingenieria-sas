@@ -4,6 +4,7 @@ import TextList from "../../section/TextList.astro";
 import Title from "../../section/Title.astro";
 
 import CathodicImg from "../../../assets/img/historia.jpg";
+import Paragraph from "../../section/Paragraph.astro";
 
 const contentData = {
   id: "section-services-welding-quality",
@@ -47,10 +48,15 @@ const contentData = {
   <div slot="bottom" class="container p-t-22">
     <div class="p-2 p-sm-1 p-md-3 p-lg-5">
       <TextList items={contentData.description} />
-      <ImageZoom src={contentData.image} alt={contentData.imageAlt} />
-      <h4>{contentData.evaluationHeader}</h4>
+      <div class="p-t-22">
+        <ImageZoom src={contentData.image} alt={contentData.imageAlt} />
+      </div>
+
+      <h4 class="p-t-22">{contentData.evaluationHeader}</h4>
       <TextList items={contentData.evaluationList} />
-      <h4>{contentData.inspectionHeader}</h4>
+      <h4 class="p-t-22">
+        {contentData.inspectionHeader}
+      </h4>
       <TextList items={contentData.inspectionList} />
     </div>
   </div>

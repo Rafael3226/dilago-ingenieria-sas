@@ -1,12 +1,18 @@
 ---
-const { items, style } = Astro.props;
+const { items, style = "", flex = false, tab = false } = Astro.props;
+
+let ulStyle = style;
+ulStyle += flex ? " display:flex; flex-direction: column; gap:20px;" : "";
+
+let pStyle = "font-size:1.2rem; text-align: justify;";
+pStyle += tab ? " padding-left: 10px" : "";
 ---
 
-<ul style={`display:flex; flex-direction: column; gap:20px; ${style}`}>
+<ul style={ulStyle}>
   {
     items.map((text) => (
       <li>
-        <p style="font-size:1.2rem; text-align: justify;">{text}</p>
+        <p style={pStyle}>{text}</p>
       </li>
     ))
   }

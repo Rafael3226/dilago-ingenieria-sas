@@ -1,15 +1,26 @@
 ---
+import Paragraph from "../../section/Paragraph.astro";
+import Section from "../../section/Section.astro";
 import Separator from "../../section/Separator.astro";
+import TextList from "../../section/TextList.astro";
 
-const id = "section-services-hydrostatic-testing";
-const title = "Pruebas Hidrostaticas";
+const content = {
+  id: "section-services-hydrostatic-testing",
+  title: "PRUEBAS HIDROSTATICAS EN TALLER",
+  paragraphs: [
+    "Las pruebas hidrostáticas nos ayudan a confirmar la integridad estructural y hermeticidad de los equipos y sistemas de tuberías que manejan hidrocarburos líquidos y gaseosos, y sustancias peligrosas, en instalaciones terrestres e instalaciones marinas incluyendo sus servicios auxiliares, con la finalidad de garantizar la confiabilidad de la instalación durante su operación normal.",
+    "En DILAGO INGENIERIA SAS Contamos con equipamiento profesional, así como personal altamente capacitado para realizar pruebas hidrostáticas a equipos sujetos a presión, válvulas y recipientes a presión en nuestros talleres de pruebas, para verificar su hermeticidad de una forma segura.",
+    "Nuestras pruebas cumplen con las normas técnicas actuales establecidas y permiten determinar y comprobar las condiciones de operación, calidad de fabricación, detectar fugas o la reparación de una línea o equipo.",
+    "Nuestro sistema de tuberías utilizado en la realización de las pruebas hidrostáticas cumple con las normas técnicas vigentes.",
+  ],
+  normatividad: "Normatividad Técnica Aplicable: API, ASME, ANSI, ICONTEC",
+};
 ---
 
-<section id={id}>
-  <Separator slot="separator">{title}</Separator>
+<Section id={content.id}>
+  <Separator slot="separator">{content.title}</Separator>
   <div slot="bottom" class="container p-t-22">
-    <div class="p-2 p-sm-1 p-md-3 p-lg-5">
-      <h3 style="text-align: center; font-weight: bold;">{title}</h3>
-    </div>
+    <TextList items={content.paragraphs} />
+    <Paragraph><strong>{content.normatividad}</strong></Paragraph>
   </div>
-</section>
+</Section>

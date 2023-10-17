@@ -4,6 +4,7 @@ import Separator from "../../section/Separator.astro";
 import TextList from "../../section/TextList.astro";
 
 import WeldingImg from "../../../assets/img/historia.jpg";
+import Paragraph from "../../section/Paragraph.astro";
 
 const weldingData = {
   id: "section-services-welding-quality",
@@ -44,14 +45,14 @@ const weldingData = {
       <TextList items={weldingData.description} />
       <ImageZoom src={weldingData.image} alt={weldingData.imageAlt} />
 
-      <h4>{weldingData.servicesHeader}</h4>
+      <h4 class="p-t-22">{weldingData.servicesHeader}</h4>
       <TextList items={weldingData.servicesList} />
 
-      <h4>{weldingData.pqrHeader}</h4>
-      <p>{weldingData.pqrDescription}</p>
+      <h4 class="p-t-22">{weldingData.pqrHeader}</h4>
+      <Paragraph>{weldingData.pqrDescription}</Paragraph>
 
-      <h4>{weldingData.soldadoresHeader}</h4>
-      <p>{weldingData.soldadoresDescription}</p>
+      <h4 class="p-t-22">{weldingData.soldadoresHeader}</h4>
+      <Paragraph>{weldingData.soldadoresDescription}</Paragraph>
     </div>
   </div>
 </section>

@@ -4,6 +4,7 @@ import Separator from "../../section/Separator.astro";
 import TextList from "../../section/TextList.astro";
 
 import NDTImg from "../../../assets/img/historia.jpg";
+import ObjectList from "../../section/ObjectList.astro";
 
 const ndtData = {
   id: "section-services-nondestructive-testing",
@@ -36,14 +37,7 @@ const ndtData = {
       <div class="entry-content" itemprop="text">
         <TextList items={ndtData.description} />
         <ImageZoom src={ndtData.image} alt={ndtData.imageAlt} />
-        {
-          Object.entries(ndtData.methods).map(([title, content]) => (
-            <div>
-              <h4>{title}</h4>
-              <p>{content}</p>
-            </div>
-          ))
-        }
+        <ObjectList object={ndtData.methods} />
       </div>
     </div>
   </div>
