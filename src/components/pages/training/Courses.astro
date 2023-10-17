@@ -4,15 +4,39 @@ import Paragraph from "../../section/Paragraph.astro";
 import Section from "../../section/Section.astro";
 import Title from "../../section/Title.astro";
 import MisionImg from "../../../assets/img/historia.jpg";
+import ObjectList from "../../section/ObjectList.astro";
+import AnchorButton from "../../basic/AnchorButton.astro";
 
-const text =
-  "Contamos con más de 30 programas ajustados a las necesidades del mercado actual en la industria  energética y metalmecánica del país, adicionalmente DILAGO INGENIERIA SAS cuenta con bases de datos de más de 500 profesionales especialistas con la capacidad de diseñar  programas de capacitaciones in compay las cuales se adapten a las necesidades específicas del cliente, siempre Teniendo como principal objetivo la satisfacción y adquisición eficiente del conocimiento así como la obtención de la calificación oportuna según sea su requerimiento.";
+import { training as brochure } from "../../../constants/brochures.js";
+import TextList from "../../section/TextList.astro";
+
+const text = [
+  "Contamos con más de 30 programas ajustados a las necesidades del mercado actual en la industria  energética y metalmecánica del país, adicionalmente DILAGO INGENIERIA SAS cuenta con bases de datos de más de 500 profesionales especialistas con la capacidad de diseñar  programas de capacitaciones in compay las cuales se adapten a las necesidades específicas del cliente, siempre Teniendo como principal objetivo la satisfacción y adquisición eficiente del conocimiento así como la obtención de la calificación oportuna según sea su requerimiento.",
+  "Conoce nuestras capacitaciones y calificaciones más frecuentes:",
+];
 const title = "Capacitaciones";
 const alt = "Capacitaciones";
+
+const courses = {
+  "Capacitación y calificación en ensayos no destructivos":
+    " Inspección visual Nivel II, Ultrasonido medición de espesores, Líquidos penetrantes Nivel II, Partículas Magnéticas nivel II. Ente calificador: Nivel lll ASNT",
+  "Profundización en soldadura. Ente calificador":
+    " ACOSEND (Asociación colombiana de soldadura y ensayos no destructivos)",
+  "Programa de capacitación y calificación de interventores para inspección de recubrimientos industriales. Ente calificador":
+    "ASCOR (Asociación colombiana de corrosión y proyección)",
+};
 ---
 
 <Section id="section-courses">
   <Title slot="title">{title}</Title>
-  <Paragraph slot="left">{text}</Paragraph>;
+  <TextList slot="left" items={text} />
   <ImageZoom slot="right" src={MisionImg} alt={alt} />
+  <div slot="bottom" class="p-t-30">
+    <ObjectList object={courses} />
+    <div class="text-center">
+      <AnchorButton href={brochure.href} download={brochure.name} dark>
+        {brochure.title}
+      </AnchorButton>
+    </div>
+  </div>
 </Section>

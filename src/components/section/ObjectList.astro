@@ -6,10 +6,14 @@ const { object } = Astro.props;
 <div>
   {
     Object.entries(object).map(([title, content]) => (
-      <Paragraph>
-        <strong>{`${title}: `}</strong>
-        <span>{content}</span>
-      </Paragraph>
+      <div class="p-b-30">
+        <Paragraph>
+          <strong>{`${title}: `}</strong>
+        </Paragraph>
+        <Paragraph>
+          <span>{content}</span>
+        </Paragraph>
+      </div>
     ))
   }
 </div>
