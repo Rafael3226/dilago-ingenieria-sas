@@ -1,0 +1,15 @@
+---
+import Paragraph from "./Paragraph.astro";
+const { object } = Astro.props;
+---
+
+<div>
+  {
+    Object.entries(object).map(([title, content]) => (
+      <Paragraph>
+        <strong>{`${title}: `}</strong>
+        <span>{content}</span>
+      </Paragraph>
+    ))
+  }
+</div>

@@ -3,16 +3,30 @@ import Layout from "../layouts/Layout.astro";
 
 import Landing from "../components/Landing.astro";
 import TitleXL from "../components/basic/TitleXL.astro";
+import AnchorButton from "../components/basic/AnchorButton.astro";
 
 import Courses from "../components/pages/training/Courses.astro";
 import Items from "../components/pages/training/Items.astro";
 
 import TrainingImg from "../assets/img/training-01.jpg";
+
+import { training as brochure } from "../constants/brochures.js";
+const title = "Capacitaciones.";
 ---
 
 <Layout>
   <Landing img={TrainingImg}>
-    <TitleXL>Capacitaciones</TitleXL>
+    <TitleXL>
+      {title}
+      <AnchorButton
+        slot="button"
+        className="button-light"
+        href={brochure.href}
+        download={brochure.name}
+      >
+        {brochure.title}
+      </AnchorButton>
+    </TitleXL>
   </Landing>
   <section id="content">
     <div class="content-wrap py-0">
