@@ -1,19 +1,22 @@
 ---
 import Paragraph from "./Paragraph.astro";
-const { object } = Astro.props;
+const { object, inline = false } = Astro.props;
 ---
 
-<div>
+<>
   {
     Object.entries(object).map(([title, content]) => (
       <div class="p-b-30">
         <Paragraph>
           <strong>{`${title}: `}</strong>
+          {inline && <span>{content}</span>}
         </Paragraph>
-        <Paragraph>
-          <span>{content}</span>
-        </Paragraph>
+        {!inline && (
+          <Paragraph>
+            <span>{content}</span>
+          </Paragraph>
+        )}
       </div>
     ))
   }
-</div>
+</>
