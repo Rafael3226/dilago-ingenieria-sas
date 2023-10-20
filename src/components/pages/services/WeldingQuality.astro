@@ -9,10 +9,9 @@ import Paragraph from "../../basic/Paragraph.astro";
 const weldingData = {
   id: "section-services-welding-quality",
   title: "CALIFICACIÓN DE SOLDADURAS",
-  description: [
-    "Especificación del procedimiento de soldadura (WPS)",
+  weldingHeader: "Especificación del procedimiento de soldadura (WPS)",
+  weldingDescription:
     "En este documento se plasman las variables esenciales y no esenciales que involucran la soldadura, para esto es necesario la participación del inspector de soldadura, supervisor de soldadura y un soldador.",
-  ],
   image: WeldingImg, // Replace with the actual image source
   imageAlt: "Imagen de calificación de soldaduras",
   servicesHeader:
@@ -32,7 +31,7 @@ const weldingData = {
   pqrHeader: "Calificación de procedimientos de soldadura (PQR)",
   pqrDescription:
     "Cada procedimiento debe estar respaldado por pruebas verificables y a su vez estas se deben registrar con los factores esenciales y relevantes en el proceso. DILAGO INGENIERIA S.A.S cuenta con personal altamente calificado para desarrollar WPS según códigos como ASME, API Y AWS.",
-  soldadoresHeader: "Calificación de soldadores (PQR)",
+  soldadoresHeader: "Calificación de soldadores (WPQ)",
   soldadoresDescription:
     "La destreza o aptitud que tenga el soldador es de fundamental relevancia a la hora de completar y conseguir con éxito un procedimiento de soldadura, para esto es necesario que el operario demuestre sus capacidades realizando soldadura específicas según API, ASME o AWS exijan. En DILAGO INGENIERÍA S.A.S contamos con personal idóneo como CWI o ICS o inspector ACOSEND para realizar dichas calificaciones si así el cliente lo requiere.",
 };
@@ -42,7 +41,9 @@ const weldingData = {
   <Separator slot="separator">{weldingData.title}</Separator>
   <div slot="bottom" class="container p-t-22">
     <div class="p-2 p-sm-1 p-md-3 p-lg-5">
-      <TextList items={weldingData.description} />
+      <h4 class="p-t-22">{weldingData.weldingHeader}</h4>
+      <Paragraph>{weldingData.weldingDescription}</Paragraph>
+
       <ImageZoom src={weldingData.image} alt={weldingData.imageAlt} />
 
       <h4 class="p-t-22">{weldingData.servicesHeader}</h4>
