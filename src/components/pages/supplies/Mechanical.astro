@@ -4,16 +4,20 @@ import Paragraph from "../../basic/Paragraph.astro";
 import Section from "../../basic/Section.astro";
 import Title from "../../basic/Title.astro";
 import MisionImg from "../../../assets/img/historia.jpg";
+import TextList from "../../basic/TextList.astro";
 
 const id = "section-supplies-mechanical";
 const title = "Suministro de materiales y accesorios mecánicos";
 const alt = "historia";
-const text =
-  "Somos importadores directos de accesorios mecánicos para la industria como válvulas, bridas, uniones, olets y tubería en acero al carbono y acero inoxidable de uso industrial.";
+const text = [
+  "Somos comercializadores e importadores directos de suministros mecánicos para construcción y mantenimiento industrial como: válvulas, bridas, uniones, olets y tubería en acero al carbono y acero inoxidable de uso industrial.",
+  "Dentro de nuestro portafolio de válvulas suministramos tipo bola, compuerta, globo, mariposa, cheque, aguja, así cómo accesorios tipo wphy o de tipo especial.",
+  "Conocemos y manejamos los listados de proveedores avalados para operadores como ECOPETROL, Cenit, Ocensa, geopark, gran tierra, ODL y otros.",
+];
 ---
 
 <Section id={id}>
   <Title slot="title">{title}</Title>
-  <Paragraph slot="left">{text}</Paragraph>;
+  <TextList slot="left" items={text} />
   <ImageZoom slot="right" src={MisionImg} alt={alt} />
 </Section>
