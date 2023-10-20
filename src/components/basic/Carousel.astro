@@ -5,15 +5,6 @@ const { images = [], alt = "imagen" } = Astro.props;
 
 <div class="content-intro p-t-77 p-b-80">
   <div class="owl-carousel">
-    {
-      images.map((img) => (
-        <Image
-          class="carousel-img"
-          src={img}
-          alt={alt}
-          style={{ height: "auto" }}
-        />
-      ))
-    }
+    {images.map((img) => <Image class="carousel-img" src={img} alt={alt} />)}
   </div>
 </div>

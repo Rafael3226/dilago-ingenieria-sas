@@ -1,7 +1,12 @@
 .owl-stage {
   display: flex;
   flex-direction: row;
-  align-items: end;
+  align-items: center;
+}
+.carousel-img {
+  max-height: 200px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Style for the WhatsApp anchor */
@@ -9,7 +14,7 @@
   position: fixed;
   bottom: 20px; /* Adjust the distance from the bottom as needed */
   right: 20px; /* Adjust the distance from the right as needed */
-  background-color: #25d366; /* WhatsApp green background color */
+  background-color: #25d366; /* WhatsApp background color */
   border-radius: 50%; /* Makes the container round */
   width: 60px; /* Adjust the size of the container as needed */
   height: 60px;
