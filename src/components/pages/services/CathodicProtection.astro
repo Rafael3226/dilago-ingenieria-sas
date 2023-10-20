@@ -5,10 +5,12 @@ import Title from "../../basic/Title.astro";
 
 import CathodicImg from "../../../assets/img/historia.jpg";
 import Paragraph from "../../basic/Paragraph.astro";
+import Section from "../../basic/Section.astro";
 
 const contentData = {
   id: "section-services-welding-quality",
   title: "Sistemas de protección catódica",
+  subTitle: "Diseño de SPC",
   description: [
     "Diseño e inspección de sistemas de protección catódica a líneas, tanques, recipientes y estructuras metálicas que se encuentren sometidas a fenómenos de corrosión.",
     "Nuestros diseños están avalados por un profesional NACE CP4 según la necesidad del cliente.",
@@ -41,17 +43,15 @@ const contentData = {
 };
 ---
 
-<section id={contentData.id}>
-  <div class="p-t-50">
-    <Title slot="title">{contentData.title}</Title>
-  </div>
-  <div slot="bottom" class="container p-t-22">
+<Section id={contentData.id}>
+  <Title slot="title">{contentData.title}</Title>
+  <div slot="bottom" class="container">
     <div class="p-2 p-sm-1 p-md-3 p-lg-5">
+      <h4 class="p-t-22">{contentData.subTitle}</h4>
       <TextList items={contentData.description} />
       <div class="p-t-22">
         <ImageZoom src={contentData.image} alt={contentData.imageAlt} />
       </div>
-
       <h4 class="p-t-22">{contentData.evaluationHeader}</h4>
       <TextList items={contentData.evaluationList} />
       <h4 class="p-t-22">
@@ -60,4 +60,4 @@ const contentData = {
       <TextList items={contentData.inspectionList} />
     </div>
   </div>
-</section>
+</Section>
