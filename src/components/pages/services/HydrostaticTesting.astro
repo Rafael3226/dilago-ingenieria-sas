@@ -13,7 +13,7 @@ const content = {
     "Nuestras pruebas cumplen con las normas técnicas actuales establecidas y permiten determinar y comprobar las condiciones de operación, calidad de fabricación, detectar fugas o la reparación de una línea o equipo.",
     "Nuestro sistema de tuberías utilizado en la realización de las pruebas hidrostáticas cumple con las normas técnicas vigentes.",
   ],
-  normatividad: "Normatividad Técnica Aplicable: API, ASME, ANSI, ICONTEC",
+  normatividad: "Normatividad Técnica Aplicable: API, ASME, ANSI, ICONTEC.",
 };
 ---
 
@@ -21,6 +21,8 @@ const content = {
   <Separator slot="separator">{content.title}</Separator>
   <div slot="bottom" class="container p-t-22">
     <TextList items={content.paragraphs} />
-    <Paragraph><strong>{content.normatividad}</strong></Paragraph>
+    <Paragraph className="p-t-10">
+      <strong>{content.normatividad}</strong>
+    </Paragraph>
   </div>
 </Section>
