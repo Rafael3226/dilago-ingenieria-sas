@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^6.0.3",
+    "@emailjs/nodejs": "^2.2.0",
     "astro": "^3.2.4",
     "sharp": "^0.32.6"
   }
