@@ -11,9 +11,12 @@ pStyle += tab ? " padding-left: 10px" : "";
 <ul style={ulStyle}>
   {
     items.map((text) => (
-      <li>
-        <p style={pStyle}>{text}</p>
-      </li>
+      <>
+        <li>
+          <p style={pStyle}>{text}</p>
+        </li>
+        <br />
+      </>
     ))
   }
 </ul>

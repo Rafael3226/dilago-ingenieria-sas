@@ -8,7 +8,7 @@ const { object, inline = false } = Astro.props;
     Object.entries(object).map(([title, content]) => (
       <div class="p-b-30">
         <Paragraph>
-          <strong>{`${title}: `}</strong>
+          <span style="color:black; font-weight: bold;">{`${title}: `}</span>
           {inline && <span>{content}</span>}
         </Paragraph>
         {!inline && (
