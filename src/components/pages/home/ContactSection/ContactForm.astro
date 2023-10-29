@@ -52,35 +52,4 @@
     </button>
   </div>
 </form>
-<script>
-  const formId = "contact-form";
-  const form = document.getElementById(formId);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
-    const formDataObject = Object.fromEntries(formData.entries());
-
-    const endpoint = window.location.origin + "/api/email";
-    fetch(endpoint, {
-      method: "POST",
-      body: JSON.stringify(formDataObject),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.status === 200) {
-          alert("El mensaje ha sido enviado.");
-        } else {
-          alert(
-            "No es posible enviar el mensaje, para mas informacion 'gerencia@dilagoingenieriasas.com'"
-          );
-        }
-      })
-      .catch(console.error);
-  };
-
-  form.addEventListener("submit", handleSubmit);
-</script>
+<script is:inline src="/js/contact-form.ts"></script>

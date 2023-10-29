@@ -1,8 +1,7 @@
 import { defineConfig } from "astro/config";
-import netlify from "@astrojs/netlify/functions";
 
+const PORT = import.meta.env.PORT || 3000;
 // https://astro.build/config
 export default defineConfig({
-  adapter: netlify(),
-  output: "hybrid",
+  server: { port: PORT }
 });
