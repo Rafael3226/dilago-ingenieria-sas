@@ -3,7 +3,7 @@ import ImageZoom from "../../basic/ImageZoom.astro";
 import Separator from "../../basic/Separator.astro";
 import TextList from "../../basic/TextList.astro";
 
-import WeldingImg from "../../../assets/img/historia.jpg";
+import WeldingImg from "../../../assets/img/pt.jpg";
 import Paragraph from "../../basic/Paragraph.astro";
 
 const weldingData = {
@@ -44,7 +44,13 @@ const weldingData = {
       <h4 class="p-t-22">{weldingData.weldingHeader}</h4>
       <Paragraph>{weldingData.weldingDescription}</Paragraph>
 
-      <ImageZoom src={weldingData.image} alt={weldingData.imageAlt} />
+      <div class="p-t-25">
+        <ImageZoom
+          src={weldingData.image}
+          alt={weldingData.imageAlt}
+          height="650"
+        />
+      </div>
 
       <h4 class="p-t-22">{weldingData.servicesHeader}</h4>
       <TextList items={weldingData.servicesList} />

@@ -1,9 +1,8 @@
 ---
 import ImageZoom from "../../basic/ImageZoom.astro";
-import Paragraph from "../../basic/Paragraph.astro";
 import Section from "../../basic/Section.astro";
 import Title from "../../basic/Title.astro";
-import MisionImg from "../../../assets/img/historia.jpg";
+import MisionImg from "../../../assets/img/valves.jpg";
 import TextList from "../../basic/TextList.astro";
 
 const id = "section-supplies-mechanical";
@@ -19,5 +18,5 @@ const text = [
 <Section id={id}>
   <Title slot="title">{title}</Title>
   <TextList slot="left" items={text} />
-  <ImageZoom slot="right" src={MisionImg} alt={alt} />
+  <ImageZoom slot="right" src={MisionImg} alt={alt} height="400" />
 </Section>

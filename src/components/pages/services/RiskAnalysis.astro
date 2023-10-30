@@ -3,7 +3,7 @@ import Separator from "../../basic/Separator.astro";
 import ImageZoom from "../../basic/ImageZoom.astro";
 import Paragraph from "../../basic/Paragraph.astro";
 import Section from "../../basic/Section.astro";
-import VisionImg from "../../../assets/img/historia.jpg";
+import VisionImg from "../../../assets/img/risk.jpg";
 import TextList from "../../basic/TextList.astro";
 
 const id = "section-services-risk-analysis";
@@ -18,7 +18,7 @@ const items = [
 
 <Section id={id}>
   <Separator slot="separator">{title}</Separator>
-  <ImageZoom slot="left" src={VisionImg} alt={title} />
+  <ImageZoom slot="left" src={VisionImg} alt={title} height="480" />
   <div slot="right">
     <Paragraph isTextCenter={false}>{text}</Paragraph>
     <TextList items={items} style="padding-top: 30px;" />

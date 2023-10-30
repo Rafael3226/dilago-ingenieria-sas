@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
-let { src, alt = "" } = Astro.props;
+let { src, alt = "", height, width } = Astro.props;
 ---
 
 {
   src && (
     <div class="size3 bo-rad-10 hov-img-zoom m-l-r-auto">
-      <Image src={src} alt={`IMAGEN: ${alt}`} />
+      <Image src={src} alt={`IMAGEN: ${alt}`} height={height} width={width} />
     </div>
   )
 }
