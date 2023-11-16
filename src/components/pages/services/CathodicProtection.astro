@@ -3,11 +3,11 @@ import ImageZoom from "../../basic/ImageZoom.astro";
 import TextList from "../../basic/TextList.astro";
 import Title from "../../basic/Title.astro";
 
-import CathodicImg from "../../../assets/img/pc-3.jpg";
+import CathodicImg from "../../../assets/img/services/pcm.png";
 import Section from "../../basic/Section.astro";
 
 const contentData = {
-  id: "section-services-welding-quality",
+  id: "section-services-cathodic-protection",
   title: "Sistemas de protección catódica",
   subTitle: "Diseño de SPC",
   description: [
@@ -49,7 +49,12 @@ const contentData = {
       <h4 class="p-t-22">{contentData.subTitle}</h4>
       <TextList items={contentData.description} />
       <div class="p-t-22">
-        <ImageZoom src={contentData.image} alt={contentData.imageAlt} />
+        <ImageZoom
+          id="cp"
+          src={contentData.image}
+          alt={contentData.imageAlt}
+          isResponsive
+        />
       </div>
       <h4 class="p-t-22">{contentData.evaluationHeader}</h4>
       <TextList items={contentData.evaluationList} />

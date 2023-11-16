@@ -3,7 +3,7 @@ import ImageZoom from "../../basic/ImageZoom.astro";
 import Separator from "../../basic/Separator.astro";
 import TextList from "../../basic/TextList.astro";
 
-import WeldingImg from "../../../assets/img/pt.jpg";
+import WeldingImg from "../../../assets/img/services/pt.jpg";
 import Paragraph from "../../basic/Paragraph.astro";
 
 const weldingData = {
@@ -48,7 +48,7 @@ const weldingData = {
         <ImageZoom
           src={weldingData.image}
           alt={weldingData.imageAlt}
-          height="650"
+          isResponsive
         />
       </div>
 

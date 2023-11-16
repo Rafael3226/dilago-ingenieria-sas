@@ -1,12 +1,30 @@
 ---
 import { Image } from "astro:assets";
-let { src, alt = "", height, width } = Astro.props;
+let { src, alt = "", isResponsive= false, id = "" } = Astro.props;
 ---
 
 {
   src && (
-    <div class="size3 bo-rad-10 hov-img-zoom m-l-r-auto">
-      <Image src={src} alt={`IMAGEN: ${alt}`} height={height} width={width} />
+    <div id="imagen-zoom-div" 
+      class="bo-rad-10 hov-img-zoom m-l-r-auto" 
+      style={isResponsive ? "max-height:500px;":""}>
+      <Image
+        id="123"
+        src={src}
+        id={`${id}-img`}
+        alt={`IMAGEN: ${alt}`}
+        style="max-width: 100%; height: auto;"
+      />
+      {isResponsive && <style>
+        #imagen-zoom-div {
+          width: 60%;
+        }
+        @media screen and (max-width: 900px) {
+          #imagen-zoom-div {
+            width: 100%;
+          }
+        }
+      </style>}
     </div>
   )
 }

@@ -3,7 +3,7 @@ import ImageZoom from "../../basic/ImageZoom.astro";
 import Separator from "../../basic/Separator.astro";
 import TextList from "../../basic/TextList.astro";
 
-import NDTImg from "../../../assets/img/nd.jpg";
+import NDTImg from "../../../assets/img/services/end.jpg";
 import ObjectList from "../../basic/ObjectList.astro";
 
 const ndtData = {
@@ -37,7 +37,7 @@ const ndtData = {
       <div class="entry-content" itemprop="text">
         <TextList items={ndtData.description} />
         <div class="p-b-25">
-          <ImageZoom src={ndtData.image} alt={ndtData.imageAlt} height="400" />
+          <ImageZoom src={ndtData.image} alt={ndtData.imageAlt} />
         </div>
 
         <ObjectList object={ndtData.methods} />
