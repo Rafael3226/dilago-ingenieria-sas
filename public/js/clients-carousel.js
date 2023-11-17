@@ -6,16 +6,16 @@ $(".owl-carousel").owlCarousel({
   stagePadding: 50,
   responsive: {
     0: {
-      items: 1,
-    },
-    300: {
       items: 2,
     },
+    300: {
+      items: 4,
+    },
     600: {
-      items: 3,
+      items: 6,
     },
     1000: {
-      items: 4,
+      items: 8,
     },
   },
 });
