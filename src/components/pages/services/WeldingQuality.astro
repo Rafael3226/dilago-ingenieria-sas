@@ -43,9 +43,10 @@ const weldingData = {
     <div class="p-2 p-sm-1 p-md-3 p-lg-5">
       <h4 class="p-t-22">{weldingData.weldingHeader}</h4>
       <Paragraph>{weldingData.weldingDescription}</Paragraph>
-
-      <div class="p-t-25">
-        <ImageZoom src={weldingData.image} alt={weldingData.imageAlt} />
+      <div class="p-t-22 row d-flex justify-content-center">
+        <div style="max-width:600px;">
+          <ImageZoom src={weldingData.image} alt={weldingData.imageAlt} />
+        </div>
       </div>
 
       <h4 class="p-t-22">{weldingData.servicesHeader}</h4>

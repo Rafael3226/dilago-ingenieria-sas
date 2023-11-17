@@ -36,8 +36,10 @@ const ndtData = {
     <div class="p-2 p-sm-1 p-md-3 p-lg-5">
       <div class="entry-content" itemprop="text">
         <TextList items={ndtData.description} />
-        <div class="p-b-25">
-          <ImageZoom src={ndtData.image} alt={ndtData.imageAlt} />
+        <div class="p-t-22 row d-flex justify-content-center">
+          <div style="max-width:600px;">
+            <ImageZoom src={ndtData.image} alt={ndtData.imageAlt} />
+          </div>
         </div>
 
         <ObjectList object={ndtData.methods} />

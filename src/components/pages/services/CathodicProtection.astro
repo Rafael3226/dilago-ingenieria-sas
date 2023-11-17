@@ -48,8 +48,10 @@ const contentData = {
     <div class="p-2 p-sm-1 p-md-3 p-lg-5">
       <h4 class="p-t-22">{contentData.subTitle}</h4>
       <TextList items={contentData.description} />
-      <div class="p-t-22">
-        <ImageZoom id="cp" src={contentData.image} alt={contentData.imageAlt} />
+      <div class="p-t-22 row d-flex justify-content-center">
+        <div style="max-width:600px;">
+          <ImageZoom src={contentData.image} alt={contentData.imageAlt} />
+        </div>
       </div>
       <h4 class="p-t-22">{contentData.evaluationHeader}</h4>
       <TextList items={contentData.evaluationList} />
