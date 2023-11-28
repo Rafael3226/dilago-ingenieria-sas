@@ -9,13 +9,13 @@ $(".owl-carousel").owlCarousel({
       items: 2,
     },
     300: {
-      items: 4,
+      items: 3,
     },
     600: {
-      items: 6,
+      items: 4,
     },
     1000: {
-      items: 8,
+      items: 6,
     },
   },
 });
