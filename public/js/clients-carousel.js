@@ -1,5 +1,5 @@
-$(".owl-carousel").owlCarousel({
-  loop: true,
+const generalConfig = {
+  loop: false,
   margin: 80,
   nav: false,
   dots: false,
@@ -18,4 +18,26 @@ $(".owl-carousel").owlCarousel({
       items: 6,
     },
   },
-});
+};
+
+$(".owl-carousel").owlCarousel(generalConfig);
+
+const certificatesConfig = {
+  ...generalConfig,
+  responsive: {
+    0: {
+      items: 2,
+    },
+    300: {
+      items: 2,
+    },
+    600: {
+      items: 3,
+    },
+    1000: {
+      items: 4,
+    },
+  },
+};
+
+$(".owl-carousel-certificates").owlCarousel(certificatesConfig);

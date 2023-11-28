@@ -1,10 +1,15 @@
 ---
 import { Image } from "astro:assets";
-const { images = [], alt = "imagen" } = Astro.props;
+const {
+  images = [],
+  alt = "imagen",
+  id,
+  className = "owl-carousel",
+} = Astro.props;
 ---
 
 <div class="content-intro p-t-77 p-b-80">
-  <div class="owl-carousel">
+  <div id={id} class={className}>
     {images.map((img) => <Image class="carousel-img" src={img} alt={alt} />)}
   </div>
 </div>
