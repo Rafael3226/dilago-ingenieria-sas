@@ -1,3 +1,7 @@
+/*[ OWL CAROUSEL ]
+///////////////////////////////////////////////////////////
+*/
+
 .owl-stage {
   display: flex;
   flex-direction: row;
@@ -7,35 +11,4 @@
   max-height: 200px;
   height: auto;
   object-fit: contain;
-}
-
-/* Style for the WhatsApp anchor */
-.whatsapp-anchor {
-  position: fixed;
-  bottom: 20px; /* Adjust the distance from the bottom as needed */
-  right: 20px; /* Adjust the distance from the right as needed */
-  background-color: #25d366; /* WhatsApp background color */
-  border-radius: 50%; /* Makes the container round */
-  width: 60px; /* Adjust the size of the container as needed */
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  transition: transform 0.3s;
-  z-index: 999; /* Ensures it appears above other content */
-}
-
-/* Style for the WhatsApp icon (adjust the path to your image) */
-.whatsapp-anchor img {
-  width: 40px; /* Adjust the size of the icon as needed */
-}
-
-/* Add a hover effect to the anchor */
-.whatsapp-anchor:hover {
-  transform: scale(1.1); /* Slightly scale up on hover */
-}
-
-.landing-height {
-  min-height: calc(100vh - 71px);
 }
