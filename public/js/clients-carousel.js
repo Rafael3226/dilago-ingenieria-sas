@@ -1,4 +1,4 @@
-window.onload = function () {
+function carouselInit() {
   const generalConfig = {
     loop: false,
     margin: 80,
@@ -38,6 +38,12 @@ window.onload = function () {
       },
     },
   };
+
   $(".owl-carousel").owlCarousel(generalConfig);
   $(".owl-carousel-certificates").owlCarousel(certificatesConfig);
-};
+
+  // Remove the event listener
+  window.removeEventListener("load", carouselInit);
+}
+
+window.addEventListener("load", carouselInit).then();
