@@ -462,27 +462,174 @@
 .bi-chevron-down::before {
   content: "\f282";
 }
-@font-face{font-family:unicons-line;src:url(unicons/unicons-0.woff2) format('woff2'),url(unicons/unicons-0.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+E800-E83B}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-1.woff2) format('woff2'),url(unicons/unicons-1.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+E83C-E877}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-10.woff2) format('woff2'),url(unicons/unicons-10.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EA5B-EA96}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-11.woff2) format('woff2'),url(unicons/unicons-11.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EA97-EAD4}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-12.woff2) format('woff2'),url(unicons/unicons-12.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EAD5-EB11}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-13.woff2) format('woff2'),url(unicons/unicons-13.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EB12-EB4D}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-14.woff2) format('woff2'),url(unicons/unicons-14.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EB4E-EB89}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-15.woff2) format('woff2'),url(unicons/unicons-15.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EB8A-EBC5}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-16.woff2) format('woff2'),url(unicons/unicons-16.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EBC6-EC01}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-17.woff2) format('woff2'),url(unicons/unicons-17.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EC02-EC3D}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-18.woff2) format('woff2'),url(unicons/unicons-18.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EC3E-EC79}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-19.woff2) format('woff2'),url(unicons/unicons-19.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EC7A-ECB5}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-2.woff2) format('woff2'),url(unicons/unicons-2.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+E878-E8B3}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-20.woff2) format('woff2'),url(unicons/unicons-20.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+ECB6-ECB9}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-3.woff2) format('woff2'),url(unicons/unicons-3.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+E8B4-E8EF}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-4.woff2) format('woff2'),url(unicons/unicons-4.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+E8F0-E92B}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-5.woff2) format('woff2'),url(unicons/unicons-5.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+E92C-E967}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-6.woff2) format('woff2'),url(unicons/unicons-6.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+E968-E9A4}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-7.woff2) format('woff2'),url(unicons/unicons-7.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+E9A5-E9E1}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-8.woff2) format('woff2'),url(unicons/unicons-8.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+E9E2-EA1D}
-@font-face{font-family:unicons-line;src:url(unicons/unicons-9.woff2) format('woff2'),url(unicons/unicons-9.woff) format('woff');font-weight:400;font-style:normal;unicode-range:U+EA1E-EA5A}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-0.woff2) format("woff2"),
+    url(unicons/unicons-0.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+E800-E83B;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-1.woff2) format("woff2"),
+    url(unicons/unicons-1.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+E83C-E877;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-10.woff2) format("woff2"),
+    url(unicons/unicons-10.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EA5B-EA96;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-11.woff2) format("woff2"),
+    url(unicons/unicons-11.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EA97-EAD4;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-12.woff2) format("woff2"),
+    url(unicons/unicons-12.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EAD5-EB11;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-13.woff2) format("woff2"),
+    url(unicons/unicons-13.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EB12-EB4D;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-14.woff2) format("woff2"),
+    url(unicons/unicons-14.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EB4E-EB89;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-15.woff2) format("woff2"),
+    url(unicons/unicons-15.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EB8A-EBC5;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-16.woff2) format("woff2"),
+    url(unicons/unicons-16.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EBC6-EC01;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-17.woff2) format("woff2"),
+    url(unicons/unicons-17.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EC02-EC3D;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-18.woff2) format("woff2"),
+    url(unicons/unicons-18.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EC3E-EC79;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-19.woff2) format("woff2"),
+    url(unicons/unicons-19.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EC7A-ECB5;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-2.woff2) format("woff2"),
+    url(unicons/unicons-2.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+E878-E8B3;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-20.woff2) format("woff2"),
+    url(unicons/unicons-20.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+ECB6-ECB9;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-3.woff2) format("woff2"),
+    url(unicons/unicons-3.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+E8B4-E8EF;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-4.woff2) format("woff2"),
+    url(unicons/unicons-4.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+E8F0-E92B;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-5.woff2) format("woff2"),
+    url(unicons/unicons-5.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+E92C-E967;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-6.woff2) format("woff2"),
+    url(unicons/unicons-6.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+E968-E9A4;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-7.woff2) format("woff2"),
+    url(unicons/unicons-7.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+E9A5-E9E1;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-8.woff2) format("woff2"),
+    url(unicons/unicons-8.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+E9E2-EA1D;
+}
+@font-face {
+  font-family: unicons-line;
+  src: url(unicons/unicons-9.woff2) format("woff2"),
+    url(unicons/unicons-9.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+EA1E-EA5A;
+}
 [class*="fa-"],
 [class*=" fa-"],
 [class*="bi-"],
@@ -1658,7 +1805,7 @@ textarea.form-control {
   --cnvs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   --cnvs-copyrights-font-size: 0.875rem;
   --bs-bg-opacity: 1;
-  --cnvs-header-height: 100px;
+  --cnvs-header-height: 70px;
   --cnvs-header-height-sm: 60px;
   --cnvs-header-height-md: 80px;
   --cnvs-header-height-lg: 120px;
@@ -2252,7 +2399,6 @@ body:not(.is-expanded-menu)
   transition: opacity 0.3s ease;
 }
 @media (prefers-reduced-motion: reduce) {
-  
   .primary-menu-trigger {
     transition: none;
   }
@@ -2435,7 +2581,6 @@ body:not(.is-expanded-menu) .primary-menu > .container {
   transition: right 0.4s ease;
 }
 @media (prefers-reduced-motion: reduce) {
-  
   .side-push-panel.stretched #header .container,
   .side-push-panel.stretched #wrapper {
     transition: none;
@@ -2446,7 +2591,6 @@ body:not(.is-expanded-menu) .primary-menu > .container {
   transition: left 0.4s ease;
 }
 @media (prefers-reduced-motion: reduce) {
-  
   .side-push-panel.stretched .slider-inner {
     transition: none;
   }
@@ -2526,7 +2670,6 @@ body:not(.stretched) .slider-parallax .slider-inner {
   transition: transform 0s cubic-bezier(0.14, 0.15, 0.13, 0.99);
 }
 @media (prefers-reduced-motion: reduce) {
-  
   .slider-parallax .slider-inner {
     transition: none;
   }
@@ -2807,7 +2950,6 @@ body:not(.stretched) .slider-parallax .slider-inner {
   transition: all 0.3s ease;
 }
 @media (prefers-reduced-motion: reduce) {
-  
   .social-icon {
     transition: none;
   }
