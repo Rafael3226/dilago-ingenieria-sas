@@ -25,9 +25,7 @@ import IconImg from "../assets/img/icon.png";
     <link rel="icon" href={IconImg.src} />
     <title>Dilago Ingeniería</title>
   </head>
-  <body
-    class="stretched side-push-panel device-xxl device-up-xxl device-up-xl device-up-lg device-up-md device-up-sm device-up-xs is-expanded-menu has-plugin-hoveranimation has-plugin-html5video has-plugin-onepage has-plugin-bootstrap has-plugin-isotope has-plugin-flexslider has-plugin-carousel has-plugin-textrotator has-plugin-form template-contactform-ready has-plugin-scrolldetect has-plugin-gmap has-plugin-cookie has-plugin-bscomponents has-plugin-notify"
-  >
+  <body class="stretched">
     <div id="wrapper">
       <Header />
       <slot />
@@ -35,7 +33,6 @@ import IconImg from "../assets/img/icon.png";
       <Footer />
     </div>
     <script is:inline src="/js/functions.bundle.js"></script>
-    <script is:inline src="/js/plugins.min.js"></script>
     <script is:inline src="/js/clients-carousel.js"></script>
   </body>
 </html>
