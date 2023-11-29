@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
   function updateNavbarClass() {
-    let headerClassList = document.getElementById("header");
+    let headerClassList = document.getElementById("header").classList;
     const transparent = "transparent-header";
     if (window.scrollY === 0 && !headerClassList.contains(transparent)) {
       headerClassList.add(transparent);
