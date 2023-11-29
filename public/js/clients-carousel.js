@@ -46,4 +46,4 @@ function carouselInit() {
   window.removeEventListener("load", carouselInit);
 }
 
-window.addEventListener("load", carouselInit).then();
+window.addEventListener("load", carouselInit);
