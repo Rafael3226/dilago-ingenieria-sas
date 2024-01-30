@@ -1,19 +1,16 @@
 function carouselInit() {
   const generalConfig = {
     loop: false,
-    margin: 80,
+    margin: 60,
     nav: false,
     dots: false,
-    stagePadding: 50,
+    stagePadding: 20,
     responsive: {
       0: {
         items: 2,
       },
-      300: {
-        items: 3,
-      },
       600: {
-        items: 4,
+        items: 3,
       },
       1000: {
         items: 6,
