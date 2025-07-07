@@ -1,0 +1,7 @@
+{
+  "name": "dilago-ingenieria-sas",
+  "compatibility_date": "2025-07-07",
+  "assets": {
+    "directory": "./dist"
+  }
+} 
