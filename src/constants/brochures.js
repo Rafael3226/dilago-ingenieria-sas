@@ -1,5 +1,6 @@
 import TrainingPDF from "../assets/pdf/brochure_capacitaciones.pdf";
 import ServicesPDF from "../assets/pdf/brochure_servicios.pdf";
+import Portfolio2025 from "../assets/pdf/Portafolio_dilago_2025.pdf";
 
 const title = "Descargar Brochure";
 
@@ -10,7 +11,7 @@ export const training = {
 };
 
 export const corporative = {
-  name: "Dilago Brochure - Servicios.pdf",
+  name: "Portafolio_dilago_2025.pdf",
   title,
-  href: ServicesPDF,
+  href: Portfolio2025,
 };
