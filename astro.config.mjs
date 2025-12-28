@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 const PORT = import.meta.env.PORT || 3000;
 
 // https://astro.build/config
@@ -7,8 +7,6 @@ export default defineConfig({
     port: PORT,
   },
   image: {
-    service: {
-      entrypoint: 'astro/assets/services/noop',
-    },
+    service: passthroughImageService(),
   },
 });
