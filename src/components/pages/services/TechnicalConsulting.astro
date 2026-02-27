@@ -25,11 +25,14 @@ const content = {
 };
 ---
 
-<Section id={content.id}>
-  <Title>{content.title}</Title>
+<Section id={content.id} className="py-2">
   <Separator slot="separator">{content.title}</Separator>
-  <div slot="bottom" class="container p-t-22">
-    <TextList items={content.paragraphs} />
+  <div slot="left">
+    <div class="p-t-20">
+      <TextList items={content.paragraphs} />
+    </div>
+  </div>
+  <div slot="right">
     <div class="p-t-30">
       <ObjectList object={content.consultancies} inline />
     </div>

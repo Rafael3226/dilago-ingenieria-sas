@@ -1,3 +1,3 @@
 export { default as ValveSensors } from "./ValveSensors.astro";
 export { default as NonMetallicReinforcement } from "./NonMetallicReinforcement.astro";
-export { default as SolarPanels } from "./SolarPanels.astro";
+export { default as CorrosionCoating } from "./CorrosionCoating.astro";

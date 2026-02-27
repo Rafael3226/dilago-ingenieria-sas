@@ -4,8 +4,10 @@ import TextList from "../../basic/TextList.astro";
 import Separator from "../../basic/Separator.astro";
 import Section from "../../basic/Section.astro";
 
-import ImageWorker from "../../../assets/img/nm-worker.jpg";
-import ImageElbow from "../../../assets/img/nm-elbow.jpg";
+import Image01 from "../../../assets/img/non-metallic-01.jpeg";
+import Image02 from "../../../assets/img/non-metallic-02.jpeg";
+import Image03 from "../../../assets/img/non-metallic-03.jpeg";
+import Image04 from "../../../assets/img/non-metallic-04.jpeg";
 import BannerImg from "../../../assets/img/tech-option-2.jpg";
 
 const contentData = {
@@ -14,10 +16,10 @@ const contentData = {
   description: [
     "El sistema de reparación compuesto ofrecido a través de DILAGO INGENIERIA certificado por ASME PC C-2, fortalece y refuerza la integridad de la pared de la tubería sin interrumpir el flujo, reparando una multitud de defectos y soportando hasta un 80% de pérdida de pared.",
   ],
-  images: [ImageWorker, ImageElbow],
+  images: [Image01, Image02, Image03, Image04],
   banner: BannerImg,
   imageAlt: "Refuerzo no metálico FRP",
-  footer: "Fig 1 y 2: Piloto desarrollado para ODL. Caso de éxito.",
+  footer: "Fig 1 a 4: Piloto desarrollado para Vanti. Caso de éxito.",
 };
 ---
 
@@ -30,8 +32,12 @@ const contentData = {
     <div class="row">
       {
         contentData.images.map((img, index) => (
-          <div class="col-md-6 m-b-15">
-            <ImageZoom src={img} alt={`${contentData.imageAlt} ${index + 1}`} />
+          <div class="col-md-6 mb-4">
+            <ImageZoom
+              src={img}
+              alt={`${contentData.imageAlt} ${index + 1}`}
+              className="square-img"
+            />
           </div>
         ))
       }
@@ -45,4 +51,27 @@ const contentData = {
     <TextList items={contentData.description} />
   </div>
 </Section>
-```
+
+<style>
+  :global(.square-img) {
+    aspect-ratio: 1 / 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    display: block !important;
+    overflow: hidden !important;
+  }
+
+  :global(.square-img div) {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+  }
+
+  :global(.square-img img) {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+</style>

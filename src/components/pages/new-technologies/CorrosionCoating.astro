@@ -1,0 +1,105 @@
+---
+import ImageZoom from "../../basic/ImageZoom.astro";
+import TextList from "../../basic/TextList.astro";
+import Separator from "../../basic/Separator.astro";
+import Section from "../../basic/Section.astro";
+
+// Using a placeholder image from existing assets
+import PlaceholderImg from "../../../assets/img/tech-option-1.jpg";
+import BannerImg from "../../../assets/img/refinery.jpg";
+
+const contentData = {
+  id: "section-corrosion-coating",
+  title: "Recubrimiento de protección a la corrosión para tuberías enterradas",
+  description: [
+    "Sistema de recubrimientos anticorrosivo y propiedades anti apantallantes para ductos y tuberías enterradas de POLYGUARD distribuidos exclusivamente por DILAGO INGENIERÍA S.A.S",
+  ],
+  applicationsHeader: "APLICACIONES:",
+  applicationsList: [
+    "REHABILITACIÓN (REPARACIÓN DE REVESTIMIENTOS).",
+    "JUNTAS SOLDADAS EN PROYECTOS DE CONSTRUCCIÓN.",
+    "REVESTIMIENTO COMPLETO PARA DUCTOS O TUBERÍAS NUEVAS.",
+  ],
+  propertiesHeader: "PROPIEDADES PRINCIPALES:",
+  propertiesList: [
+    "Adhesión superior sobre metal y sobre otros materiales de revestimiento en la transición.",
+    "Anti apantallamiento.",
+    "Resistencia al desplazamiento por esfuerzo del suelo (stress de suelo).",
+    "Excelente resistencia al desprendimiento catódico.",
+    "Fácil aplicación.",
+    "Tiempo de secado del Adhesivo Liquido de 3 a 5 minutos",
+  ],
+  benefitsHeader: "BENEFICIOS PRINCIPALES:",
+  benefitsList: [
+    "Provee un camino para el flujo de la corriente de Protección catódica (CP) en área de traslape.",
+    "No requiere mezclado de componentes, ni tiempo de curado.",
+    "Adhesivo liquido POLYGUAR 600 puede usarse durante todo el día o más, si se cubre durante la noche.",
+    "Secado rápido, 5 minutos.",
+  ],
+  image: PlaceholderImg,
+  banner: BannerImg,
+  imageAlt: "Recubrimiento de protección a la corrosión Polyguard",
+};
+---
+
+<Section id={contentData.id}>
+  <Separator slot="separator" img={contentData.banner}>
+    {contentData.title}
+  </Separator>
+
+  <div slot="left">
+    <TextList items={contentData.description} />
+
+    <h4 class="p-t-15 m-b-10">{contentData.applicationsHeader}</h4>
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      {
+        contentData.applicationsList.map((text) => (
+          <li class="m-b-5">
+            <p
+              class="text-justify"
+              style="font-size:1.2rem; line-height:1.3; margin:0; margin-bottom: 5px;"
+            >
+              {text}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h4 class="p-t-15 m-b-10">{contentData.propertiesHeader}</h4>
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      {
+        contentData.propertiesList.map((text) => (
+          <li class="m-b-5">
+            <p
+              class="text-justify"
+              style="font-size:1.2rem; line-height:1.3; margin:0; margin-bottom: 5px;"
+            >
+              {text}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h4 class="p-t-15 m-b-10">{contentData.benefitsHeader}</h4>
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      {
+        contentData.benefitsList.map((text) => (
+          <li class="m-b-5">
+            <p
+              class="text-justify"
+              style="font-size:1.2rem; line-height:1.3; margin:0; margin-bottom: 5px;"
+            >
+              {text}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div slot="right">
+    <ImageZoom src={contentData.image} alt={contentData.imageAlt} />
+  </div>
+</Section>

@@ -1,6 +1,6 @@
 import TrainingPDF from "../assets/pdf/brochure_capacitaciones.pdf";
 import ServicesPDF from "../assets/pdf/brochure_servicios.pdf";
-import Portfolio2025 from "../assets/pdf/Portafolio_dilago_2025.pdf";
+import Portfolio2026 from "../assets/pdf/Portafolio_dilago_2026.pdf";
 
 const title = "Descargar Brochure";
 
@@ -11,7 +11,7 @@ export const training = {
 };
 
 export const corporative = {
-  name: "Portafolio_dilago_2025.pdf",
+  name: "Portafolio_dilago_2026.pdf",
   title,
-  href: Portfolio2025,
+  href: Portfolio2026,
 };
