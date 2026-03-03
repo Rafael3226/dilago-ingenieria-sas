@@ -335,8 +335,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(font/fa-brands-400.woff2) format("woff2"),
-    url(font/fa-brands-400.ttf) format("truetype");
+  src: url(/font/fa-brands-400.woff2) format("woff2"),
+    url(/font/fa-brands-400.ttf) format("truetype");
 }
 .fa-brands {
   font-weight: 400;
@@ -355,18 +355,6 @@
 }
 
 :root {
-  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
-}
-@font-face {
-  font-family: "font awesome 6 free";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url(font/fa-regular-400.woff2) format("woff2"),
-    url(font/fa-regular-400.ttf) format("truetype");
-}
-
-:root {
   --fa-style-family-classic: "Font Awesome 6 Free";
   --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
 }
@@ -375,66 +363,34 @@
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(font/fa-solid-900.woff2) format("woff2"),
-    url(font/fa-solid-900.ttf) format("truetype");
+  src: url(/font/fa-solid-900.woff2) format("woff2"),
+    url(/font/fa-solid-900.ttf) format("truetype");
 }
 @font-face {
   font-family: "font awesome 5 brands";
   font-display: block;
   font-weight: 400;
-  src: url(font/fa-brands-400.woff2) format("woff2"),
-    url(font/fa-brands-400.ttf) format("truetype");
+  src: url(/font/fa-brands-400.woff2) format("woff2"),
+    url(/font/fa-brands-400.ttf) format("truetype");
 }
 @font-face {
   font-family: "font awesome 5 free";
   font-display: block;
   font-weight: 900;
-  src: url(font/fa-solid-900.woff2) format("woff2"),
-    url(font/fa-solid-900.ttf) format("truetype");
-}
-@font-face {
-  font-family: "font awesome 5 free";
-  font-display: block;
-  font-weight: 400;
-  src: url(font/fa-regular-400.woff2) format("woff2"),
-    url(font/fa-regular-400.ttf) format("truetype");
+  src: url(/font/fa-solid-900.woff2) format("woff2"),
+    url(/font/fa-solid-900.ttf) format("truetype");
 }
 @font-face {
   font-family: fontawesome;
   font-display: block;
-  src: url(font/fa-solid-900.woff2) format("woff2"),
-    url(font/fa-solid-900.ttf) format("truetype");
+  src: url(/font/fa-solid-900.woff2) format("woff2"),
+    url(/font/fa-solid-900.ttf) format("truetype");
 }
 @font-face {
   font-family: fontawesome;
   font-display: block;
-  src: url(font/fa-brands-400.woff2) format("woff2"),
-    url(font/fa-brands-400.ttf) format("truetype");
-}
-@font-face {
-  font-family: fontawesome;
-  font-display: block;
-  src: url(font/fa-regular-400.woff2) format("woff2"),
-    url(font/fa-regular-400.ttf) format("truetype");
-  unicode-range: u+f003, u+f006, u+f014, u+f016-f017, u+f01a-f01b, u+f01d,
-    u+f022, u+f03e, u+f044, u+f046, u+f05c-f05d, u+f06e, u+f070, u+f087-f088,
-    u+f08a, u+f094, u+f096-f097, u+f09d, u+f0a0, u+f0a2, u+f0a4-f0a7, u+f0c5,
-    u+f0c7, u+f0e5-f0e6, u+f0eb, u+f0f6-f0f8, u+f10c, u+f114-f115, u+f118-f11a,
-    u+f11c-f11d, u+f133, u+f147, u+f14e, u+f150-f152, u+f185-f186, u+f18e,
-    u+f190-f192, u+f196, u+f1c1-f1c9, u+f1d9, u+f1db, u+f1e3, u+f1ea, u+f1f7,
-    u+f1f9, u+f20a, u+f247-f248, u+f24a, u+f24d, u+f255-f25b, u+f25d,
-    u+f271-f274, u+f278, u+f27b, u+f28c, u+f28e, u+f29c, u+f2b5, u+f2b7, u+f2ba,
-    u+f2bc, u+f2be, u+f2c0-f2c1, u+f2c3, u+f2d0, u+f2d2, u+f2d4, u+f2dc;
-}
-@font-face {
-  font-family: fontawesome;
-  font-display: block;
-  src: url(font/fa-v4compatibility.woff2) format("woff2"),
-    url(font/fa-v4compatibility.ttf) format("truetype");
-  unicode-range: u+f041, u+f047, u+f065-f066, u+f07d-f07e, u+f080, u+f08b,
-    u+f08e, u+f090, u+f09a, u+f0ac, u+f0ae, u+f0b2, u+f0d0, u+f0d6, u+f0e4,
-    u+f0ec, u+f10a-f10b, u+f123, u+f13e, u+f148-f149, u+f14c, u+f156, u+f15e,
-    u+f160-f161, u+f163, u+f175-f178, u+f195, u+f1f8, u+f219, u+f27a;
+  src: url(/font/fa-brands-400.woff2) format("woff2"),
+    url(/font/fa-brands-400.ttf) format("truetype");
 }
 /*!* Bootstrap Icons v1.11.0 (https://icons.getbootstrap.com/)
 * Copyright 2019-2023 The Bootstrap Authors
@@ -442,8 +398,8 @@
 @font-face {
   font-display: block;
   font-family: bootstrap-icons;
-  src: url(font/bootstrap-icons.woff2) format("woff2"),
-    url(font/bootstrap-icons.woff) format("woff");
+  src: url(/font/bootstrap-icons.woff2) format("woff2"),
+    url(/font/bootstrap-icons.woff) format("woff");
 }
 
 [class*=" bi-"]::before,
@@ -461,174 +417,6 @@
 }
 .bi-chevron-down::before {
   content: "\f282";
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-0.woff2) format("woff2"),
-    url(unicons/unicons-0.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+E800-E83B;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-1.woff2) format("woff2"),
-    url(unicons/unicons-1.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+E83C-E877;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-10.woff2) format("woff2"),
-    url(unicons/unicons-10.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EA5B-EA96;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-11.woff2) format("woff2"),
-    url(unicons/unicons-11.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EA97-EAD4;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-12.woff2) format("woff2"),
-    url(unicons/unicons-12.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EAD5-EB11;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-13.woff2) format("woff2"),
-    url(unicons/unicons-13.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EB12-EB4D;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-14.woff2) format("woff2"),
-    url(unicons/unicons-14.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EB4E-EB89;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-15.woff2) format("woff2"),
-    url(unicons/unicons-15.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EB8A-EBC5;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-16.woff2) format("woff2"),
-    url(unicons/unicons-16.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EBC6-EC01;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-17.woff2) format("woff2"),
-    url(unicons/unicons-17.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EC02-EC3D;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-18.woff2) format("woff2"),
-    url(unicons/unicons-18.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EC3E-EC79;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-19.woff2) format("woff2"),
-    url(unicons/unicons-19.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EC7A-ECB5;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-2.woff2) format("woff2"),
-    url(unicons/unicons-2.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+E878-E8B3;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-20.woff2) format("woff2"),
-    url(unicons/unicons-20.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+ECB6-ECB9;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-3.woff2) format("woff2"),
-    url(unicons/unicons-3.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+E8B4-E8EF;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-4.woff2) format("woff2"),
-    url(unicons/unicons-4.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+E8F0-E92B;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-5.woff2) format("woff2"),
-    url(unicons/unicons-5.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+E92C-E967;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-6.woff2) format("woff2"),
-    url(unicons/unicons-6.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+E968-E9A4;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-7.woff2) format("woff2"),
-    url(unicons/unicons-7.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+E9A5-E9E1;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-8.woff2) format("woff2"),
-    url(unicons/unicons-8.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+E9E2-EA1D;
-}
-@font-face {
-  font-family: unicons-line;
-  src: url(unicons/unicons-9.woff2) format("woff2"),
-    url(unicons/unicons-9.woff) format("woff");
-  font-weight: 400;
-  font-style: normal;
-  unicode-range: U+EA1E-EA5A;
 }
 [class*="fa-"],
 [class*=" fa-"],
@@ -694,34 +482,6 @@
 .dark #header-wrap:not(.not-dark) #logo .logo-dark,
 .dark .header-row:not(.not-dark) #logo .logo-dark {
   display: flex;
-}
-@font-face {
-  font-family: Montserrat-Regular;
-  src: url("../fonts/montserrat/Montserrat-Regular.ttf");
-}
-@font-face {
-  font-family: Montserrat-Bold;
-  src: url("../fonts/montserrat/Montserrat-Bold.ttf");
-}
-@font-face {
-  font-family: Courgette-Regular;
-  src: url("../fonts/courgette/Courgette-Regular.ttf");
-}
-@font-face {
-  font-family: Poppins-Regular;
-  src: url("../fonts/poppins/Poppins-Regular.ttf");
-}
-@font-face {
-  font-family: Poppins-Medium;
-  src: url("../fonts/poppins/Poppins-Medium.ttf");
-}
-@font-face {
-  font-family: Poppins-Bold;
-  src: url("../fonts/poppins/Poppins-Bold.ttf");
-}
-@font-face {
-  font-family: Poppins-Light;
-  src: url("../fonts/poppins/Poppins-Light.ttf");
 }
 /*[ RESTYLE TAG ]
 ///////////////////////////////////////////////////////////
@@ -2699,7 +2459,7 @@ body:not(.stretched) .slider-parallax .slider-inner {
   top: 0;
   left: 0;
   z-index: 5;
-  background: transparent url(img/grid.png) repeat;
+  background: transparent url(/img/grid.png) repeat;
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
 }
@@ -5091,14 +4851,7 @@ body.dark {
  */
 @font-face {
   font-family: "FontAwesome";
-  src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0")
-      format("embedded-opentype"),
-    url("font/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
-    url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
-    url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
-    url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular")
-      format("svg");
+  src: url("/font/fontawesome-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
