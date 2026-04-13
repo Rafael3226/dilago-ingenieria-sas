@@ -1,0 +1,373 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../assets/css/dashboard.css";
+---
+
+<Layout>
+  <section id="content">
+    <div class="content-wrap">
+      <div class="form-container">
+
+        <div class="form-header mb-5">
+          <span class="form-badge">Formulario técnico</span>
+          <h1>Requerimiento de datos</h1>
+          <p>Refuerzo mecánico no metálico</p>
+        </div>
+
+        <div class="form-card">
+          <form action="" method="post">
+
+            <div class="form-section">
+              <div class="form-section-title">
+                <span class="section-number">01</span>
+                <span>Información general</span>
+              </div>
+              <div class="form-row">
+                <div class="form-col-third">
+                  <label for="fecha" class="form-label">Fecha</label>
+                  <input type="date" class="form-control" id="fecha" name="fecha">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="form-section-title">
+                <span class="section-number">02</span>
+                <span>Datos del cliente</span>
+              </div>
+              <div class="form-row">
+                <div class="form-col-half">
+                  <label for="empresa" class="form-label">Empresa</label>
+                  <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Nombre de la empresa">
+                </div>
+                <div class="form-col-half">
+                  <label for="contacto" class="form-label">Contacto</label>
+                  <input type="text" class="form-control" id="contacto" name="contacto" placeholder="Nombre del contacto">
+                </div>
+                <div class="form-col-half">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="text" class="form-control" id="telefono" name="telefono" placeholder="+57 000 000 0000">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="form-section-title">
+                <span class="section-number">03</span>
+                <span>Datos de operación</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-col-full">
+                  <label for="campo" class="form-label">Campo / Ubicación</label>
+                  <input type="text" class="form-control" id="campo" name="campo" placeholder="Campo o ubicación del sitio">
+                </div>
+                <div class="form-col-full">
+                  <label for="estructura-nombre" class="form-label">Nombre de la estructura</label>
+                  <input type="text" class="form-control" id="estructura-nombre" name="estructura_nombre" placeholder="Nombre de la estructura">
+                </div>
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-label">Estructura a reparar</label>
+                <div class="form-check-group">
+                  <label class="form-check-label">
+                    <input type="radio" name="estructura_tipo" value="tuberia" class="form-check-input">
+                    <span>Tubería</span>
+                  </label>
+                  <label class="form-check-label">
+                    <input type="radio" name="estructura_tipo" value="tanque" class="form-check-input">
+                    <span>Tanque</span>
+                  </label>
+                  <label class="form-check-label">
+                    <input type="radio" name="estructura_tipo" value="otro" class="form-check-input">
+                    <span>Otro</span>
+                  </label>
+                </div>
+              </div>
+
+              <div id="campos-tuberia" class="form-row campos-estructura" style="display:none;">
+                <div class="form-col-third">
+                  <label for="diametro" class="form-label">Diámetro de la línea (inch)</label>
+                  <input type="text" class="form-control" id="diametro" name="diametro" placeholder="ej. 6">
+                </div>
+                <div class="form-col-third">
+                  <label for="grado-tuberia" class="form-label">Grado de la tubería</label>
+                  <input type="text" class="form-control" id="grado-tuberia" name="grado_tuberia" placeholder="ej. API 5L X65">
+                </div>
+                <div class="form-col-third">
+                  <label for="schedule" class="form-label">Schedule</label>
+                  <input type="text" class="form-control" id="schedule" name="schedule" placeholder="ej. STD">
+                </div>
+              </div>
+
+              <div id="campos-tuberia-ubicacion" class="form-field-group campos-estructura" style="display:none;">
+                <label class="form-label">Ubicación de la tubería</label>
+                <div class="form-check-group">
+                  <label class="form-check-label">
+                    <input type="radio" name="tuberia_ubicacion" value="aerea" class="form-check-input">
+                    <span>Aérea</span>
+                  </label>
+                  <label class="form-check-label">
+                    <input type="radio" name="tuberia_ubicacion" value="enterrada" class="form-check-input">
+                    <span>Enterrada</span>
+                  </label>
+                </div>
+              </div>
+
+              <div id="campos-proteccion-catodica" class="form-field-group" style="display:none;">
+                <label class="form-label">¿Cuenta con protección catódica?</label>
+                <div class="form-check-group">
+                  <label class="form-check-label">
+                    <input type="radio" name="proteccion_catodica" value="si" class="form-check-input">
+                    <span>Sí</span>
+                  </label>
+                  <label class="form-check-label">
+                    <input type="radio" name="proteccion_catodica" value="no" class="form-check-input">
+                    <span>No</span>
+                  </label>
+                </div>
+              </div>
+
+              <div id="campos-tanque" class="form-row campos-estructura" style="display:none;">
+                <div class="form-col-third">
+                  <label for="dim-tanque" class="form-label">Dimensiones del tanque (inch)</label>
+                  <input type="text" class="form-control" id="dim-tanque" name="dim_tanque" placeholder="ej. 120 x 48">
+                </div>
+                <div class="form-col-third">
+                  <label for="grado-material" class="form-label">Grado del material</label>
+                  <input type="text" class="form-control" id="grado-material" name="grado_material" placeholder="ej. A36">
+                </div>
+              </div>
+
+              <div id="campos-otro" class="campos-estructura" style="display:none;">
+                <div class="form-alert-warning">
+                  <span class="form-alert-icon">⚠️</span>
+                  <div>
+                    <strong>Estructura no soportada</strong>
+                    <p>Este tipo de estructura requiere una evaluación personalizada. Por favor contacte directamente al fabricante para obtener asistencia técnica.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-subsection-title">Condiciones de temperatura</div>
+              <div class="form-row">
+                <div class="form-col-third">
+                  <label for="temp-max-op" class="form-label">Máx. temperatura operación (°F)</label>
+                  <input type="number" class="form-control" id="temp-max-op" name="temp_max_op" placeholder="ej. 150">
+                </div>
+                <div class="form-col-third">
+                  <label for="temp-tuberia" class="form-label">Temperatura de tubería (°F)</label>
+                  <input type="number" class="form-control" id="temp-tuberia" name="temp_tuberia" placeholder="ej. 120">
+                </div>
+                <div class="form-col-third">
+                  <label for="temp-diseno" class="form-label">Temperatura de diseño (°F)</label>
+                  <input type="number" class="form-control" id="temp-diseno" name="temp_diseno" placeholder="ej. 200">
+                </div>
+              </div>
+
+              <div class="form-subsection-title">Condiciones de presión</div>
+              <div class="form-row">
+                <div class="form-col-third">
+                  <label for="presion-max-op" class="form-label">Máx. presión operación (PSI)</label>
+                  <input type="number" class="form-control" id="presion-max-op" name="presion_max_op" placeholder="ej. 500">
+                </div>
+                <div class="form-col-third">
+                  <label for="presion-op" class="form-label">Presión de operación (PSI)</label>
+                  <input type="number" class="form-control" id="presion-op" name="presion_op" placeholder="ej. 350">
+                </div>
+                <div class="form-col-third">
+                  <label for="presion-diseno" class="form-label">Presión de diseño (PSI)</label>
+                  <input type="number" class="form-control" id="presion-diseno" name="presion_diseno" placeholder="ej. 600">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-section">
+              <div class="form-section-title">
+                <span class="section-number">04</span>
+                <span>Datos de la reparación</span>
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-label">Configuración de la sección a reparar</label>
+                <div class="form-check-group" id="config-seccion-group">
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="recta" class="form-check-input"><span>Recta</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="codo" class="form-check-input"><span>Codo</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="t" class="form-check-input"><span>T</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="y" class="form-check-input"><span>Y</span></label>
+                  <label class="form-check-label" data-config-tipo="tanque"><input type="checkbox" name="config_seccion" value="pared" class="form-check-input"><span>Pared</span></label>
+                  <label class="form-check-label" data-config-tipo="tanque"><input type="checkbox" name="config_seccion" value="piso" class="form-check-input"><span>Piso</span></label>
+                  <label class="form-check-label" data-config-tipo="tanque"><input type="checkbox" name="config_seccion" value="techo" class="form-check-input"><span>Techo</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="otro" class="form-check-input"><span>Otro</span></label>
+                </div>
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-label">Ubicación del defecto</label>
+                <div class="form-check-group">
+                  <label class="form-check-label"><input type="radio" name="ubicacion_defecto" value="interno" class="form-check-input"><span>Interno</span></label>
+                  <label class="form-check-label"><input type="radio" name="ubicacion_defecto" value="externo" class="form-check-input"><span>Externo</span></label>
+                </div>
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-label">Obstáculos presentes y su distancia con respecto al defecto</label>
+                <div class="form-check-group" id="obstaculos-group">
+                  <label class="form-check-label" data-obstaculo-tipo="tuberia"><input type="checkbox" name="obstaculos" value="bridas" class="form-check-input"><span>Bridas</span></label>
+                  <label class="form-check-label" data-obstaculo-tipo="tuberia"><input type="checkbox" name="obstaculos" value="abrazadera" class="form-check-input"><span>Abrazadera de sellado</span></label>
+                  <label class="form-check-label" data-obstaculo-tipo="tuberia"><input type="checkbox" name="obstaculos" value="marco_h" class="form-check-input"><span>Marco H</span></label>
+                  <label class="form-check-label" data-obstaculo-tipo="ambos"><input type="checkbox" name="obstaculos" value="instrumentacion" class="form-check-input"><span>Instrumentación</span></label>
+                  <label class="form-check-label" data-obstaculo-tipo="ambos"><input type="checkbox" name="obstaculos" value="accesos" class="form-check-input"><span>Accesos</span></label>
+                  <label class="form-check-label" data-obstaculo-tipo="tuberia"><input type="checkbox" name="obstaculos" value="otro" class="form-check-input"><span>Otro</span></label>
+                </div>
+                <input type="text" class="form-control" id="obstaculos-distancia" name="obstaculos_distancia" placeholder="Distancia con respecto al defecto" style="margin-top: 10px;">
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-label">Producto que transporta o almacena</label>
+                <div class="form-check-group">
+                  <label class="form-check-label"><input type="checkbox" name="producto" value="crudo" class="form-check-input"><span>Crudo</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="producto" value="gas" class="form-check-input"><span>Gas</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="producto" value="refinado" class="form-check-input"><span>Refinado</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="producto" value="agua" class="form-check-input"><span>Agua</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="producto" value="intermedios" class="form-check-input"><span>Intermedios</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="producto" value="otro" class="form-check-input"><span>Otro</span></label>
+                </div>
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-label">Tipo de defecto</label>
+                <div class="form-check-group">
+                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="corrosion_interna" class="form-check-input"><span>Corrosión interna</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="corrosion_externa" class="form-check-input"><span>Corrosión externa</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="abolladura" class="form-check-input"><span>Abolladura</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="pitting" class="form-check-input"><span>Pitting</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="grieta" class="form-check-input"><span>Grieta</span></label>
+                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="otro" class="form-check-input"><span>Otro</span></label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-col-half">
+                  <label for="caract-defecto" class="form-label">Número de defectos</label>
+                  <input type="number" class="form-control" id="caract-defecto" name="caract_defecto">
+                </div>
+                <div class="form-col-half">
+                  <label for="caract-defecto" class="form-label">Caracterización del defecto (inch)</label>
+                  <input type="text" class="form-control" id="caract-defecto" name="caract_defecto" placeholder="ej. 50mm x 30mm x 3mm prof.">
+                </div>
+                <div class="form-col-half">
+                  <label for="perdida-espesor" class="form-label">Porcentaje de pérdida de espesor del defecto a reparar (%)</label>
+                  <input type="number" class="form-control" id="perdida-espesor" name="perdida_espesor" placeholder="ej. 45" min="0" max="100">
+                </div>
+                <div class="form-col-half">
+                  <label for="tiempo-aseguramiento" class="form-label">Tiempo mínimo requerido para aseguramiento del refuerzo (años)</label>
+                  <input type="number" class="form-control" id="tiempo-aseguramiento" name="tiempo_aseguramiento" placeholder="ej. 5" min="1">
+                </div>
+              </div>
+
+              <div class="form-field-group">
+                <label for="distancia-libre" class="form-label">Distancia libre entre la estructura y elementos circundantes (inch)</label>
+                <p>Indicar la distancia libre existente entre la estructura y los elementos circundantes, tales como el piso, muros, paredes u otras posibles restricciones físicas.</p>
+                <p class="form-hint"><strong>IMPORTANTE:</strong> Se requiere una distancia mínima de 20" para asegurar la preparación superficial y la aplicación de la fibra.</p>
+                <input type="text" class="form-control" id="distancia-libre" name="distancia_libre" placeholder='ej. 12" de distancia al piso'>
+              </div>
+
+            </div>
+
+            <div class="form-actions">
+              <button type="reset" class="btn-secondary-custom">Limpiar</button>
+              <button type="submit" class="btn-primary-custom">Enviar requerimiento</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const radios = document.querySelectorAll<HTMLInputElement>('input[name="estructura_tipo"]');
+  const grupos: Record<string, HTMLElement | null> = {
+    tuberia: document.getElementById('campos-tuberia'),
+    tanque:  document.getElementById('campos-tanque'),
+    otro:    document.getElementById('campos-otro'),
+  };
+
+  const configOpciones   = document.querySelectorAll<HTMLElement>('#config-seccion-group [data-config-tipo]');
+  const obstaculoOpciones = document.querySelectorAll<HTMLElement>('#obstaculos-group [data-obstaculo-tipo]');
+
+  function filtrarOpciones(opciones: NodeListOf<HTMLElement>, tipo: string, attrKey: string) {
+    opciones.forEach(label => {
+      const val     = (label.dataset as Record<string, string>)[attrKey];
+      const mostrar = val === 'ambos' || tipo === 'otro' || val === tipo;
+      label.style.display = mostrar ? '' : 'none';
+      const cb = label.querySelector<HTMLInputElement>('input');
+      if (cb) {
+        if (!mostrar) cb.checked = false;
+        cb.disabled = !mostrar;
+      }
+    });
+  }
+
+  function filtrarConfigSeccion(tipo: string) {
+    filtrarOpciones(configOpciones,   tipo, 'configTipo');
+    filtrarOpciones(obstaculoOpciones, tipo, 'obstaculoTipo');
+  }
+
+  const btnSubmit = document.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+  const tubUbicacionEl  = document.getElementById('campos-tuberia-ubicacion');
+  const catEl            = document.getElementById('campos-proteccion-catodica');
+  const radiosUbicacion  = document.querySelectorAll<HTMLInputElement>('input[name="tuberia_ubicacion"]');
+
+  function resetUbicacionTuberia() {
+    radiosUbicacion.forEach(r => { r.checked = false; r.disabled = true; });
+    if (catEl) {
+      catEl.style.display = 'none';
+      catEl.querySelectorAll<HTMLInputElement>('input').forEach(i => { i.checked = false; i.disabled = true; });
+    }
+  }
+
+  function mostrarCampos(tipo: string) {
+    Object.entries(grupos).forEach(([key, el]) => {
+      if (!el) return;
+      const visible = key === tipo;
+      el.style.display = visible ? (key === 'otro' ? 'block' : 'flex') : 'none';
+      el.querySelectorAll<HTMLInputElement>('input').forEach(input => {
+        input.disabled = !visible;
+      });
+    });
+    filtrarConfigSeccion(tipo);
+    if (btnSubmit) {
+      btnSubmit.disabled = tipo === 'otro';
+      btnSubmit.classList.toggle('btn-disabled', tipo === 'otro');
+    }
+    if (tubUbicacionEl) {
+      const esTuberia = tipo === 'tuberia';
+      tubUbicacionEl.style.display = esTuberia ? 'block' : 'none';
+      if (!esTuberia) resetUbicacionTuberia();
+      else radiosUbicacion.forEach(r => r.disabled = false);
+    }
+  }
+
+  radiosUbicacion.forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (!catEl) return;
+      const esEnterrada = radio.value === 'enterrada';
+      catEl.style.display = esEnterrada ? 'block' : 'none';
+      catEl.querySelectorAll<HTMLInputElement>('input').forEach(i => {
+        i.disabled = !esEnterrada;
+        if (!esEnterrada) i.checked = false;
+      });
+    });
+  });
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => mostrarCampos(radio.value));
+  });
+</script>

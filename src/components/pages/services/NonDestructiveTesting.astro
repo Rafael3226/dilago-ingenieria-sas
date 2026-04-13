@@ -1,0 +1,51 @@
+---
+import ImageZoom from "../../basic/ImageZoom.astro";
+import Separator from "../../basic/Separator.astro";
+import TextList from "../../basic/TextList.astro";
+import Section from "../../basic/Section.astro";
+import Title from "../../basic/Title.astro";
+
+import NDTImg from "../../../assets/img/services/end.jpg";
+import ObjectList from "../../basic/ObjectList.astro";
+
+const ndtData = {
+  id: "section-services-nondestructive-testing",
+  title: "Ensayos no destructivos",
+  description: [
+    "Se denomina ensayo no destructivo a cualquier tipo de prueba practicada a un material que no altere de forma permanente sus propiedades físicas, químicas, mecánicas o dimensionales. Los ensayos no destructivos implican un daño imperceptible o nulo.",
+    "Se denomina así a toda prueba que se realice sobre un material sin afectarlo metalúrgicamente, se realizan con el fin de determinar el estado geométrico, mecánico o químico de la pieza para verificar si cumple con los estándares de calidad de su código de fabricación o para detectar discontinuidades que puedan resultar en defectos.",
+  ],
+  image: NDTImg, // Replace with the actual image source
+  imageAlt: "Imagen de ensayos no destructivos",
+  methods: {
+    "Inspección visual":
+      "Permite observar salpicaduras, existencia de cenizas, distorsiones por excesivo calentamiento, grietas. Es adecuada para todos los materiales.",
+    "Líquidos Penetrantes":
+      "Consiste en aplicar un líquido coloreado o fluorescente a la superficie en estudio, el cual penetra en cualquier discontinuidad que pudiera existir debido al fenómeno de capilaridad. Después de un determinado tiempo se remueve el exceso de líquido y se aplica un revelador, el cual absorbe el líquido que ha penetrado en las discontinuidades y sobre la capa del revelador se delinea el contorno de éstas.",
+    "Partículas Magnéticas":
+      " Es un método de prueba no destructivo para la detección de imperfecciones sobre o justamente debajo de la superficie de metales ferrosos que también se puede aplicar en soldadura. Es una técnica rápida y confiable para detección y localización de grietas superficiales.",
+    "Ultrasonido Scan A/B/C":
+      " El ensayo ultrasónico se basa en el fenómeno de reflexión de ondas acústicas cuando encuentran obstáculos a su propagación. La onda será reflejada retornando hasta su fuente generadora, si el obstáculo está en una posición normal en relación al haz incidente.",
+    "Ultrasonido convencional y Phased Array":
+      " La tecnología phased array utiliza elementos de ultrasonidos múltiples y retardos electrónicos para crear haces que se pueden dirigir, escanear, barrer y enfocar electrónicamente para lograr inspecciones rápidas, almacenamientos completos de datos e inspecciones con ángulos múltiples. La tecnología phased array permite obtener mediciones precisas y resultados más confiables.",
+  },
+};
+---
+
+<Section id={ndtData.id} className="py-2">
+  <Separator slot="separator">{ndtData.title}</Separator>
+  <div slot="left">
+    <div class="p-t-20">
+      <TextList items={ndtData.description} />
+    </div>
+    <div class="p-t-20">
+      <ObjectList object={ndtData.methods} inline={true} />
+    </div>
+  </div>
+
+  <div slot="right">
+    <div class="hov-img-zoom bo-rad-10 m-b-30">
+      <ImageZoom src={ndtData.image} alt={ndtData.imageAlt} />
+    </div>
+  </div>
+</Section>

@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+let { src, alt = "", id = "", className = "" } = Astro.props;
+---
+
+{
+  src && (
+    <div
+      class={`bo-rad-10 hov-img-zoom m-l-r-auto ${className}`}
+      style="max-height: 500px; overflow: hidden;"
+    >
+      <div style="width: auto; height: 100%;">
+        <Image
+          src={src}
+          id={`${id}-img`}
+          alt={`IMAGEN: ${alt}`}
+          style="height:100%; width auto;"
+        />
+      </div>
+    </div>
+  )
+}

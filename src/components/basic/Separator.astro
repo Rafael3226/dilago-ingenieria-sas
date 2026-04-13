@@ -1,0 +1,12 @@
+---
+import DefaultImage from "../../assets/img/bg-refinery-01.jpg";
+let { img } = Astro.props;
+img = img?.src || DefaultImage.src;
+---
+
+<div
+  class="header-intro parallax100 t-center p-t-135 p-b-158"
+  style={`background-image: url(${img})`}
+>
+  <h3 class="tit4 t-center p-l-15 p-r-15 p-t-3"><slot /></h3>
+</div>

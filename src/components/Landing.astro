@@ -1,0 +1,27 @@
+---
+import BackgroundImg from "../assets/img/refinery.jpg";
+let { img } = Astro.props;
+img = img?.src || BackgroundImg.src;
+---
+
+<section
+  id="section-home"
+  class="slider-element slider-parallax dark min-vh-100 include-header slider-parallax-visible"
+  style="margin-top: -71px"
+>
+  <div
+    class="slider-inner landing-height d-flex align-items-center"
+    style={`background-image: url(${img});
+        background-size: cover;
+        background-position: center center;`}
+  >
+    <slot />
+    <div class="video-wrap">
+      <div class="video-overlay" style="background-color: rgba(0, 0, 0, 0.55);">
+      </div>
+    </div>
+    <a href="#content" class="one-page-arrow dark"
+      ><i class="bi-chevron-down infinite animated fadeInDown"></i></a
+    >
+  </div>
+</section>

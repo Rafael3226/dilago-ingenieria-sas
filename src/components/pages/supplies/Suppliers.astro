@@ -1,0 +1,33 @@
+---
+import Separator from "../../basic/Separator.astro";
+import Carousel from "../../basic/Carousel.astro";
+
+import ApolloLogo from "../../../assets/img/suppliers/apollo.jpg";
+import BoteliLogo from "../../../assets/img/suppliers/boteli.jpg";
+import CraneLogo from "../../../assets/img/suppliers/crane.jpg";
+import EmersonLogo from "../../../assets/img/suppliers/emerson.png";
+import NewayLogo from "../../../assets/img/suppliers/neway.jpg";
+import SimensLogo from "../../../assets/img/suppliers/simens.png";
+import WalworthLogo from "../../../assets/img/suppliers/walworth.png";
+import YDFLogo from "../../../assets/img/suppliers/ydf.jpg";
+
+const images = [
+  ApolloLogo,
+  BoteliLogo,
+  CraneLogo,
+  EmersonLogo,
+  NewayLogo,
+  SimensLogo,
+  WalworthLogo,
+  YDFLogo,
+];
+---
+
+<section id="section-clients">
+  <Separator>Proveedores</Separator>
+  <Carousel
+    className="owl-carousel-certificates"
+    images={images}
+    alt="Proveedores"
+  />
+</section>

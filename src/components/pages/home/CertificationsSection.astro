@@ -1,0 +1,20 @@
+---
+import Separator from "../../basic/Separator.astro";
+import Carousel from "../../basic/Carousel.astro";
+
+import RucAndCcsImg from "../../../assets/img/certificades/CCS_y_RUC.png";
+import Iso14001Img from "../../../assets/img/certificades/ISO-14001.png";
+import Iso9001Img from "../../../assets/img/certificades/ISO-9001.png";
+import Iso45001Img from "../../../assets/img/certificades/ISO-45001.jpg";
+
+const images = [Iso14001Img, Iso9001Img, Iso45001Img, RucAndCcsImg];
+---
+
+<section id="section-certificates">
+  <Separator>Certificaciones</Separator>
+  <Carousel
+    className="owl-carousel-certificates"
+    images={images}
+    alt="Certificaciones"
+  />
+</section>

@@ -1,0 +1,24 @@
+---
+import Section from "../../../basic/Section.astro";
+import Separator from "../../../basic/Separator.astro";
+import ContactForm from "./ContactForm.astro";
+---
+
+<Section id="section-contact">
+  <Separator slot="separator">Envia un Mensaje</Separator>
+  <div slot="bottom" class="container d-flex justify-content-center">
+    <div class="col-lg-6 px-5">
+      <ContactForm />
+    </div>
+    <div class="col-lg-6 px-5">
+      <div>
+        <iframe
+          class="bo-rad-10"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5855353344195!2d-73.85118218884627!3d7.057888092915102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e42ecae97075bf7%3A0x7fc32d9b2d2fe560!2sDilago%20Ingeniería%20Sas!5e0!3m2!1sen!2sco!4v1696885880695!5m2!1sen!2sco"
+          height="350"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</Section>

@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Landing from "../components/Landing.astro";
+import TitleXL from "../components/basic/TitleXL.astro";
+import BussinesSection from "../components/pages/home/BussinesSection.astro";
+import ExperienceSection from "../components/pages/home/ExperienceSection.astro";
+import ClientsSection from "../components/pages/home/ClientsSection.astro";
+import ContactSection from "../components/pages/home/ContactSection";
+import HistorySection from "../components/pages/home/HistorySection.astro";
+
+import RefineryImg from "../assets/img/refinery.jpg";
+import AnchorButton from "../components/basic/AnchorButton.astro";
+
+import { corporative as brochure } from "../constants/brochures.js";
+import CertificationsSection from "../components/pages/home/CertificationsSection.astro";
+import { Suppliers } from "../components/pages/supplies";
+
+const title = "Bienvenidos.";
+---
+
+<Layout>
+  <Landing img={RefineryImg}>
+    <TitleXL>
+      {title}
+      <AnchorButton
+        slot="button"
+        className="button-light"
+        href={brochure.href}
+        download={brochure.name}
+      >
+        {brochure.title}
+      </AnchorButton>
+    </TitleXL>
+  </Landing>
+  <section id="content">
+    <div class="content-wrap py-0">
+      <BussinesSection />
+      <ExperienceSection />
+      <HistorySection />
+      <ClientsSection />
+      <Suppliers />
+      <CertificationsSection />
+      <ContactSection />
+    </div>
+  </section>
+</Layout>

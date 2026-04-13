@@ -1,0 +1,40 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import WhatsappIcon from "../components/WhatsappIcon.astro";
+
+import "../assets/css/style.css";
+import "../assets/css/new.css";
+
+import IconImg from "../assets/img/icon.png";
+---
+
+<html dir="ltr" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="author" content="" />
+    <meta name="description" content="Dilago Ingeniería pagina web" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href={IconImg.src} />
+    <title>Dilago Ingeniería</title>
+  </head>
+  <body class="stretched">
+    <div id="wrapper">
+      <Header />
+      <slot />
+      <WhatsappIcon />
+      <Footer />
+    </div>
+    <script is:inline src="/js/functions.bundle.js"></script>
+    <script is:inline src="/js/clients-carousel.js"></script>
+    <script is:inline src="/js/nav-background.js"></script>
+    <script is:inline src="https://code.jquery.com/jquery-3.6.4.min.js"
+    ></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"
+    ></script>
+  </body>
+</html>

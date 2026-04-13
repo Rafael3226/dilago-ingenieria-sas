@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import LogoDark from "../assets/img/logo-transparent.png";
+---
+
+<header id="header" class="transparent-header dark">
+  <div id="header-wrap">
+    <div class="container">
+      <div class="header-row">
+        <div id="logo">
+          <a href="/">
+            <Image
+              class="logo-dark"
+              src={LogoDark}
+              alt="Dilago Logo"
+              style={{
+                width: "auto",
+                height: "70px",
+              }}
+            />
+          </a>
+        </div>
+        <div class="primary-menu-trigger">
+          <button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+            <span class="cnvs-hamburger-box"
+              ><span class="cnvs-hamburger-inner"></span></span
+            >
+          </button>
+        </div>
+
+        <nav class="primary-menu">
+          <ul class="one-page-menu menu-container">
+            <li class="menu-item">
+              <a href="/#section-home" class="menu-link">
+                <div>Inicio</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="/#section-bussines" class="menu-link"
+                ><div>Lineas de negocio</div></a
+              >
+            </li>
+            <li class="menu-item">
+              <a href="/#section-history" class="menu-link"
+                ><div>Historia</div></a
+              >
+            </li>
+            <li class="menu-item">
+              <a href="/#section-experience" class="menu-link"
+                ><div>Experiencia</div></a
+              >
+            </li>
+            <li class="menu-item">
+              <a href="/#section-clients" class="menu-link"
+                ><div>Clientes</div></a
+              >
+            </li>
+            <li class="menu-item">
+              <a href="/#section-contact" class="menu-link"
+                ><div>Contacto</div></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

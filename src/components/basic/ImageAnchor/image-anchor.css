@@ -1,0 +1,30 @@
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-overlay-text {
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 24px;
+  transform: scale(0.8);
+  transition: transform 0.5s;
+}
+
+.a-image:hover .image-overlay {
+  opacity: 1;
+}
+
+.a-image:hover .image-overlay-text {
+  transform: scale(1);
+}

@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Landing from "../components/Landing.astro";
+import TitleXL from "../components/basic/TitleXL.astro";
+import NewTechImg from "../assets/img/new_tech_banner.jpeg";
+import Section from "../components/basic/Section.astro";
+
+import {
+  ValveSensors,
+  NonMetallicReinforcement,
+  CorrosionCoating,
+} from "../components/pages/new-technologies";
+---
+
+<Layout>
+  <Landing img={NewTechImg}>
+    <TitleXL>Nuevas Tecnologías.</TitleXL>
+  </Landing>
+  <section id="content">
+    <div class="content-wrap py-0">
+      <Section id="new-tech-intro">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center p-5">
+              <p class="lead">
+                Explorando el futuro con soluciones innovadoras.
+              </p>
+              <p>
+                En Dilago Ingeniería SAS, estamos comprometidos con la
+                implementación de las últimas tecnologías para optimizar
+                procesos y garantizar la seguridad en todas nuestras
+                operaciones.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <ValveSensors />
+      <NonMetallicReinforcement />
+      <CorrosionCoating />
+    </div>
+  </section>
+</Layout>

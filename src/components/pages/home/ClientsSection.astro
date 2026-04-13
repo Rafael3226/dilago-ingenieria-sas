@@ -1,0 +1,43 @@
+---
+import Separator from "../../basic/Separator.astro";
+import Carousel from "../../basic/Carousel.astro";
+
+import vantiImg from "../../../assets/img/clients/vanti.jpeg";
+import CONCREMACKImg from "../../../assets/img/clients/CONCREMACK.jpg";
+import ecopetrolImg from "../../../assets/img/clients/logo-ecopetrol-1.png";
+import DISCONImg from "../../../assets/img/clients/DISCON.jpg";
+import emporioImg from "../../../assets/img/clients/emporio.jpg";
+import metalparImg from "../../../assets/img/clients/metalpar.jpg";
+import confipetrolImg from "../../../assets/img/clients/confipetrol.png";
+import idomImg from "../../../assets/img/clients/idom.png";
+import INDEQImg from "../../../assets/img/clients/INDEQ.png";
+import jeImg from "../../../assets/img/clients/je-jaimes.png";
+import PAVIANDIImg from "../../../assets/img/clients/PAVIANDI.png";
+import profesionalesImg from "../../../assets/img/clients/profesionales.png";
+import tuscanyImg from "../../../assets/img/clients/tuscany.png";
+
+const images = [
+  vantiImg,
+  CONCREMACKImg,
+  ecopetrolImg,
+  DISCONImg,
+  emporioImg,
+  metalparImg,
+  confipetrolImg,
+  idomImg,
+  INDEQImg,
+  jeImg,
+  PAVIANDIImg,
+  profesionalesImg,
+  tuscanyImg,
+];
+---
+
+<section id="section-clients">
+  <Separator>Clientes</Separator>
+  <Carousel
+    className="owl-carousel-certificates"
+    images={images}
+    alt="Clientes"
+  />
+</section>

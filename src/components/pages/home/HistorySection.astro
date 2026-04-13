@@ -1,0 +1,41 @@
+---
+import HistoryImg from "../../../assets/img/historia.jpg";
+import ImageZoom from "../../basic/ImageZoom.astro";
+import Paragraph from "../../basic/Paragraph.astro";
+import Section from "../../basic/Section.astro";
+import Separator from "../../basic/Separator.astro";
+import Title from "../../basic/Title.astro";
+
+const id = "section-history";
+const title = "Historia";
+
+const paragraphs = [
+  "Dilago ingeniería nace en el año 2015 en Barrancabermeja inicialmente con el objetivo de cubrir la demanda local y regional en capacitaciones técnicas para el sector energético, actualmente y debido al crecimiento corporativo decide expandir su alcance a tres líneas de negocios; capacitaciones técnicas, suministros y servicios.",
+  "Dentro de sus áreas se puede evidenciar experiencia en diseño e inspección de sistemas de protección catódica, calificación de procedimientos de soldadura y soldadores, Ensayos no destructivos a equipo estático y rotativo, elaboración de estudios de QRA, Pruebas hidrostáticas, Suministro de materiales mecánicos, eléctricos y electrónicos y calificación técnica de personal.",
+  "En Dilago ingeniería sas su principal objetivo es alcanzar la satisfacción del cliente de una manera eficiente y ética, cumpliendo las regulaciones gubernamentales y normativas que se requieran.",
+];
+const href = "./about";
+---
+
+<Section id={id}>
+  <Separator slot="separator">{title}</Separator>
+  <div slot="left" class="d-flex flex-column gap-3">
+    <Paragraph>{paragraphs[0]}</Paragraph>
+    <Paragraph>{paragraphs[1]}</Paragraph>
+  </div>
+  <ImageZoom
+    slot="right"
+    src={HistoryImg}
+    alt="Nuestra historia imagen."
+    style="max-width:50px;"
+  />
+  <div slot="bottom" class="p-t-25">
+    <Paragraph>{paragraphs[2]}</Paragraph>
+    <div class="text-center p-3">
+      <a href={href} class="txt4">
+        VER MAS
+        <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</Section>

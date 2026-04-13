@@ -1,0 +1,23 @@
+---
+import Landing from "../components/Landing.astro";
+import Politicas from "../components/pages/about/Politicas.astro";
+import Layout from "../layouts/Layout.astro";
+
+import HistoryImg from "../assets/img/historia.jpg";
+import MisionVision from "../components/pages/about/MisionVision.astro";
+import TitleXL from "../components/basic/TitleXL.astro";
+
+const title = "Nuestra Historia.";
+---
+
+<Layout>
+  <Landing img={HistoryImg}>
+    <TitleXL>{title}</TitleXL>
+  </Landing>
+  <section id="content">
+    <div class="content-wrap py-0">
+      <MisionVision />
+      <Politicas />
+    </div>
+  </section>
+</Layout>

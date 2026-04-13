@@ -1,0 +1,53 @@
+---
+import Separator from "../../basic/Separator.astro";
+import Card from "../../basic/Card.astro";
+import TrainingImg from "../../../assets/img/training-01.jpg";
+import ServicesImg from "../../../assets/img/services-01.jpeg";
+import SuppliesImg from "../../../assets/img/supplies-01.jpeg";
+import NewTechImg from "../../../assets/img/services-02.jpeg";
+import Title from "../../basic/Title.astro";
+import Section from "../../basic/Section.astro";
+
+const title = "Lineas de Negocio";
+const sections = [
+  {
+    title: "Suministros",
+    text: "Ofrecemos una variedad de suministros que incluyen materiales y accesorios mecánicos, así como instrumentacion y equipo electrónico.",
+    img: SuppliesImg,
+    alt: "Suministros",
+    href: "/supplies",
+  },
+  {
+    title: "Servicios",
+    text: "Ofrecemos una amplia gama de servicios que cumplen con los estándares y códigos de la industria, garantizando la calidad y seguridad de los proyectos.",
+    img: ServicesImg,
+    alt: "Servicios",
+    href: "/services",
+  },
+  {
+    title: "Nuevas Tecnologías",
+    text: "En la era digital actual, las tecnologías de monitoreo inalambrico o remoto, han revolucionado diversas industrias al proporcionar soluciones eficientes y precisas para supervisar procesos, activos y entornos desde cualquier ubicación. Estas innovaciones no solo mejoran la eficiencia operativa, sino que también permiten una respuesta más rápida y efectiva ante situaciones críticas.",
+    img: NewTechImg,
+    alt: "Nuevas Tecnologías",
+    href: "/new-technologies",
+  },
+];
+
+const className = "col-md-4 p-t-30";
+---
+
+<Section id="section-bussines">
+  <Title slot="title">{title}</Title>
+  <div slot="bottom" class="content-intro">
+    <div class="container">
+      <div class="row">
+        {
+          sections.map((d) => {
+            const props = { ...d, className };
+            return <Card {...props} />;
+          })
+        }
+      </div>
+    </div>
+  </div>
+</Section>

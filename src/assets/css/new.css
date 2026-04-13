@@ -1,0 +1,14 @@
+/*[ OWL CAROUSEL ]
+///////////////////////////////////////////////////////////
+*/
+
+.owl-stage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.carousel-img {
+  max-height: 200px;
+  height: auto;
+  object-fit: contain;
+}
