@@ -219,6 +219,78 @@
   transform: none;
 }
 
+/* Lista de defectos */
+.defectos-lista {
+  margin: 20px 0;
+}
+.defecto-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+.defecto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.defecto-header strong {
+  color: var(--cnvs-themecolor);
+  font-size: 14px;
+}
+.btn-eliminar-defecto {
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+.btn-eliminar-defecto:hover {
+  color: #b91c1c;
+}
+.defecto-detalles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 12px;
+  color: #64748b;
+}
+.defecto-detalles span {
+  background: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Botón agregar defecto */
+#btn-agregar-defecto {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1.5px dashed var(--cnvs-themecolor);
+  color: var(--cnvs-themecolor);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#btn-agregar-defecto:hover {
+  background: var(--cnvs-themecolor);
+  color: #fff;
+}
+#btn-agregar-defecto span {
+  font-size: 18px;
+  font-weight: 400;
+}
+
 /* Actions */
 .form-actions {
   display: flex;

@@ -251,10 +251,6 @@ import "../assets/css/dashboard.css";
 
               <div class="form-row">
                 <div class="form-col-half">
-                  <label for="caract-defecto" class="form-label">Número de defectos</label>
-                  <input type="number" class="form-control" id="caract-defecto" name="caract_defecto">
-                </div>
-                <div class="form-col-half">
                   <label for="caract-defecto" class="form-label">Caracterización del defecto (inch)</label>
                   <input type="text" class="form-control" id="caract-defecto" name="caract_defecto" placeholder="ej. 50mm x 30mm x 3mm prof.">
                 </div>
@@ -273,6 +269,16 @@ import "../assets/css/dashboard.css";
                 <p>Indicar la distancia libre existente entre la estructura y los elementos circundantes, tales como el piso, muros, paredes u otras posibles restricciones físicas.</p>
                 <p class="form-hint"><strong>IMPORTANTE:</strong> Se requiere una distancia mínima de 20" para asegurar la preparación superficial y la aplicación de la fibra.</p>
                 <input type="text" class="form-control" id="distancia-libre" name="distancia_libre" placeholder='ej. 12" de distancia al piso'>
+              </div>
+
+              <input type="hidden" id="defectos-json" name="defectos_json" value="[]">
+
+              <div id="lista-defectos" class="defectos-lista"></div>
+
+              <div class="form-field-group" style="margin-top: 20px;">
+                <button type="button" id="btn-agregar-defecto" class="btn-secondary-custom">
+                  <span>+</span> Agregar otro defecto
+                </button>
               </div>
 
             </div>
@@ -370,4 +376,100 @@ import "../assets/css/dashboard.css";
   radios.forEach(radio => {
     radio.addEventListener('change', () => mostrarCampos(radio.value));
   });
+
+  const btnAgregarDefecto = document.getElementById('btn-agregar-defecto');
+  const listaDefectosEl   = document.getElementById('lista-defectos');
+  const defectosJsonInput = document.getElementById('defectos-json') as HTMLInputElement;
+  const seccion04         = document.querySelector('.form-section:nth-of-type(2)') as HTMLElement;
+
+  let defectos: Array<Record<string, unknown>> = [];
+
+  function obtenerValoresSeccion04(): Record<string, unknown> {
+    const data: Record<string, unknown> = {};
+
+    const configSeccion = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="config_seccion"]:checked')).map(cb => cb.value);
+    data.configuracion = configSeccion;
+
+    const ubicacionDefecto = document.querySelector<HTMLInputElement>('input[name="ubicacion_defecto"]:checked');
+    data.ubicacion_defecto = ubicacionDefecto?.value || '';
+
+    const obstaculos = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="obstaculos"]:checked')).map(cb => cb.value);
+    data.obstaculos = obstaculos;
+    data.obstaculos_distancia = (document.getElementById('obstaculos-distancia') as HTMLInputElement)?.value || '';
+
+    const productos = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="producto"]:checked')).map(cb => cb.value);
+    data.producto = productos;
+
+    const tipoDefecto = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="tipo_defecto"]:checked')).map(cb => cb.value);
+    data.tipo_defecto = tipoDefecto;
+
+    data.caracterizacion = (document.getElementById('caract-defecto') as HTMLInputElement)?.value || '';
+    data.perdida_espesor = (document.getElementById('perdida-espesor') as HTMLInputElement)?.value || '';
+    data.tiempo_aseguramiento = (document.getElementById('tiempo-aseguramiento') as HTMLInputElement)?.value || '';
+    data.distancia_libre = (document.getElementById('distancia-libre') as HTMLInputElement)?.value || '';
+
+    return data;
+  }
+
+  function limpiarSeccion04() {
+    document.querySelectorAll<HTMLInputElement>('input[name="config_seccion"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll<HTMLInputElement>('input[name="ubicacion_defecto"]').forEach(r => r.checked = false);
+    document.querySelectorAll<HTMLInputElement>('input[name="obstaculos"]').forEach(cb => cb.checked = false);
+    (document.getElementById('obstaculos-distancia') as HTMLInputElement).value = '';
+    document.querySelectorAll<HTMLInputElement>('input[name="producto"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll<HTMLInputElement>('input[name="tipo_defecto"]').forEach(cb => cb.checked = false);
+    (document.getElementById('caract-defecto') as HTMLInputElement).value = '';
+    (document.getElementById('perdida-espesor') as HTMLInputElement).value = '';
+    (document.getElementById('tiempo-aseguramiento') as HTMLInputElement).value = '';
+    (document.getElementById('distancia-libre') as HTMLInputElement).value = '';
+  }
+
+  function renderizarListaDefectos() {
+    if (!listaDefectosEl) return;
+    listaDefectosEl.innerHTML = '';
+
+    defectos.forEach((defecto, index) => {
+      const item = document.createElement('div');
+      item.className = 'defecto-item';
+      item.innerHTML = `
+        <div class="defecto-header">
+          <strong>Defecto #${index + 1}</strong>
+          <button type="button" class="btn-eliminar-defecto" data-index="${index}">×</button>
+        </div>
+        <div class="defecto-detalles">
+          <span>Config: ${Array.isArray(defecto.configuracion) ? defecto.configuracion.join(', ') : defecto.configuracion}</span>
+          <span>Ubicación: ${defecto.ubicacion_defecto}</span>
+          <span>Tipo: ${Array.isArray(defecto.tipo_defecto) ? defecto.tipo_defecto.join(', ') : defecto.tipo_defecto}</span>
+          <span>Caracterización: ${defecto.caracterizacion}</span>
+        </div>
+      `;
+      listaDefectosEl.appendChild(item);
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('.btn-eliminar-defecto').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = parseInt((e.currentTarget as HTMLButtonElement).dataset.index || '0');
+        defectos.splice(idx, 1);
+        renderizarListaDefectos();
+        if (defectosJsonInput) defectosJsonInput.value = JSON.stringify(defectos);
+      });
+    });
+  }
+
+  if (btnAgregarDefecto) {
+    btnAgregarDefecto.addEventListener('click', () => {
+      const datos = obtenerValoresSeccion04();
+
+      const tieneDatos = (Array.isArray(datos.configuracion) && datos.configuracion.length > 0) || datos.ubicacion_defecto || (Array.isArray(datos.tipo_defecto) && datos.tipo_defecto.length > 0) || datos.caracterizacion;
+      if (!tieneDatos) {
+        alert('Por favor complete al menos un campo de la sección "Datos de la reparación" antes de agregar.');
+        return;
+      }
+
+      defectos.push(datos);
+      if (defectosJsonInput) defectosJsonInput.value = JSON.stringify(defectos);
+      renderizarListaDefectos();
+      limpiarSeccion04();
+    });
+  }
 </script>
