@@ -193,14 +193,14 @@ import "../assets/css/dashboard.css";
               <div class="form-field-group">
                 <label class="form-label">Configuración de la sección a reparar</label>
                 <div class="form-check-group" id="config-seccion-group">
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="recta" class="form-check-input"><span>Recta</span></label>
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="codo" class="form-check-input"><span>Codo</span></label>
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="t" class="form-check-input"><span>T</span></label>
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="y" class="form-check-input"><span>Y</span></label>
-                  <label class="form-check-label" data-config-tipo="tanque"><input type="checkbox" name="config_seccion" value="pared" class="form-check-input"><span>Pared</span></label>
-                  <label class="form-check-label" data-config-tipo="tanque"><input type="checkbox" name="config_seccion" value="piso" class="form-check-input"><span>Piso</span></label>
-                  <label class="form-check-label" data-config-tipo="tanque"><input type="checkbox" name="config_seccion" value="techo" class="form-check-input"><span>Techo</span></label>
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="otro" class="form-check-input"><span>Otro</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="recta" class="form-check-input"><span>Recta</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="codo" class="form-check-input"><span>Codo</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="t" class="form-check-input"><span>T</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="y" class="form-check-input"><span>Y</span></label>
+                  <label class="form-check-label" data-config-tipo="tanque"><input type="radio" name="config_seccion" value="pared" class="form-check-input"><span>Pared</span></label>
+                  <label class="form-check-label" data-config-tipo="tanque"><input type="radio" name="config_seccion" value="piso" class="form-check-input"><span>Piso</span></label>
+                  <label class="form-check-label" data-config-tipo="tanque"><input type="radio" name="config_seccion" value="techo" class="form-check-input"><span>Techo</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="otro" class="form-check-input"><span>Otro</span></label>
                 </div>
               </div>
 
@@ -228,24 +228,24 @@ import "../assets/css/dashboard.css";
               <div class="form-field-group">
                 <label class="form-label">Producto que transporta o almacena</label>
                 <div class="form-check-group">
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="crudo" class="form-check-input"><span>Crudo</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="gas" class="form-check-input"><span>Gas</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="refinado" class="form-check-input"><span>Refinado</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="agua" class="form-check-input"><span>Agua</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="intermedios" class="form-check-input"><span>Intermedios</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="otro" class="form-check-input"><span>Otro</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="crudo" class="form-check-input"><span>Crudo</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="gas" class="form-check-input"><span>Gas</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="refinado" class="form-check-input"><span>Refinado</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="agua" class="form-check-input"><span>Agua</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="intermedios" class="form-check-input"><span>Intermedios</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="otro" class="form-check-input"><span>Otro</span></label>
                 </div>
               </div>
 
               <div class="form-field-group">
                 <label class="form-label">Tipo de defecto</label>
                 <div class="form-check-group">
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="corrosion_interna" class="form-check-input"><span>Corrosión interna</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="corrosion_externa" class="form-check-input"><span>Corrosión externa</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="abolladura" class="form-check-input"><span>Abolladura</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="pitting" class="form-check-input"><span>Pitting</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="grieta" class="form-check-input"><span>Grieta</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="otro" class="form-check-input"><span>Otro</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="corrosion_interna" class="form-check-input"><span>Corrosión interna</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="corrosion_externa" class="form-check-input"><span>Corrosión externa</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="abolladura" class="form-check-input"><span>Abolladura</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="pitting" class="form-check-input"><span>Pitting</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="grieta" class="form-check-input"><span>Grieta</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="otro" class="form-check-input"><span>Otro</span></label>
                 </div>
               </div>
 
@@ -387,8 +387,8 @@ import "../assets/css/dashboard.css";
   function obtenerValoresSeccion04(): Record<string, unknown> {
     const data: Record<string, unknown> = {};
 
-    const configSeccion = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="config_seccion"]:checked')).map(cb => cb.value);
-    data.configuracion = configSeccion;
+    const configSeccion = document.querySelector<HTMLInputElement>('input[name="config_seccion"]:checked');
+    data.configuracion = configSeccion?.value || '';
 
     const ubicacionDefecto = document.querySelector<HTMLInputElement>('input[name="ubicacion_defecto"]:checked');
     data.ubicacion_defecto = ubicacionDefecto?.value || '';
@@ -397,11 +397,11 @@ import "../assets/css/dashboard.css";
     data.obstaculos = obstaculos;
     data.obstaculos_distancia = (document.getElementById('obstaculos-distancia') as HTMLInputElement)?.value || '';
 
-    const productos = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="producto"]:checked')).map(cb => cb.value);
-    data.producto = productos;
+    const producto = document.querySelector<HTMLInputElement>('input[name="producto"]:checked');
+    data.producto = producto?.value || '';
 
-    const tipoDefecto = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="tipo_defecto"]:checked')).map(cb => cb.value);
-    data.tipo_defecto = tipoDefecto;
+    const tipoDefecto = document.querySelector<HTMLInputElement>('input[name="tipo_defecto"]:checked');
+    data.tipo_defecto = tipoDefecto?.value || '';
 
     data.caracterizacion = (document.getElementById('caract-defecto') as HTMLInputElement)?.value || '';
     data.perdida_espesor = (document.getElementById('perdida-espesor') as HTMLInputElement)?.value || '';
@@ -437,9 +437,9 @@ import "../assets/css/dashboard.css";
           <button type="button" class="btn-eliminar-defecto" data-index="${index}">×</button>
         </div>
         <div class="defecto-detalles">
-          <span>Config: ${Array.isArray(defecto.configuracion) ? defecto.configuracion.join(', ') : defecto.configuracion}</span>
-          <span>Ubicación: ${defecto.ubicacion_defecto}</span>
-          <span>Tipo: ${Array.isArray(defecto.tipo_defecto) ? defecto.tipo_defecto.join(', ') : defecto.tipo_defecto}</span>
+          <span>Config: ${defecto.configuracion || '-'}</span>
+          <span>Ubicación: ${defecto.ubicacion_defecto || '-'}</span>
+          <span>Tipo: ${defecto.tipo_defecto || '-'}</span>
           <span>Caracterización: ${defecto.caracterizacion}</span>
         </div>
       `;
@@ -460,7 +460,7 @@ import "../assets/css/dashboard.css";
     btnAgregarDefecto.addEventListener('click', () => {
       const datos = obtenerValoresSeccion04();
 
-      const tieneDatos = (Array.isArray(datos.configuracion) && datos.configuracion.length > 0) || datos.ubicacion_defecto || (Array.isArray(datos.tipo_defecto) && datos.tipo_defecto.length > 0) || datos.caracterizacion;
+      const tieneDatos = datos.configuracion || datos.ubicacion_defecto || datos.tipo_defecto || datos.caracterizacion;
       if (!tieneDatos) {
         alert('Por favor complete al menos un campo de la sección "Datos de la reparación" antes de agregar.');
         return;
