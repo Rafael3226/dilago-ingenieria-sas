@@ -14,15 +14,15 @@ export const POST: APIRoute = async ({ request }) => {
     console.log("Datos para email:", JSON.stringify(data, null, 2));
 
     // Verificar variables de entorno
-    const sendGridApiKey = import.meta.env.SENDGRID_API_KEY;
+    const resendApiKey = import.meta.env.RESEND_API_KEY;
     const emailDestino = import.meta.env.EMAIL_DESTINO;
     
     console.log("Config email:", {
-      hasApiKey: !!sendGridApiKey,
+      hasApiKey: !!resendApiKey,
       emailDestino: emailDestino
     });
 
-    if (!sendGridApiKey || !emailDestino) {
+    if (!resendApiKey || !emailDestino) {
       return new Response(
         JSON.stringify({ error: "Faltan variables de entorno para email" }),
         { status: 500, headers: { "Content-Type": "application/json" } }
@@ -32,41 +32,34 @@ export const POST: APIRoute = async ({ request }) => {
     // Formatear el contenido del correo
     const htmlContent = generarHTMLCorreo(data);
 
-    // Enviar correo usando SendGrid API
-    const response = await fetch("https://api.sendgrid.com/v3/mail/send", {
+    // Enviar correo usando Resend API
+    const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${sendGridApiKey}`,
+        "Authorization": `Bearer ${resendApiKey}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        personalizations: [{
-          to: [{ email: emailDestino }],
-          subject: `Nueva Solicitud de Reparación - ${data.empresa}`
-        }],
-        from: { 
-          email: "noreply@dilago.com",
-          name: "Sistema de Solicitudes Dilago"
-        },
-        content: [{
-          type: "text/html",
-          value: htmlContent
-        }]
+        from: "Sistema de Solicitudes Dilago <noreply@dilago.com>",
+        to: [emailDestino],
+        subject: `Nueva Solicitud de Reparación - ${data.empresa}`,
+        html: htmlContent
       })
     });
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Error SendGrid:", errorText);
+      console.error("Error Resend:", errorText);
       return new Response(
         JSON.stringify({ error: "Error enviando correo", details: errorText }),
         { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
 
-    console.log("Correo enviado exitosamente");
+    const result = await response.json();
+    console.log("Correo enviado exitosamente:", result);
     return new Response(
-      JSON.stringify({ success: true, message: "Correo enviado" }),
+      JSON.stringify({ success: true, message: "Correo enviado", id: result.id }),
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
 
