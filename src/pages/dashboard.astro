@@ -297,7 +297,10 @@ import "../assets/css/dashboard.css";
 </Layout>
 
 <script is:inline>
+  console.log("Script del formulario cargado y ejecutando");
+  
   const radios = document.querySelectorAll('input[name="estructura_tipo"]');
+  console.log("Radios encontrados:", radios.length);
   const grupos = {
     tuberia: document.getElementById('campos-tuberia'),
     tanque:  document.getElementById('campos-tanque'),
@@ -473,9 +476,13 @@ import "../assets/css/dashboard.css";
 
   // Enviar formulario al API
   const form = document.querySelector('form');
+  console.log("Formulario encontrado:", !!form);
+  
   if (form) {
     form.addEventListener('submit', async (e) => {
+      console.log("Submit del formulario activado");
       e.preventDefault();
+      console.log("preventDefault ejecutado");
 
       const formData = {
         fecha: new Date().toISOString().split('T')[0],
@@ -501,14 +508,19 @@ import "../assets/css/dashboard.css";
         defectos: defectos
       };
 
+      console.log("Datos del formulario:", JSON.stringify(formData, null, 2));
+
       try {
+        console.log("Iniciando fetch a /api/solicitud");
         const res = await fetch('/api/solicitud', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
         });
 
+        console.log("Respuesta recibida - Status:", res.status, "OK:", res.ok);
         const result = await res.json();
+        console.log("Respuesta JSON:", result);
 
         if (res.ok && result.success) {
           alert('Solicitud guardada correctamente. ID: ' + result.id);
