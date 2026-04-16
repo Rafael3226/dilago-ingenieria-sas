@@ -110,6 +110,27 @@ export const POST: APIRoute = async ({ request }) => {
       }
     }
 
+    // Enviar correo con los datos de la solicitud
+    console.log("Enviando correo...");
+    try {
+      const emailResponse = await fetch(`${request.url.replace('/api/solicitud', '/api/email')}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (emailResponse.ok) {
+        console.log("Correo enviado exitosamente");
+      } else {
+        const emailError = await emailResponse.text();
+        console.error("Error enviando correo:", emailError);
+        // No fallamos toda la operación si el correo no se envía
+      }
+    } catch (emailError) {
+      console.error("Error en el envío de correo:", emailError);
+      // No fallamos toda la operación si el correo no se envía
+    }
+
     // devuelve la respuesta exitosa si ambos elementos pudieron ser ingresados a la bd
     return new Response(
       JSON.stringify({ success: true, id: solicitud?.id }),

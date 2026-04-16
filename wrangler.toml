@@ -3,6 +3,8 @@ compatibility_date = "2025-07-07"
 
 [vars]
 SUPABASE_URL = "https://wqcvevghjaltsbepieaj.supabase.co"
+EMAIL_DESTINO = "laura.gomez@dilago.com"  # Cambiar al correo deseado
 
-# SUPABASE_SERVICE_ROLE_KEY debe configurarse en el panel de Cloudflare
-# como variable secreta: Settings -> Variables and Secrets
+# Variables secretas que deben configurarse en Cloudflare:
+# SUPABASE_SERVICE_ROLE_KEY: Settings -> Variables and Secrets
+# SENDGRID_API_KEY: Settings -> Variables and Secrets
