@@ -1,0 +1,8 @@
+name = "dilago"
+compatibility_date = "2025-07-07"
+
+[vars]
+SUPABASE_URL = "https://wqcvevghjaltsbepieaj.supabase.co"
+
+# SUPABASE_SERVICE_ROLE_KEY debe configurarse en el panel de Cloudflare
+# como variable secreta: Settings -> Variables and Secrets
