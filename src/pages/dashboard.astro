@@ -296,23 +296,23 @@ import "../assets/css/dashboard.css";
   </section>
 </Layout>
 
-<script>
-  const radios = document.querySelectorAll<HTMLInputElement>('input[name="estructura_tipo"]');
-  const grupos: Record<string, HTMLElement | null> = {
+<script is:inline>
+  const radios = document.querySelectorAll('input[name="estructura_tipo"]');
+  const grupos = {
     tuberia: document.getElementById('campos-tuberia'),
     tanque:  document.getElementById('campos-tanque'),
     otro:    document.getElementById('campos-otro'),
   };
 
-  const configOpciones   = document.querySelectorAll<HTMLElement>('#config-seccion-group [data-config-tipo]');
-  const obstaculoOpciones = document.querySelectorAll<HTMLElement>('#obstaculos-group [data-obstaculo-tipo]');
+  const configOpciones = document.querySelectorAll('#config-seccion-group [data-config-tipo]');
+  const obstaculoOpciones = document.querySelectorAll('#obstaculos-group [data-obstaculo-tipo]');
 
-  function filtrarOpciones(opciones: NodeListOf<HTMLElement>, tipo: string, attrKey: string) {
+  function filtrarOpciones(opciones, tipo, attrKey) {
     opciones.forEach(label => {
-      const val     = (label.dataset as Record<string, string>)[attrKey];
+      const val = label.dataset[attrKey];
       const mostrar = val === 'ambos' || tipo === 'otro' || val === tipo;
       label.style.display = mostrar ? '' : 'none';
-      const cb = label.querySelector<HTMLInputElement>('input');
+      const cb = label.querySelector('input');
       if (cb) {
         if (!mostrar) cb.checked = false;
         cb.disabled = !mostrar;
@@ -320,31 +320,30 @@ import "../assets/css/dashboard.css";
     });
   }
 
-  function filtrarConfigSeccion(tipo: string) {
-    filtrarOpciones(configOpciones,   tipo, 'configTipo');
+  function filtrarConfigSeccion(tipo) {
+    filtrarOpciones(configOpciones, tipo, 'configTipo');
     filtrarOpciones(obstaculoOpciones, tipo, 'obstaculoTipo');
   }
 
-  const btnSubmit = document.querySelector<HTMLButtonElement>('button[type="submit"]');
-
-  const tubUbicacionEl  = document.getElementById('campos-tuberia-ubicacion');
-  const catEl            = document.getElementById('campos-proteccion-catodica');
-  const radiosUbicacion  = document.querySelectorAll<HTMLInputElement>('input[name="tuberia_ubicacion"]');
+  const btnSubmit = document.querySelector('button[type="submit"]');
+  const tubUbicacionEl = document.getElementById('campos-tuberia-ubicacion');
+  const catEl = document.getElementById('campos-proteccion-catodica');
+  const radiosUbicacion = document.querySelectorAll('input[name="tuberia_ubicacion"]');
 
   function resetUbicacionTuberia() {
     radiosUbicacion.forEach(r => { r.checked = false; r.disabled = true; });
     if (catEl) {
       catEl.style.display = 'none';
-      catEl.querySelectorAll<HTMLInputElement>('input').forEach(i => { i.checked = false; i.disabled = true; });
+      catEl.querySelectorAll('input').forEach(i => { i.checked = false; i.disabled = true; });
     }
   }
 
-  function mostrarCampos(tipo: string) {
+  function mostrarCampos(tipo) {
     Object.entries(grupos).forEach(([key, el]) => {
       if (!el) return;
       const visible = key === tipo;
       el.style.display = visible ? (key === 'otro' ? 'block' : 'flex') : 'none';
-      el.querySelectorAll<HTMLInputElement>('input').forEach(input => {
+      el.querySelectorAll('input').forEach(input => {
         input.disabled = !visible;
       });
     });
@@ -366,7 +365,7 @@ import "../assets/css/dashboard.css";
       if (!catEl) return;
       const esEnterrada = radio.value === 'enterrada';
       catEl.style.display = esEnterrada ? 'block' : 'none';
-      catEl.querySelectorAll<HTMLInputElement>('input').forEach(i => {
+      catEl.querySelectorAll('input').forEach(i => {
         i.disabled = !esEnterrada;
         if (!esEnterrada) i.checked = false;
       });
@@ -378,50 +377,49 @@ import "../assets/css/dashboard.css";
   });
 
   const btnAgregarDefecto = document.getElementById('btn-agregar-defecto');
-  const listaDefectosEl   = document.getElementById('lista-defectos');
-  const defectosJsonInput = document.getElementById('defectos-json') as HTMLInputElement;
-  const seccion04         = document.querySelector('.form-section:nth-of-type(2)') as HTMLElement;
+  const listaDefectosEl = document.getElementById('lista-defectos');
+  const defectosJsonInput = document.getElementById('defectos-json');
 
-  let defectos: Array<Record<string, unknown>> = [];
+  let defectos = [];
 
-  function obtenerValoresSeccion04(): Record<string, unknown> {
-    const data: Record<string, unknown> = {};
+  function obtenerValoresSeccion04() {
+    const data = {};
 
-    const configSeccion = document.querySelector<HTMLInputElement>('input[name="config_seccion"]:checked');
+    const configSeccion = document.querySelector('input[name="config_seccion"]:checked');
     data.configuracion = configSeccion?.value || '';
 
-    const ubicacionDefecto = document.querySelector<HTMLInputElement>('input[name="ubicacion_defecto"]:checked');
+    const ubicacionDefecto = document.querySelector('input[name="ubicacion_defecto"]:checked');
     data.ubicacion_defecto = ubicacionDefecto?.value || '';
 
-    const obstaculos = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="obstaculos"]:checked')).map(cb => cb.value);
+    const obstaculos = Array.from(document.querySelectorAll('input[name="obstaculos"]:checked')).map(cb => cb.value);
     data.obstaculos = obstaculos;
-    data.obstaculos_distancia = (document.getElementById('obstaculos-distancia') as HTMLInputElement)?.value || '';
+    data.obstaculos_distancia = document.getElementById('obstaculos-distancia')?.value || '';
 
-    const producto = document.querySelector<HTMLInputElement>('input[name="producto"]:checked');
+    const producto = document.querySelector('input[name="producto"]:checked');
     data.producto = producto?.value || '';
 
-    const tipoDefecto = document.querySelector<HTMLInputElement>('input[name="tipo_defecto"]:checked');
+    const tipoDefecto = document.querySelector('input[name="tipo_defecto"]:checked');
     data.tipo_defecto = tipoDefecto?.value || '';
 
-    data.caracterizacion = (document.getElementById('caract-defecto') as HTMLInputElement)?.value || '';
-    data.perdida_espesor = (document.getElementById('perdida-espesor') as HTMLInputElement)?.value || '';
-    data.tiempo_aseguramiento = (document.getElementById('tiempo-aseguramiento') as HTMLInputElement)?.value || '';
-    data.distancia_libre = (document.getElementById('distancia-libre') as HTMLInputElement)?.value || '';
+    data.caracterizacion = document.getElementById('caract-defecto')?.value || '';
+    data.perdida_espesor = document.getElementById('perdida-espesor')?.value || '';
+    data.tiempo_aseguramiento = document.getElementById('tiempo-aseguramiento')?.value || '';
+    data.distancia_libre = document.getElementById('distancia-libre')?.value || '';
 
     return data;
   }
 
   function limpiarSeccion04() {
-    document.querySelectorAll<HTMLInputElement>('input[name="config_seccion"]').forEach(cb => cb.checked = false);
-    document.querySelectorAll<HTMLInputElement>('input[name="ubicacion_defecto"]').forEach(r => r.checked = false);
-    document.querySelectorAll<HTMLInputElement>('input[name="obstaculos"]').forEach(cb => cb.checked = false);
-    (document.getElementById('obstaculos-distancia') as HTMLInputElement).value = '';
-    document.querySelectorAll<HTMLInputElement>('input[name="producto"]').forEach(cb => cb.checked = false);
-    document.querySelectorAll<HTMLInputElement>('input[name="tipo_defecto"]').forEach(cb => cb.checked = false);
-    (document.getElementById('caract-defecto') as HTMLInputElement).value = '';
-    (document.getElementById('perdida-espesor') as HTMLInputElement).value = '';
-    (document.getElementById('tiempo-aseguramiento') as HTMLInputElement).value = '';
-    (document.getElementById('distancia-libre') as HTMLInputElement).value = '';
+    document.querySelectorAll('input[name="config_seccion"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('input[name="ubicacion_defecto"]').forEach(r => r.checked = false);
+    document.querySelectorAll('input[name="obstaculos"]').forEach(cb => cb.checked = false);
+    document.getElementById('obstaculos-distancia').value = '';
+    document.querySelectorAll('input[name="producto"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('input[name="tipo_defecto"]').forEach(cb => cb.checked = false);
+    document.getElementById('caract-defecto').value = '';
+    document.getElementById('perdida-espesor').value = '';
+    document.getElementById('tiempo-aseguramiento').value = '';
+    document.getElementById('distancia-libre').value = '';
   }
 
   function renderizarListaDefectos() {
@@ -446,9 +444,9 @@ import "../assets/css/dashboard.css";
       listaDefectosEl.appendChild(item);
     });
 
-    document.querySelectorAll<HTMLButtonElement>('.btn-eliminar-defecto').forEach(btn => {
+    document.querySelectorAll('.btn-eliminar-defecto').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const idx = parseInt((e.currentTarget as HTMLButtonElement).dataset.index || '0');
+        const idx = parseInt(e.currentTarget.dataset.index || '0');
         defectos.splice(idx, 1);
         renderizarListaDefectos();
         if (defectosJsonInput) defectosJsonInput.value = JSON.stringify(defectos);
@@ -481,25 +479,25 @@ import "../assets/css/dashboard.css";
 
       const formData = {
         fecha: new Date().toISOString().split('T')[0],
-        empresa: (document.getElementById('empresa') as HTMLInputElement)?.value || '',
-        contacto: (document.getElementById('contacto') as HTMLInputElement)?.value || '',
-        telefono: (document.getElementById('telefono') as HTMLInputElement)?.value || '',
-        campo: (document.getElementById('campo') as HTMLInputElement)?.value || '',
-        nombre_estructura: (document.getElementById('nombre-estructura') as HTMLInputElement)?.value || '',
-        tipo_estructura: document.querySelector<HTMLInputElement>('input[name="estructura_tipo"]:checked')?.value || '',
-        diametro_linea: (document.getElementById('diametro') as HTMLInputElement)?.value || '',
-        grado_tuberia: (document.getElementById('grado-tuberia') as HTMLInputElement)?.value || '',
-        schedule: (document.getElementById('schedule') as HTMLInputElement)?.value || '',
-        dim_tanque: (document.getElementById('dim-tanque') as HTMLInputElement)?.value || '',
-        grado_material: (document.getElementById('grado-material') as HTMLInputElement)?.value || '',
-        ubicacion_tuberia: document.querySelector<HTMLInputElement>('input[name="tuberia_ubicacion"]:checked')?.value || '',
-        proteccion_catodica: document.querySelector<HTMLInputElement>('input[name="proteccion_catodica"]:checked')?.value || '',
-        temp_max_operacion: (document.getElementById('temp-max-op') as HTMLInputElement)?.value || null,
-        temp_tuberia: (document.getElementById('temp-tuberia') as HTMLInputElement)?.value || null,
-        temp_diseno: (document.getElementById('temp-diseno') as HTMLInputElement)?.value || null,
-        presion_max_operacion: (document.getElementById('presion-max-op') as HTMLInputElement)?.value || null,
-        presion_operacion: (document.getElementById('presion-op') as HTMLInputElement)?.value || null,
-        presion_diseno: (document.getElementById('presion-diseno') as HTMLInputElement)?.value || null,
+        empresa: document.getElementById('empresa')?.value || '',
+        contacto: document.getElementById('contacto')?.value || '',
+        telefono: document.getElementById('telefono')?.value || '',
+        campo: document.getElementById('campo')?.value || '',
+        nombre_estructura: document.getElementById('nombre-estructura')?.value || '',
+        tipo_estructura: document.querySelector('input[name="estructura_tipo"]:checked')?.value || '',
+        diametro_linea: document.getElementById('diametro')?.value || '',
+        grado_tuberia: document.getElementById('grado-tuberia')?.value || '',
+        schedule: document.getElementById('schedule')?.value || '',
+        dim_tanque: document.getElementById('dim-tanque')?.value || '',
+        grado_material: document.getElementById('grado-material')?.value || '',
+        ubicacion_tuberia: document.querySelector('input[name="tuberia_ubicacion"]:checked')?.value || '',
+        proteccion_catodica: document.querySelector('input[name="proteccion_catodica"]:checked')?.value || '',
+        temp_max_operacion: document.getElementById('temp-max-op')?.value || null,
+        temp_tuberia: document.getElementById('temp-tuberia')?.value || null,
+        temp_diseno: document.getElementById('temp-diseno')?.value || null,
+        presion_max_operacion: document.getElementById('presion-max-op')?.value || null,
+        presion_operacion: document.getElementById('presion-op')?.value || null,
+        presion_diseno: document.getElementById('presion-diseno')?.value || null,
         defectos: defectos
       };
 
