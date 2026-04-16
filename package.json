@@ -7,10 +7,11 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "studio": "npx open-cli https://supabase.com/dashboard/project/wqcvevghjaltsbepieaj"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.1.10",
+    "@astrojs/cloudflare": "^11.2.0",
     "@emailjs/browser": "^3.11.0",
     "@supabase/supabase-js": "^2.103.2",
     "astro": "^4.16.7",
