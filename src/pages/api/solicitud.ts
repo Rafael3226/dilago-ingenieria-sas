@@ -18,6 +18,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // declarar variable data y asignarle el json devuelto
     const data = await request.json();
+    console.log("Datos recibidos:", JSON.stringify(data, null, 2));
 
     // verifica que los campos empresa y fecha existan
     if (!data.empresa || !data.fecha) {
@@ -28,6 +29,11 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     // declara la conexión a la base de datos supabase mediante las variables de entorno
+    console.log("Variables de entorno:", {
+      url: import.meta.env.SUPABASE_URL,
+      hasKey: !!import.meta.env.SUPABASE_SERVICE_ROLE_KEY
+    });
+    
     const supabase = createClient(
       import.meta.env.SUPABASE_URL || "",
       import.meta.env.SUPABASE_SERVICE_ROLE_KEY || ""
