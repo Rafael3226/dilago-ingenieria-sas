@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.1.10",
     "@emailjs/browser": "^3.11.0",
     "@supabase/supabase-js": "^2.103.2",
     "astro": "^4.16.7",

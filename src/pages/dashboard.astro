@@ -277,7 +277,7 @@ import "../assets/css/dashboard.css";
 
               <div class="form-field-group" style="margin-top: 20px;">
                 <button type="button" id="btn-agregar-defecto" class="btn-secondary-custom">
-                  <span>+</span> Agregar otro defecto
+                  <span>+</span> Agregar defecto
                 </button>
               </div>
 
@@ -470,6 +470,60 @@ import "../assets/css/dashboard.css";
       if (defectosJsonInput) defectosJsonInput.value = JSON.stringify(defectos);
       renderizarListaDefectos();
       limpiarSeccion04();
+    });
+  }
+
+  // Enviar formulario al API
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = {
+        fecha: new Date().toISOString().split('T')[0],
+        empresa: (document.getElementById('empresa') as HTMLInputElement)?.value || '',
+        contacto: (document.getElementById('contacto') as HTMLInputElement)?.value || '',
+        telefono: (document.getElementById('telefono') as HTMLInputElement)?.value || '',
+        campo: (document.getElementById('campo') as HTMLInputElement)?.value || '',
+        nombre_estructura: (document.getElementById('nombre-estructura') as HTMLInputElement)?.value || '',
+        tipo_estructura: document.querySelector<HTMLInputElement>('input[name="estructura_tipo"]:checked')?.value || '',
+        diametro_linea: (document.getElementById('diametro') as HTMLInputElement)?.value || '',
+        grado_tuberia: (document.getElementById('grado-tuberia') as HTMLInputElement)?.value || '',
+        schedule: (document.getElementById('schedule') as HTMLInputElement)?.value || '',
+        dim_tanque: (document.getElementById('dim-tanque') as HTMLInputElement)?.value || '',
+        grado_material: (document.getElementById('grado-material') as HTMLInputElement)?.value || '',
+        ubicacion_tuberia: document.querySelector<HTMLInputElement>('input[name="tuberia_ubicacion"]:checked')?.value || '',
+        proteccion_catodica: document.querySelector<HTMLInputElement>('input[name="proteccion_catodica"]:checked')?.value || '',
+        temp_max_operacion: (document.getElementById('temp-max-op') as HTMLInputElement)?.value || null,
+        temp_tuberia: (document.getElementById('temp-tuberia') as HTMLInputElement)?.value || null,
+        temp_diseno: (document.getElementById('temp-diseno') as HTMLInputElement)?.value || null,
+        presion_max_operacion: (document.getElementById('presion-max-op') as HTMLInputElement)?.value || null,
+        presion_operacion: (document.getElementById('presion-op') as HTMLInputElement)?.value || null,
+        presion_diseno: (document.getElementById('presion-diseno') as HTMLInputElement)?.value || null,
+        defectos: defectos
+      };
+
+      try {
+        const res = await fetch('/api/solicitud', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await res.json();
+
+        if (res.ok && result.success) {
+          alert('Solicitud guardada correctamente. ID: ' + result.id);
+          form.reset();
+          defectos = [];
+          if (defectosJsonInput) defectosJsonInput.value = '[]';
+          renderizarListaDefectos();
+        } else {
+          alert('Error: ' + (result.error || 'No se pudo guardar la solicitud'));
+        }
+      } catch (err) {
+        alert('Error de conexión: ' + String(err));
+      }
     });
   }
 </script>
