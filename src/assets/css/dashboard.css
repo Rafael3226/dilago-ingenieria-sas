@@ -330,3 +330,35 @@
   border-color: #aaa;
   color: #333;
 }
+
+/* Mensaje de estado del formulario */
+.form-status {
+  display: none;
+  margin-top: 20px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.form-status.success {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f0fdf4;
+  border: 1.5px solid #22c55e;
+  color: #15803d;
+}
+.form-status.error {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #fef2f2;
+  border: 1.5px solid #ef4444;
+  color: #b91c1c;
+}
+.form-status-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  line-height: 1.2;
+}

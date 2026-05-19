@@ -240,8 +240,8 @@ import "../assets/css/dashboard.css";
               <div class="form-field-group">
                 <label class="form-label">Tipo de defecto</label>
                 <div class="form-check-group">
-                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="corrosion_interna" class="form-check-input"><span>Corrosión interna</span></label>
-                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="corrosion_externa" class="form-check-input"><span>Corrosión externa</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="corrosion interna" class="form-check-input"><span>Corrosión interna</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="corrosion externa" class="form-check-input"><span>Corrosión externa</span></label>
                   <label class="form-check-label"><input type="radio" name="tipo_defecto" value="abolladura" class="form-check-input"><span>Abolladura</span></label>
                   <label class="form-check-label"><input type="radio" name="tipo_defecto" value="pitting" class="form-check-input"><span>Pitting</span></label>
                   <label class="form-check-label"><input type="radio" name="tipo_defecto" value="grieta" class="form-check-input"><span>Grieta</span></label>
@@ -268,7 +268,7 @@ import "../assets/css/dashboard.css";
                 <label for="distancia-libre" class="form-label">Distancia libre entre la estructura y elementos circundantes (inch)</label>
                 <p>Indicar la distancia libre existente entre la estructura y los elementos circundantes, tales como el piso, muros, paredes u otras posibles restricciones físicas.</p>
                 <p class="form-hint"><strong>IMPORTANTE:</strong> Se requiere una distancia mínima de 20" para asegurar la preparación superficial y la aplicación de la fibra.</p>
-                <input type="text" class="form-control" id="distancia-libre" name="distancia_libre" placeholder='ej. 12" de distancia al piso'>
+                <input type="number" class="form-control" id="distancia-libre" name="distancia_libre" placeholder='ej. 12' min="0">
               </div>
 
               <input type="hidden" id="defectos-json" name="defectos_json" value="[]">
@@ -286,6 +286,11 @@ import "../assets/css/dashboard.css";
             <div class="form-actions">
               <button type="reset" class="btn-secondary-custom">Limpiar</button>
               <button type="submit" class="btn-primary-custom">Enviar requerimiento</button>
+            </div>
+
+            <div id="form-status" class="form-status">
+              <span class="form-status-icon"></span>
+              <span id="form-status-msg"></span>
             </div>
 
           </form>
@@ -478,6 +483,17 @@ import "../assets/css/dashboard.css";
   const form = document.querySelector('form');
   console.log("Formulario encontrado:", !!form);
   
+  const formStatusEl = document.getElementById('form-status');
+  const formStatusMsg = document.getElementById('form-status-msg');
+
+  function mostrarEstado(tipo, mensaje) {
+    if (!formStatusEl || !formStatusMsg) return;
+    formStatusEl.className = 'form-status ' + tipo;
+    formStatusEl.querySelector('.form-status-icon').textContent = tipo === 'success' ? '✓' : '✕';
+    formStatusMsg.textContent = mensaje;
+    formStatusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
   if (form) {
     form.addEventListener('submit', async (e) => {
       console.log("Submit del formulario activado");
@@ -490,7 +506,7 @@ import "../assets/css/dashboard.css";
         contacto: document.getElementById('contacto')?.value || '',
         telefono: document.getElementById('telefono')?.value || '',
         campo: document.getElementById('campo')?.value || '',
-        nombre_estructura: document.getElementById('nombre-estructura')?.value || '',
+        nombre_estructura: document.getElementById('estructura-nombre')?.value || '',
         tipo_estructura: document.querySelector('input[name="estructura_tipo"]:checked')?.value || '',
         diametro_linea: document.getElementById('diametro')?.value || '',
         grado_tuberia: document.getElementById('grado-tuberia')?.value || '',
@@ -523,16 +539,16 @@ import "../assets/css/dashboard.css";
         console.log("Respuesta JSON:", result);
 
         if (res.ok && result.success) {
-          alert('Solicitud guardada correctamente. ID: ' + result.id);
+          mostrarEstado('success', 'Solicitud guardada correctamente (ID: ' + result.id + '). El equipo técnico de Dilago ha sido notificado.');
           form.reset();
           defectos = [];
           if (defectosJsonInput) defectosJsonInput.value = '[]';
           renderizarListaDefectos();
         } else {
-          alert('Error: ' + (result.error || 'No se pudo guardar la solicitud'));
+          mostrarEstado('error', 'Error al guardar: ' + (result.error || 'No se pudo guardar la solicitud'));
         }
       } catch (err) {
-        alert('Error de conexión: ' + String(err));
+        mostrarEstado('error', 'Error de conexión: ' + String(err));
       }
     });
   }

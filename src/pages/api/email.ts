@@ -16,10 +16,12 @@ export const POST: APIRoute = async ({ request }) => {
     // Verificar variables de entorno
     const resendApiKey = import.meta.env.RESEND_API_KEY;
     const emailDestino = import.meta.env.EMAIL_DESTINO;
-    
+    const emailFrom = import.meta.env.EMAIL_FROM || "onboarding@resend.dev";
+
     console.log("Config email:", {
       hasApiKey: !!resendApiKey,
-      emailDestino: emailDestino
+      emailDestino: emailDestino,
+      emailFrom: emailFrom
     });
 
     if (!resendApiKey || !emailDestino) {
@@ -28,6 +30,8 @@ export const POST: APIRoute = async ({ request }) => {
         { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
+
+    const destinatarios = emailDestino.split(",").map((e: string) => e.trim()).filter(Boolean);
 
     // Formatear el contenido del correo
     const htmlContent = generarHTMLCorreo(data);
@@ -40,8 +44,8 @@ export const POST: APIRoute = async ({ request }) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "Sistema de Solicitudes Dilago <noreply@dilago.com>",
-        to: [emailDestino],
+        from: `Sistema de Solicitudes Dilago <${emailFrom}>`,
+        to: destinatarios,
         subject: `Nueva Solicitud de Reparación - ${data.empresa}`,
         html: htmlContent
       })
