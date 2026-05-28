@@ -7,18 +7,66 @@ import "../assets/css/style.css";
 import "../assets/css/new.css";
 
 import IconImg from "../assets/img/icon.png";
+
+const SITE_URL = "https://dilagoingenieriasas.com";
+
+const {
+  title = "Dilago Ingeniería SAS | Ingeniería de Integridad Industrial",
+  description = "Especialistas en protección catódica, ensayos no destructivos, calidad en soldadura y nuevas tecnologías industriales en Colombia.",
+  ogImage = `${SITE_URL}/img/og-preview.jpg`,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Dilago Ingeniería SAS",
+  url: SITE_URL,
+  logo: `${SITE_URL}/img/icon.png`,
+  description:
+    "Empresa colombiana especializada en protección catódica, ensayos no destructivos, calidad en soldadura e integridad de activos industriales.",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "CO",
+  },
+  sameAs: ["https://www.linkedin.com/company/dilago-ingenieria-sas"],
+};
 ---
 
 <html dir="ltr" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <meta name="author" content="" />
-    <meta name="description" content="Dilago Ingeniería pagina web" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Dilago Ingeniería SAS" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <link rel="icon" href={IconImg.src} />
-    <title>Dilago Ingeniería</title>
+    <title>{title}</title>
   </head>
   <body class="stretched">
     <div id="wrapper">
