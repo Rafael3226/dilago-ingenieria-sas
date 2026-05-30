@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import LogoDark from "../assets/img/logo-transparent.png";
+import LogoColored from "../assets/img/logo-transparent.png";
+import LogoWhite from "../assets/img/logo-dark.png";
 ---
 
 <header id="header" class="transparent-header dark">
@@ -9,14 +10,19 @@ import LogoDark from "../assets/img/logo-transparent.png";
       <div class="header-row">
         <div id="logo">
           <a href="/">
+            <!-- Logo blanco: visible cuando el navbar es transparente (sobre el hero) -->
             <Image
-              class="logo-dark"
-              src={LogoDark}
+              class="logo-white-version"
+              src={LogoWhite}
               alt="Dilago Logo"
-              style={{
-                width: "auto",
-                height: "70px",
-              }}
+              style={{ width: "auto", height: "70px" }}
+            />
+            <!-- Logo de color: visible cuando el navbar tiene fondo blanco (scroll) -->
+            <Image
+              class="logo-colored-version"
+              src={LogoColored}
+              alt="Dilago Logo"
+              style={{ width: "auto", height: "70px" }}
             />
           </a>
         </div>

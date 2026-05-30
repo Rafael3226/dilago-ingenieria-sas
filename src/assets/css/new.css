@@ -13,7 +13,7 @@
   object-fit: contain;
 }
 
-/*[ NAVBAR: dark background on scroll so logo stays visible ]
+/*[ NAVBAR: switch de logo según estado ]
 ///////////////////////////////////////////////////////////
 */
 
@@ -21,9 +21,20 @@
   transition: background-color 0.35s ease, box-shadow 0.35s ease !important;
 }
 
-#header.header-scrolled #header-wrap {
-  background-color: rgba(15, 15, 15, 0.97) !important;
-  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+/* Navbar transparente (top): logo blanco visible, logo de color oculto */
+#header.transparent-header .logo-colored-version {
+  display: none;
+}
+#header.transparent-header .logo-white-version {
+  display: block;
+}
+
+/* Navbar con fondo blanco (scroll): logo de color visible, logo blanco oculto */
+#header:not(.transparent-header) .logo-white-version {
+  display: none;
+}
+#header:not(.transparent-header) .logo-colored-version {
+  display: block;
 }
 
 /*[ EXPERIENCE GRID: uniform image height ]
