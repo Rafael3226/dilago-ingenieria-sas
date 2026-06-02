@@ -7,8 +7,9 @@ import "../assets/css/style.css";
 import "../assets/css/new.css";
 
 import IconImg from "../assets/img/icon.png";
+import { COMPANY } from "../constants/company";
 
-const SITE_URL = "https://dilagoingenieriasas.com";
+const SITE_URL = COMPANY.url;
 
 const {
   title = "Dilago Ingeniería SAS | Ingeniería de Integridad Industrial",
@@ -20,17 +21,29 @@ const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Dilago Ingeniería SAS",
-  url: SITE_URL,
-  logo: `${SITE_URL}/img/icon.png`,
-  description:
-    "Empresa colombiana especializada en protección catódica, ensayos no destructivos, calidad en soldadura e integridad de activos industriales.",
+  "@type": "ProfessionalService",
+  name: COMPANY.name,
+  url: COMPANY.url,
+  logo: COMPANY.logo,
+  description: COMPANY.description,
+  telephone: COMPANY.contact.phone,
+  email: COMPANY.contact.email,
   address: {
     "@type": "PostalAddress",
-    addressCountry: "CO",
+    streetAddress: `${COMPANY.address.street}, ${COMPANY.address.building}`,
+    addressLocality: COMPANY.address.city,
+    addressRegion: COMPANY.address.state,
+    addressCountry: COMPANY.address.countryCode,
   },
-  sameAs: ["https://www.linkedin.com/company/dilago-ingenieria-sas"],
+  areaServed: [
+    { "@type": "City", name: "Bucaramanga" },
+    { "@type": "Country", name: "Colombia" },
+  ],
+  sameAs: [
+    COMPANY.social.facebook,
+    COMPANY.social.instagram,
+    COMPANY.social.linkedin,
+  ],
 };
 ---
 
@@ -64,6 +77,9 @@ const jsonLd = {
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Slot para schemas adicionales por página -->
+    <slot name="head" />
 
     <link rel="icon" href={IconImg.src} />
     <title>{title}</title>

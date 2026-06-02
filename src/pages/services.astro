@@ -12,14 +12,78 @@ import {
 } from "../components/pages/services";
 
 import ServicesImg from "../assets/img/services-01.jpeg";
+import { COMPANY } from "../constants/company";
+
+const serviceSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Sistemas de Protección Catódica",
+    serviceType: "Protección Catódica",
+    description:
+      "Diseño, evaluación, diagnóstico, mantenimiento e inspección de sistemas de protección catódica para tuberías e infraestructura industrial en Colombia.",
+    provider: { "@type": "ProfessionalService", name: COMPANY.name, url: COMPANY.url },
+    areaServed: { "@type": "Country", name: "Colombia" },
+    url: `${COMPANY.url}/services#cathodic-protection`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Calificación de Soldaduras",
+    serviceType: "Calificación de Soldadura",
+    description:
+      "Elaboración de procedimientos de soldadura (WPS/PQR) y calificación de soldadores según normas ASME, API y AWS para la industria del petróleo y gas.",
+    provider: { "@type": "ProfessionalService", name: COMPANY.name, url: COMPANY.url },
+    areaServed: { "@type": "Country", name: "Colombia" },
+    url: `${COMPANY.url}/services#welding`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Ensayos No Destructivos (NDT)",
+    serviceType: "Ensayos No Destructivos",
+    description:
+      "Inspección mediante líquidos penetrantes, partículas magnéticas, ultrasonido Scan A/B/C y Phased Array para control de calidad industrial.",
+    provider: { "@type": "ProfessionalService", name: COMPANY.name, url: COMPANY.url },
+    areaServed: { "@type": "Country", name: "Colombia" },
+    url: `${COMPANY.url}/services#ndt`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Análisis de Riesgos (QRA)",
+    serviceType: "Análisis Cuantitativo de Riesgos",
+    description:
+      "Análisis cuantitativo de riesgos con software PHAST y SAFETI para estimación de riesgos individuales y sociales en instalaciones industriales.",
+    provider: { "@type": "ProfessionalService", name: COMPANY.name, url: COMPANY.url },
+    areaServed: { "@type": "Country", name: "Colombia" },
+    url: `${COMPANY.url}/services#risk`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Consultoría Técnica en Integridad de Activos",
+    serviceType: "Consultoría de Integridad Industrial",
+    description:
+      "Consultoría técnica especializada en integridad de activos industriales según normas API RP 1102, 653, 510, 570, RP 580 y 579.",
+    provider: { "@type": "ProfessionalService", name: COMPANY.name, url: COMPANY.url },
+    areaServed: { "@type": "Country", name: "Colombia" },
+    url: `${COMPANY.url}/services#consulting`,
+  },
+];
 ---
 
 <Layout
-  title="Servicios de Ingeniería Industrial | Dilago Ingeniería SAS"
-  description="Protección catódica, ensayos no destructivos, calidad en soldadura, análisis de riesgos e integridad de activos industriales en Colombia."
+  title="Protección Catódica, NDT y Refuerzos No Metálicos en Colombia | Dilago Ingeniería SAS"
+  description="Servicios de integridad industrial en Colombia: protección catódica, ensayos no destructivos (NDT), estudios de interferencia y coexistencia, localización de estructura metálica enterrada, calificación de soldadura y análisis de riesgos."
 >
+  <Fragment slot="head">
+    {serviceSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+  </Fragment>
   <Landing img={ServicesImg}>
-    <TitleXL>Servicios.</TitleXL>
+    <TitleXL>Servicios de integridad industrial en Colombia.</TitleXL>
   </Landing>
   <section id="content">
     <div class="content-wrap py-0">

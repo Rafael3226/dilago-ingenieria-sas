@@ -10,14 +10,30 @@ import {
   NonMetallicReinforcement,
   CorrosionCoating,
 } from "../components/pages/new-technologies";
+import { COMPANY } from "../constants/company";
+
+const nonMetallicSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Instalación de Refuerzos Mecánicos No Metálicos para Tubería",
+  serviceType: "Instalación de Refuerzo No Metálico",
+  description:
+    "Instalación de sistemas de refuerzo compuesto no metálico certificados por ASME PC C-2 para rehabilitación de tuberías en la industria del petróleo, gas y energía en Colombia.",
+  provider: { "@type": "ProfessionalService", name: COMPANY.name, url: COMPANY.url },
+  areaServed: { "@type": "Country", name: "Colombia" },
+  url: `${COMPANY.url}/new-technologies#section-non-metallic`,
+};
 ---
 
 <Layout
-  title="Nuevas Tecnologías de Monitoreo Industrial | Dilago Ingeniería SAS"
-  description="Soluciones innovadoras: válvulas y sensores inteligentes, refuerzo no metálico y recubrimientos anticorrosión para la industria energética en Colombia."
+  title="Instalación de Refuerzos No Metálicos y Tecnología Industrial en Colombia | Dilago Ingeniería SAS"
+  description="Instalación de refuerzos mecánicos no metálicos certificados ASME, sensores IoT para válvulas, recubrimientos anticorrosión Polyguard y soluciones tecnológicas para la industria energética en Colombia."
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(nonMetallicSchema)} />
+  </Fragment>
   <Landing img={NewTechImg}>
-    <TitleXL>Nuevas Tecnologías.</TitleXL>
+    <TitleXL>Instalación de refuerzos no metálicos y tecnología para la industria energética.</TitleXL>
   </Landing>
   <section id="content">
     <div class="content-wrap py-0">
