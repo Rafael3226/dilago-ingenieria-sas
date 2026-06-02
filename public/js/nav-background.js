@@ -1,11 +1,11 @@
 window.addEventListener("load", function () {
   function updateNavbarClass() {
-    let headerClassList = document.getElementById("header").classList;
-    const transparent = "transparent-header";
-    if (window.scrollY === 0 && !headerClassList.contains(transparent)) {
-      headerClassList.add(transparent);
-    } else if (headerClassList.contains(transparent) && window.scrollY !== 0) {
-      headerClassList.remove(transparent);
+    var classList = document.getElementById("header").classList;
+    var transparent = "transparent-header";
+    if (window.scrollY === 0) {
+      if (!classList.contains(transparent)) classList.add(transparent);
+    } else {
+      classList.remove(transparent);
     }
   }
   updateNavbarClass();

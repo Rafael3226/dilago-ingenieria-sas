@@ -6,8 +6,8 @@ const { img, alt, href, text } = Astro.props;
 ---
 
 <a href={href}>
-  <div class="a-image bo-rad-10 hov-img-zoom pos-relative">
-    <Image src={img} alt={alt} style={{ height: "auto" }} />
+  <div class="a-image pos-relative">
+    <Image src={img} alt={alt} style={{ width: "100%", height: "240px", objectFit: "cover" }} />
     <div class="image-overlay">
       <span class="image-overlay-text">{text}</span>
     </div>
