@@ -1,38 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-import Landing from "../components/Landing.astro";
-import TitleXL from "../components/basic/TitleXL.astro";
-import AnchorButton from "../components/basic/AnchorButton.astro";
-
+import PageHero from "../components/basic/PageHero.astro";
 import Courses from "../components/pages/training/Courses.astro";
-
 import TrainingImg from "../assets/img/training-01.jpg";
-
 import { training as brochure } from "../constants/brochures.js";
-const title = "Capacitaciones en protección catódica, NDT y soldadura.";
 ---
 
 <Layout
   title="Capacitaciones en Protección Catódica, NDT y Soldadura en Colombia | Dilago Ingeniería SAS"
   description="Cursos y capacitaciones técnicas en protección catódica (NACE), ensayos no destructivos (ASNT), calificación de soldadura y normas internacionales para la industria del petróleo y gas en Colombia."
 >
-  <Landing img={TrainingImg}>
-    <TitleXL>
-      {title}
-      <AnchorButton
-        slot="button"
-        className="button-light"
-        href={brochure.href}
-        download={brochure.name}
-      >
+  <PageHero
+    img={TrainingImg}
+    title="Capacitaciones en protección catódica, NDT y soldadura."
+    label="Capacitaciones"
+  >
+    <div class="ds-page-hero-actions">
+      <a href={brochure.href} download={brochure.name} class="ds-btn ds-btn-ghost">
         {brochure.title}
-      </AnchorButton>
-    </TitleXL>
-  </Landing>
-  <section id="content">
-    <div class="content-wrap py-0">
-      <Courses />
+      </a>
     </div>
-  </section>
+  </PageHero>
+
+  <Courses />
 </Layout>

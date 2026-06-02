@@ -1,105 +1,66 @@
 ---
-import ImageAnchor from "../../basic/ImageAnchor";
-import Separator from "../../basic/Separator.astro";
-
-import FluresentImg from "../../../assets/img/experience/rotor.jpg";
-import PipesImg from "../../../assets/img/experience/cover.jpg";
-import WeldingImg from "../../../assets/img/experience/welding.jpg";
-import LiquidsImg from "../../../assets/img/experience/liquidos.jpg";
+import { Image } from "astro:assets";
 import TgiImg from "../../../assets/img/experience/tgi.jpg";
-import ExperienceImg6 from "../../../assets/img/experience/valves.jpg";
+import ValvesImg from "../../../assets/img/experience/valves.jpg";
 
-const href = "/services";
-const data = [
+const items = [
   {
-    img: FluresentImg,
-    alt: "Inspección de rotores y compresores con líquidos penetrantes fluorescentes y partículas magnéticas",
-    text: "Inspección de rotores y compresores mediante líquidos penetrantes fluorscentes, partículas magnéticas fluorescentes y ultrasonido",
+    icon: "analytics",
+    title: "Inspección de rotores",
+    text: "Inspección mediante líquidos penetrantes fluorescentes y ultrasonido en compresores industriales.",
   },
   {
-    img: PipesImg,
-    alt: "Supervisión de cambio de recubrimiento en tubería TGI de 20 pulgadas",
-    text: "Supervisión de obra de cambio de recubrimiento de tubería TGI de 20'' PK14+400 de la UF4",
+    icon: "supervised_user_circle",
+    title: "Supervisión TGI",
+    text: "Cambio de recubrimiento de tubería TGI de 20'' PK14+400 de la UF4 con estándares internacionales.",
   },
   {
-    img: LiquidsImg,
-    alt: "Ensayo de líquidos penetrantes e inspección visual en estructura metálica",
-    text: "Ensayo de líquidos penetrantes e inspección visual a estructura",
+    icon: "shield",
+    title: "Protección Catódica",
+    text: "Diseño de sistema de protección catódica para tuberías de 12'' y 10'' en infraestructura petrolera.",
   },
   {
-    img: WeldingImg,
-    alt: "Calificación de soldadores según estándares ASME y API en campo",
-    text: "Calificaciones de soldadores en diversos campos del país",
-  },
-  {
-    img: TgiImg,
-    alt: "Diseño de sistema de protección catódica en tubería de 12 y 10 pulgadas",
-    text: "Diseño de sistema de proteccción de catódica a tubería de 12'' y 10'",
-  },
-  {
-    img: ExperienceImg6,
-    alt: "Suministro de válvulas y accesorios para la industria petrolera colombiana",
-    text: "Suministro de válvulas y accesorios para la industria petrolera",
+    icon: "verified",
+    title: "Suministro de Válvulas",
+    text: "Provisión de válvulas y accesorios certificados para la industria energética de alta presión.",
   },
 ];
 ---
 
-<section id="section-experience">
-  <Separator>Experiencia</Separator>
-  <div class="container p-t-50 p-b-50">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-sm-6 p-t-25">
-            <ImageAnchor
-              img={data[0].img}
-              alt={data[0].alt}
-              href={href}
-              text={data[0].text}
-            />
-          </div>
-          <div class="col-sm-6 p-t-25">
-            <ImageAnchor
-              img={data[1].img}
-              alt={data[1].alt}
-              href={href}
-              text={data[1].text}
-            />
-          </div>
-          <div class="col-12 p-t-25">
-            <ImageAnchor
-              img={data[2].img}
-              alt={data[2].alt}
-              href={href}
-              text={data[2].text}
-            />
-          </div>
-        </div>
+<section id="section-experience" class="ds-experience">
+  <div class="ds-experience-inner">
+    <div class="ds-experience-layout">
+      <!-- Sticky sidebar -->
+      <div class="ds-experience-sidebar ds-reveal">
+        <span class="ds-label-secondary">Portafolio</span>
+        <h2>Nuestra Experiencia</h2>
+        <p>
+          Dilago Ingeniería ha participado activamente en proyectos de
+          envergadura nacional, demostrando capacidad técnica en sectores
+          críticos de la industria energética colombiana.
+        </p>
+        <Image
+          src={TgiImg}
+          alt="Proyecto TGI tubería Dilago Ingeniería"
+        />
       </div>
-      <div class="col-md-4">
-        <div class="row">
-          <div class="col-12 p-t-25">
-            <ImageAnchor
-              img={data[3].img}
-              alt={data[3].alt}
-              href={href}
-              text={data[3].text}
-            />
-          </div>
-          <div class="col-12 p-t-30">
-            <ImageAnchor
-              img={data[4].img}
-              alt={data[4].alt}
-              href={href}
-              text={data[4].text}
-            />
-          </div>
-          <div class="col-12 p-t-30">
-            <ImageAnchor
-              img={data[5].img}
-              alt={data[5].alt}
-              href={href}
-              text={data[5].text}
+
+      <!-- Experience items grid -->
+      <div class="ds-experience-items ds-reveal" data-delay="100">
+        <div class="ds-experience-grid">
+          {items.map((item) => (
+            <div class="ds-experience-item">
+              <span class="ds-experience-icon material-symbols-outlined">{item.icon}</span>
+              <h4>{item.title}</h4>
+              <p>{item.text}</p>
+            </div>
+          ))}
+
+          <!-- Wide image at bottom -->
+          <div class="ds-experience-item ds-experience-wide-img">
+            <Image
+              src={ValvesImg}
+              alt="Suministro de válvulas y accesorios para la industria energética"
             />
           </div>
         </div>

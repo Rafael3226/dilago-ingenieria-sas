@@ -1,22 +1,51 @@
 ---
-import Section from "../../../basic/Section.astro";
-import Separator from "../../../basic/Separator.astro";
 import ContactForm from "./ContactForm.astro";
 ---
 
-<Section id="section-contact">
-  <Separator slot="separator">Envia un Mensaje</Separator>
-  <div slot="bottom" class="contact-layout">
-    <div class="contact-col">
+<section id="section-contact" class="ds-contact">
+  <div class="ds-contact-inner">
+    <!-- Form column -->
+    <div class="ds-reveal">
+      <h2>Contáctenos</h2>
       <ContactForm />
     </div>
-    <div class="contact-col">
-      <iframe
-        class="bo-rad-10"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5855353344195!2d-73.85118218884627!3d7.057888092915102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e42ecae97075bf7%3A0x7fc32d9b2d2fe560!2sDilago%20Ingeniería%20Sas!5e0!3m2!1sen!2sco!4v1696885880695!5m2!1sen!2sco"
-        height="350"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <!-- Contact details column -->
+    <div class="ds-contact-details ds-reveal" data-delay="100">
+      <div class="ds-contact-detail-block">
+        <h3>
+          <span class="material-symbols-outlined">location_on</span>
+          Dirección Principal
+        </h3>
+        <p>
+          Cra 27 #37-33 Oficina 504<br />
+          Green Gold Business Center<br />
+          Bucaramanga, Colombia
+        </p>
+      </div>
+
+      <div class="ds-contact-detail-block">
+        <h3>
+          <span class="material-symbols-outlined">contact_phone</span>
+          Contacto Directo
+        </h3>
+        <p>
+          Laura Gómez — Gerente Comercial<br />
+          <a href="tel:+573009888499">+57 300-988-8499</a><br />
+          <a href="mailto:info@dilago.com.co">info@dilago.com.co</a>
+        </p>
+      </div>
+
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5855353344195!2d-73.85118218884627!3d7.057888092915102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e42ecae97075bf7%3A0x7fc32d9b2d2fe560!2sDilago%20Ingeniería%20Sas!5e0!3m2!1sen!2sco!4v1696885880695!5m2!1sen!2sco"
+          width="100%"
+          height="220"
+          style="border-radius:0.25rem; border:none; opacity:0.8; filter: invert(90%) hue-rotate(180deg);"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
   </div>
-</Section>
+</section>

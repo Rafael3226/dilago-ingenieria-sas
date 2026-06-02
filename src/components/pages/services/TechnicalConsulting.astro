@@ -1,40 +1,33 @@
 ---
-import Section from "../../basic/Section.astro";
-import Separator from "../../basic/Separator.astro";
-import Title from "../../basic/Title.astro";
-import TextList from "../../basic/TextList.astro";
-import ObjectList from "../../basic/ObjectList.astro";
-
-const content = {
-  id: "section-services-consulting",
-  title: "SERVICIO DE CONSULTORIA TECNICA",
-  paragraphs: [
-    "En DILAGO INGENIERIA SAS contamos con especialistas en áreas como soldadura, corrosión interna y externa, análisis de cargas e integridad que cuentan con el talento técnico y ético para desarrollar los proyectos requeridos por el cliente.",
-    "Nuestras consultorías más frecuentes:",
-  ],
-  consultancies: {
-    "API RP 1102": "“Pipelines crossing railroad highways.”",
-    "API 653": "“Tank Inspection, Repair, Alteration and Reconstruction”",
-    "API 510":
-      "“Pressure Vessel Inspection Code Maintenance Inspection, Rating,”",
-    "API 570":
-      "“Piping Inspection Code: In-service Inspection, Rating, Repair, and Alteration of Piping Systems”",
-    "API RP 580": "“Risk-Based Inspection”",
-    "API 579": "“Fitness-For-Service”",
-  },
-};
+const consultancies = [
+  { key: "API RP 1102", value: '"Pipelines crossing railroad highways."' },
+  { key: "API 653", value: '"Tank Inspection, Repair, Alteration and Reconstruction."' },
+  { key: "API 510", value: '"Pressure Vessel Inspection Code Maintenance Inspection, Rating."' },
+  { key: "API 570", value: '"Piping Inspection Code: In-service Inspection, Rating, Repair, and Alteration of Piping Systems."' },
+  { key: "API RP 580", value: '"Risk-Based Inspection."' },
+  { key: "API 579", value: '"Fitness-For-Service."' },
+];
 ---
 
-<Section id={content.id} className="py-2">
-  <Separator slot="separator">{content.title}</Separator>
-  <div slot="left">
-    <div class="p-t-20">
-      <TextList items={content.paragraphs} />
+<section id="section-services-consulting" class="ds-inner-section">
+  <div class="ds-inner-wrap">
+    <h2>Servicio de Consultoría Técnica</h2>
+    <div class="ds-service-grid">
+      <div class="ds-service-text">
+        <p class="ds-inner-p">En DILAGO INGENIERÍA SAS contamos con especialistas en áreas como soldadura, corrosión interna y externa, análisis de cargas e integridad, con el talento técnico y ético para desarrollar los proyectos requeridos por el cliente.</p>
+        <p class="ds-inner-p">Nuestras consultorías más frecuentes:</p>
+      </div>
+
+      <div>
+        <div class="ds-object-list">
+          {consultancies.map((c) => (
+            <div class="ds-object-item">
+              <div class="ds-object-key">{c.key}</div>
+              <div class="ds-object-value">{c.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
-  <div slot="right">
-    <div class="p-t-30">
-      <ObjectList object={content.consultancies} inline />
-    </div>
-  </div>
-</Section>
+</section>

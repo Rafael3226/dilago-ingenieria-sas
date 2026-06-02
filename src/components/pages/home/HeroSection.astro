@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import RefineryImg from "../../../assets/img/refinery.jpg";
+import { corporative as brochure } from "../../../constants/brochures.js";
+---
+
+<section id="section-home" class="ds-hero">
+  <!-- Background image -->
+  <div class="ds-hero-bg">
+    <Image
+      src={RefineryImg}
+      alt="Infraestructura industrial Dilago Ingeniería"
+      loading="eager"
+      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+    />
+  </div>
+  <!-- Gradient overlay -->
+  <div class="ds-hero-gradient"></div>
+
+  <!-- Content -->
+  <div class="ds-hero-content">
+    <div class="ds-hero-icon">
+      <span class="material-symbols-outlined">engineering</span>
+    </div>
+
+    <h1 class="ds-hero-title">
+      Excelencia y Precisión en Ingeniería Industrial
+    </h1>
+
+    <p class="ds-hero-subtitle">
+      Comprometidos con el desarrollo nacional a través de soluciones técnicas
+      de alto impacto y precisión estructural.
+    </p>
+
+    <div class="ds-hero-ctas">
+      <a href="/#section-bussines" class="ds-btn ds-btn-primary">
+        Saber Más
+      </a>
+      <a
+        href={brochure.href}
+        download={brochure.name}
+        class="ds-btn ds-btn-outline"
+      >
+        Descargar Brochure
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Landing from "../components/Landing.astro";
-import TitleXL from "../components/basic/TitleXL.astro";
+import PageHero from "../components/basic/PageHero.astro";
 
 import {
   Mechanical,
@@ -15,14 +14,15 @@ import SuppliesImg from "../assets/img/supplies-01.jpeg";
   title="Suministros Industriales para Petróleo y Gas en Colombia | Dilago Ingeniería SAS"
   description="Suministros industriales para el sector energético en Colombia: válvulas, bridas, tubería en acero al carbono e inoxidable, instrumentación electrónica y accesorios para proyectos de integridad de activos."
 >
-  <Landing img={SuppliesImg}>
-    <TitleXL>Suministros industriales para el sector energético en Colombia.</TitleXL>
-  </Landing>
-  <section id="content">
-    <div class="content-wrap py-0">
-      <Mechanical />
-      <Electronic />
-      <Suppliers />
-    </div>
-  </section>
+  <PageHero
+    img={SuppliesImg}
+    title="Suministros industriales para el sector energético en Colombia."
+    label="Suministros"
+  />
+
+  <Mechanical />
+  <Electronic />
+  <div class="ds-carousel-section">
+    <Suppliers />
+  </div>
 </Layout>

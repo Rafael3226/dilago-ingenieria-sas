@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Landing from "../components/Landing.astro";
-import TitleXL from "../components/basic/TitleXL.astro";
+import PageHero from "../components/basic/PageHero.astro";
 
 import {
   CathodicProtection,
@@ -82,16 +81,16 @@ const serviceSchemas = [
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
   </Fragment>
-  <Landing img={ServicesImg}>
-    <TitleXL>Servicios de integridad industrial en Colombia.</TitleXL>
-  </Landing>
-  <section id="content">
-    <div class="content-wrap py-0">
-      <CathodicProtection />
-      <WeldingQuality />
-      <NonDestructiveTesting />
-      <RiskAnalysis />
-      <TechnicalConsulting />
-    </div>
-  </section>
+
+  <PageHero
+    img={ServicesImg}
+    title="Servicios de integridad industrial en Colombia."
+    label="Servicios"
+  />
+
+  <CathodicProtection />
+  <WeldingQuality />
+  <NonDestructiveTesting />
+  <RiskAnalysis />
+  <TechnicalConsulting />
 </Layout>

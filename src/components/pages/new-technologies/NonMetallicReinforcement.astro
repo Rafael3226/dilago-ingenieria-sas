@@ -1,78 +1,41 @@
 ---
-import ImageZoom from "../../basic/ImageZoom.astro";
-import TextList from "../../basic/TextList.astro";
-import Separator from "../../basic/Separator.astro";
-import Section from "../../basic/Section.astro";
-
+import { Image } from "astro:assets";
 import Image01 from "../../../assets/img/non-metallic-01.jpeg";
 import Image02 from "../../../assets/img/non-metallic-02.jpeg";
 import Image03 from "../../../assets/img/non-metallic-03.jpeg";
 import Image04 from "../../../assets/img/non-metallic-04.jpeg";
-import BannerImg from "../../../assets/img/tech-option-2.jpg";
 
-const contentData = {
-  id: "section-non-metallic",
-  title: "Soluciones de refuerzo no metálico para tubería",
-  description: [
-    "El sistema de reparación compuesto ofrecido a través de DILAGO INGENIERIA certificado por ASME PC C-2, fortalece y refuerza la integridad de la pared de la tubería sin interrumpir el flujo, reparando una multitud de defectos y soportando hasta un 80% de pérdida de pared.",
-    "La instalación de refuerzos mecánicos no metálicos permite rehabilitar tuberías en operación sin necesidad de parar el flujo, reduciendo costos y tiempos de intervención. Aplicable en la industria del petróleo, gas, agua y energía en toda Colombia.",
-  ],
-  images: [Image01, Image02, Image03, Image04],
-  banner: BannerImg,
-  imageAlt: "Refuerzo no metálico FRP",
-  footer: "Fig 1 a 4: Piloto desarrollado para Vanti. Caso de éxito.",
-};
+const images = [
+  { src: Image01, alt: "Refuerzo no metálico FRP 1" },
+  { src: Image02, alt: "Refuerzo no metálico FRP 2" },
+  { src: Image03, alt: "Refuerzo no metálico FRP 3" },
+  { src: Image04, alt: "Refuerzo no metálico FRP 4" },
+];
 ---
 
-<Section id={contentData.id} className="bg-white">
-  <Separator slot="separator" img={contentData.banner}
-    >{contentData.title}</Separator
-  >
+<section id="section-non-metallic" class="ds-inner-section ds-alt">
+  <div class="ds-inner-wrap">
+    <h2>Soluciones de Refuerzo No Metálico para Tubería</h2>
+    <div class="ds-service-grid ds-reverse">
+      <div class="ds-service-text">
+        <p class="ds-inner-p">El sistema de reparación compuesto ofrecido a través de DILAGO INGENIERÍA, certificado por ASME PC C-2, fortalece y refuerza la integridad de la pared de la tubería sin interrumpir el flujo, reparando una multitud de defectos y soportando hasta un 80% de pérdida de pared.</p>
+        <p class="ds-inner-p">La instalación de refuerzos mecánicos no metálicos permite rehabilitar tuberías en operación sin necesidad de parar el flujo, reduciendo costos y tiempos de intervención. Aplicable en la industria del petróleo, gas, agua y energía en toda Colombia.</p>
+      </div>
 
-  <div slot="left">
-    <div class="row">
-      {
-        contentData.images.map((img, index) => (
-          <div class="col-md-6 mb-4">
-            <ImageZoom
-              src={img}
-              alt={`${contentData.imageAlt} ${index + 1}`}
-              className="square-img"
-            />
-          </div>
-        ))
-      }
+      <div class="ds-service-visual">
+        <div class="ds-img-grid">
+          {images.map((img) => (
+            <div class="ds-img-grid-item">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+            </div>
+          ))}
+        </div>
+        <p class="ds-img-caption">Fig 1 a 4: Piloto desarrollado para Vanti. Caso de éxito.</p>
+      </div>
     </div>
-    <p class="text-center text-muted mt-2">
-      <small>{contentData.footer}</small>
-    </p>
   </div>
-
-  <div slot="right">
-    <TextList items={contentData.description} />
-  </div>
-</Section>
-
-<style>
-  :global(.square-img) {
-    aspect-ratio: 1 / 1 !important;
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    display: block !important;
-    overflow: hidden !important;
-  }
-
-  :global(.square-img div) {
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-  }
-
-  :global(.square-img img) {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-  }
-</style>
+</section>

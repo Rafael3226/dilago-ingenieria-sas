@@ -1,53 +1,59 @@
 ---
-import Separator from "../../basic/Separator.astro";
-import Card from "../../basic/Card.astro";
-import TrainingImg from "../../../assets/img/training-01.jpg";
-import ServicesImg from "../../../assets/img/services-01.jpeg";
+import { Image } from "astro:assets";
 import SuppliesImg from "../../../assets/img/supplies-01.jpeg";
+import ServicesImg from "../../../assets/img/services-01.jpeg";
 import NewTechImg from "../../../assets/img/services-02.jpeg";
-import Title from "../../basic/Title.astro";
-import Section from "../../basic/Section.astro";
 
-const title = "Lineas de Negocio";
-const sections = [
+const cards = [
   {
     title: "Suministros",
-    text: "Ofrecemos una variedad de suministros que incluyen materiales y accesorios mecánicos, así como instrumentacion y equipo electrónico.",
+    text: "Ofrecemos una variedad de suministros que incluyen materiales y accesorios mecánicos, así como instrumentación y equipo electrónico.",
     img: SuppliesImg,
-    alt: "Suministros",
+    alt: "Suministros industriales mecánicos y electrónicos",
     href: "/supplies",
   },
   {
     title: "Servicios",
-    text: "Ofrecemos una amplia gama de servicios que cumplen con los estándares y códigos de la industria, garantizando la calidad y seguridad de los proyectos.",
+    text: "Ofrecemos una amplia gama de servicios que cumplen con los estándares y códigos internacionales, garantizando la calidad y seguridad de los proyectos.",
     img: ServicesImg,
-    alt: "Servicios",
+    alt: "Servicios de ingeniería de integridad industrial",
     href: "/services",
   },
   {
     title: "Nuevas Tecnologías",
-    text: "En la era digital actual, las tecnologías de monitoreo inalambrico o remoto, han revolucionado diversas industrias al proporcionar soluciones eficientes y precisas para supervisar procesos, activos y entornos desde cualquier ubicación. Estas innovaciones no solo mejoran la eficiencia operativa, sino que también permiten una respuesta más rápida y efectiva ante situaciones críticas.",
+    text: "Monitoreo inalámbrico y remoto para revolucionar la eficiencia operativa y la respuesta crítica en tiempo real.",
     img: NewTechImg,
-    alt: "Nuevas Tecnologías",
+    alt: "Nuevas tecnologías de monitoreo remoto industrial",
     href: "/new-technologies",
   },
 ];
-
-const className = "col-md-4 p-t-30 d-flex";
 ---
 
-<Section id="section-bussines">
-  <Title slot="title">{title}</Title>
-  <div slot="bottom" class="content-intro">
-    <div class="container">
-      <div class="row">
-        {
-          sections.map((d) => {
-            const props = { ...d, className };
-            return <Card {...props} />;
-          })
-        }
-      </div>
+<section id="section-bussines" class="ds-business">
+  <div class="ds-business-inner">
+    <!-- Header -->
+    <div class="ds-section-header ds-reveal">
+      <h2>Líneas de Negocio</h2>
+      <hr class="ds-divider" />
+    </div>
+
+    <!-- Cards grid -->
+    <div class="ds-business-cards">
+      {cards.map((card, i) => (
+        <a href={card.href} class="ds-card ds-reveal" data-delay={String(i * 100)}>
+          <div class="ds-card-image">
+            <Image src={card.img} alt={card.alt} />
+          </div>
+          <div class="ds-card-body">
+            <h3>{card.title}</h3>
+            <p>{card.text}</p>
+            <span class="ds-card-link">
+              VER MÁS
+              <span class="material-symbols-outlined" style="font-size:1.1rem">trending_flat</span>
+            </span>
+          </div>
+        </a>
+      ))}
     </div>
   </div>
-</Section>
+</section>
