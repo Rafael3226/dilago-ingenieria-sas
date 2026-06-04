@@ -23,7 +23,7 @@
   --ds-on-surface-variant:       #4c4546;
   --ds-outline:                  #7e7576;
   --ds-outline-variant:          #cfc4c5;
-  --ds-section-gap:              120px;
+  --ds-section-gap:              72px;
   --ds-container-max:            1280px;
   --ds-margin-desktop:           64px;
   --ds-margin-mobile:            20px;
@@ -166,9 +166,9 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(249, 249, 249, 0.75) 0%,
-    rgba(249, 249, 249, 0.1) 50%,
-    rgba(249, 249, 249, 0.75) 100%
+    rgba(10, 31, 48, 0.65) 0%,
+    rgba(10, 31, 48, 0.55) 50%,
+    rgba(10, 31, 48, 0.75) 100%
   );
 }
 
@@ -177,7 +177,11 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   text-align: center;
   max-width: 900px;
+  margin: 0 auto;
   padding: 0 var(--ds-margin-mobile);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -191,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   margin-bottom: 1.5rem;
   font-size: 2.5rem;
-  color: var(--ds-primary);
+  color: #ffffff;
 }
 
 .ds-hero-title {
@@ -200,9 +204,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--ds-primary);
+  color: #ffffff;
   margin-bottom: 1.5rem;
-  text-shadow: 0 2px 20px rgba(249,249,249,0.5);
+  text-align: center;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
 }
 
 .ds-hero-subtitle {
@@ -210,12 +215,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.65;
-  color: var(--ds-on-surface-variant);
+  color: rgba(255, 255, 255, 0.92);
   margin-bottom: 2.5rem;
   max-width: 580px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: 0 1px 10px rgba(249,249,249,0.8);
+  text-align: center;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
 }
 
 .ds-hero-ctas {
@@ -224,6 +230,29 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.ds-hero .ds-btn-primary {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: var(--ds-primary) !important;
+}
+
+.ds-hero .ds-btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.88);
+  color: var(--ds-primary) !important;
+}
+
+.ds-hero .ds-btn-outline {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.ds-hero .ds-btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  color: #ffffff !important;
 }
 
 @media (min-width: 576px) {
@@ -1262,19 +1291,28 @@ footer#footer.ds-footer #copyrights {
 .ds-service-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: start;
+  gap: 2rem;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
   .ds-service-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 3rem;
   }
 }
 
 .ds-service-grid.ds-reverse .ds-service-visual {
   order: -1;
+}
+
+@media (min-width: 768px) {
+  .ds-service-grid.ds-reverse {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  }
+  .ds-service-grid.ds-reverse .ds-service-visual {
+    order: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1283,11 +1321,34 @@ footer#footer.ds-footer #copyrights {
   }
 }
 
+.ds-service-text {
+  min-width: 0;
+}
+
+.ds-service-visual {
+  min-width: 0;
+  width: 100%;
+  align-self: center;
+}
+
 .ds-service-visual img {
   width: 100%;
+  max-height: 420px;
   border-radius: 0.5rem;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: var(--ds-surface-container-lowest);
+  border: 1px solid var(--ds-outline-variant);
+}
+
+.ds-inner-section.ds-alt .ds-service-visual img {
+  background-color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .ds-service-visual img {
+    max-height: 320px;
+  }
 }
 
 .ds-inner-h4 {
@@ -1393,14 +1454,20 @@ footer#footer.ds-footer #copyrights {
 }
 
 .ds-img-grid-item {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 0.5rem;
+  background-color: var(--ds-surface-container-lowest);
+  border: 1px solid var(--ds-outline-variant);
+}
+
+.ds-inner-section.ds-alt .ds-img-grid-item {
+  background-color: #ffffff;
 }
 
 .ds-img-grid-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
