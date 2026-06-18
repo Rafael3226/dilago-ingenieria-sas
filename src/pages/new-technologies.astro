@@ -1,44 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Landing from "../components/Landing.astro";
-import TitleXL from "../components/basic/TitleXL.astro";
+import PageHero from "../components/basic/PageHero.astro";
 import NewTechImg from "../assets/img/new_tech_banner.jpeg";
-import Section from "../components/basic/Section.astro";
 
 import {
   ValveSensors,
   NonMetallicReinforcement,
   CorrosionCoating,
 } from "../components/pages/new-technologies";
+import { COMPANY } from "../constants/company";
+
+const nonMetallicSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Instalación de Refuerzos Mecánicos No Metálicos para Tubería",
+  serviceType: "Instalación de Refuerzo No Metálico",
+  description:
+    "Instalación de sistemas de refuerzo compuesto no metálico certificados por ASME PC C-2 para rehabilitación de tuberías en la industria del petróleo, gas y energía en Colombia.",
+  provider: { "@type": "ProfessionalService", name: COMPANY.name, url: COMPANY.url },
+  areaServed: { "@type": "Country", name: "Colombia" },
+  url: `${COMPANY.url}/new-technologies#section-non-metallic`,
+};
 ---
 
-<Layout>
-  <Landing img={NewTechImg}>
-    <TitleXL>Nuevas Tecnologías.</TitleXL>
-  </Landing>
-  <section id="content">
-    <div class="content-wrap py-0">
-      <Section id="new-tech-intro">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center p-5">
-              <p class="lead">
-                Explorando el futuro con soluciones innovadoras.
-              </p>
-              <p>
-                En Dilago Ingeniería SAS, estamos comprometidos con la
-                implementación de las últimas tecnologías para optimizar
-                procesos y garantizar la seguridad en todas nuestras
-                operaciones.
-              </p>
-            </div>
-          </div>
-        </div>
-      </Section>
+<Layout
+  title="Instalación de Refuerzos No Metálicos y Tecnología Industrial en Colombia | Dilago Ingeniería SAS"
+  description="Instalación de refuerzos mecánicos no metálicos certificados ASME, sensores IoT para válvulas, recubrimientos anticorrosión Polyguard y soluciones tecnológicas para la industria energética en Colombia."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(nonMetallicSchema)} />
+  </Fragment>
 
-      <ValveSensors />
-      <NonMetallicReinforcement />
-      <CorrosionCoating />
-    </div>
-  </section>
+  <PageHero
+    img={NewTechImg}
+    title="Instalación de refuerzos no metálicos y tecnología para la industria energética."
+    label="Nuevas Tecnologías"
+  />
+
+  <ValveSensors />
+  <NonMetallicReinforcement />
+  <CorrosionCoating />
 </Layout>

@@ -1,14 +1,13 @@
 ---
-import Whatsapp from "../assets/svg/Whatsapp.svg";
-const alt = "Whatsapp icon";
 ---
 
 <a
-  class="whatsapp-anchor"
+  class="ds-whatsapp-fab"
   href="https://api.whatsapp.com/send?phone=573009888499"
   target="_blank"
   rel="noopener noreferrer"
-  title="Whatsapp"
+  title="Escribir por WhatsApp"
+  aria-label="Contactar por WhatsApp"
 >
-  <img src={Whatsapp.src} alt={alt} />
+  <span class="material-symbols-outlined">chat</span>
 </a>

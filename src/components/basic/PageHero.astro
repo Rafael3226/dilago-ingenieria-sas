@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+
+const { img, title, label = "Dilago Ingeniería SAS" } = Astro.props;
+---
+
+<section class="ds-page-hero">
+  <div class="ds-page-hero-bg">
+    <Image
+      src={img}
+      alt={title}
+      loading="eager"
+      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+    />
+  </div>
+  <div class="ds-page-hero-overlay"></div>
+  <div class="ds-page-hero-content">
+    <span class="ds-page-hero-label">{label}</span>
+    <h1 class="ds-page-hero-title">{title}</h1>
+    <slot />
+  </div>
+</section>

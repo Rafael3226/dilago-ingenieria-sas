@@ -5,20 +5,89 @@ import WhatsappIcon from "../components/WhatsappIcon.astro";
 
 import "../assets/css/style.css";
 import "../assets/css/new.css";
+import "../assets/css/stitch-design.css";
 
 import IconImg from "../assets/img/icon.png";
+import { COMPANY } from "../constants/company";
+
+const SITE_URL = COMPANY.url;
+
+const {
+  title = "Dilago Ingeniería SAS | Ingeniería de Integridad Industrial",
+  description = "Especialistas en protección catódica, ensayos no destructivos, calidad en soldadura y nuevas tecnologías industriales en Colombia.",
+  ogImage = `${SITE_URL}/img/og-preview.jpg`,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: COMPANY.name,
+  url: COMPANY.url,
+  logo: COMPANY.logo,
+  description: COMPANY.description,
+  telephone: COMPANY.contact.phone,
+  email: COMPANY.contact.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: `${COMPANY.address.street}, ${COMPANY.address.building}`,
+    addressLocality: COMPANY.address.city,
+    addressRegion: COMPANY.address.state,
+    addressCountry: COMPANY.address.countryCode,
+  },
+  areaServed: [
+    { "@type": "City", name: "Bucaramanga" },
+    { "@type": "Country", name: "Colombia" },
+  ],
+  sameAs: [
+    COMPANY.social.facebook,
+    COMPANY.social.instagram,
+    COMPANY.social.linkedin,
+  ],
+};
 ---
 
 <html dir="ltr" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <meta name="author" content="" />
-    <meta name="description" content="Dilago Ingeniería pagina web" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="AujTN2YOk_02IZ46PTRpD0PK5MWa9uaWLWT57Kq_maE" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Dilago Ingeniería SAS" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Slot para schemas adicionales por página -->
+    <slot name="head" />
+
+    <!-- Material Symbols Outlined for DS icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" rel="stylesheet" />
 
     <link rel="icon" href={IconImg.src} />
-    <title>Dilago Ingeniería</title>
+    <title>{title}</title>
   </head>
   <body class="stretched">
     <div id="wrapper">
@@ -30,6 +99,36 @@ import IconImg from "../assets/img/icon.png";
     <script is:inline src="/js/functions.bundle.js"></script>
     <script is:inline src="/js/clients-carousel.js"></script>
     <script is:inline src="/js/nav-background.js"></script>
+    <script is:inline>
+      // DS: Header scroll shadow
+      (function() {
+        var header = document.getElementById('header');
+        if (!header) return;
+        function onScroll() {
+          if (window.scrollY > 50) {
+            header.classList.add('ds-scrolled');
+          } else {
+            header.classList.remove('ds-scrolled');
+          }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      })();
+
+      // DS: Scroll reveal
+      (function() {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('ds-visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.ds-reveal').forEach(function(el) {
+          observer.observe(el);
+        });
+      })();
+    </script>
     <script is:inline src="https://code.jquery.com/jquery-3.6.4.min.js"
     ></script>
     <script

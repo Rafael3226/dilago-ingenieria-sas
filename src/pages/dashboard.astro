@@ -15,7 +15,7 @@ import "../assets/css/dashboard.css";
         </div>
 
         <div class="form-card">
-          <form action="" method="post">
+          <form>
 
             <div class="form-section">
               <div class="form-section-title">
@@ -193,14 +193,14 @@ import "../assets/css/dashboard.css";
               <div class="form-field-group">
                 <label class="form-label">Configuración de la sección a reparar</label>
                 <div class="form-check-group" id="config-seccion-group">
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="recta" class="form-check-input"><span>Recta</span></label>
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="codo" class="form-check-input"><span>Codo</span></label>
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="t" class="form-check-input"><span>T</span></label>
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="y" class="form-check-input"><span>Y</span></label>
-                  <label class="form-check-label" data-config-tipo="tanque"><input type="checkbox" name="config_seccion" value="pared" class="form-check-input"><span>Pared</span></label>
-                  <label class="form-check-label" data-config-tipo="tanque"><input type="checkbox" name="config_seccion" value="piso" class="form-check-input"><span>Piso</span></label>
-                  <label class="form-check-label" data-config-tipo="tanque"><input type="checkbox" name="config_seccion" value="techo" class="form-check-input"><span>Techo</span></label>
-                  <label class="form-check-label" data-config-tipo="tuberia"><input type="checkbox" name="config_seccion" value="otro" class="form-check-input"><span>Otro</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="recta" class="form-check-input"><span>Recta</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="codo" class="form-check-input"><span>Codo</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="t" class="form-check-input"><span>T</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="y" class="form-check-input"><span>Y</span></label>
+                  <label class="form-check-label" data-config-tipo="tanque"><input type="radio" name="config_seccion" value="pared" class="form-check-input"><span>Pared</span></label>
+                  <label class="form-check-label" data-config-tipo="tanque"><input type="radio" name="config_seccion" value="piso" class="form-check-input"><span>Piso</span></label>
+                  <label class="form-check-label" data-config-tipo="tanque"><input type="radio" name="config_seccion" value="techo" class="form-check-input"><span>Techo</span></label>
+                  <label class="form-check-label" data-config-tipo="tuberia"><input type="radio" name="config_seccion" value="otro" class="form-check-input"><span>Otro</span></label>
                 </div>
               </div>
 
@@ -228,32 +228,28 @@ import "../assets/css/dashboard.css";
               <div class="form-field-group">
                 <label class="form-label">Producto que transporta o almacena</label>
                 <div class="form-check-group">
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="crudo" class="form-check-input"><span>Crudo</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="gas" class="form-check-input"><span>Gas</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="refinado" class="form-check-input"><span>Refinado</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="agua" class="form-check-input"><span>Agua</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="intermedios" class="form-check-input"><span>Intermedios</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="producto" value="otro" class="form-check-input"><span>Otro</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="crudo" class="form-check-input"><span>Crudo</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="gas" class="form-check-input"><span>Gas</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="refinado" class="form-check-input"><span>Refinado</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="agua" class="form-check-input"><span>Agua</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="intermedios" class="form-check-input"><span>Intermedios</span></label>
+                  <label class="form-check-label"><input type="radio" name="producto" value="otro" class="form-check-input"><span>Otro</span></label>
                 </div>
               </div>
 
               <div class="form-field-group">
                 <label class="form-label">Tipo de defecto</label>
                 <div class="form-check-group">
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="corrosion_interna" class="form-check-input"><span>Corrosión interna</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="corrosion_externa" class="form-check-input"><span>Corrosión externa</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="abolladura" class="form-check-input"><span>Abolladura</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="pitting" class="form-check-input"><span>Pitting</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="grieta" class="form-check-input"><span>Grieta</span></label>
-                  <label class="form-check-label"><input type="checkbox" name="tipo_defecto" value="otro" class="form-check-input"><span>Otro</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="corrosion interna" class="form-check-input"><span>Corrosión interna</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="corrosion externa" class="form-check-input"><span>Corrosión externa</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="abolladura" class="form-check-input"><span>Abolladura</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="pitting" class="form-check-input"><span>Pitting</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="grieta" class="form-check-input"><span>Grieta</span></label>
+                  <label class="form-check-label"><input type="radio" name="tipo_defecto" value="otro" class="form-check-input"><span>Otro</span></label>
                 </div>
               </div>
 
               <div class="form-row">
-                <div class="form-col-half">
-                  <label for="caract-defecto" class="form-label">Número de defectos</label>
-                  <input type="number" class="form-control" id="caract-defecto" name="caract_defecto">
-                </div>
                 <div class="form-col-half">
                   <label for="caract-defecto" class="form-label">Caracterización del defecto (inch)</label>
                   <input type="text" class="form-control" id="caract-defecto" name="caract_defecto" placeholder="ej. 50mm x 30mm x 3mm prof.">
@@ -272,7 +268,17 @@ import "../assets/css/dashboard.css";
                 <label for="distancia-libre" class="form-label">Distancia libre entre la estructura y elementos circundantes (inch)</label>
                 <p>Indicar la distancia libre existente entre la estructura y los elementos circundantes, tales como el piso, muros, paredes u otras posibles restricciones físicas.</p>
                 <p class="form-hint"><strong>IMPORTANTE:</strong> Se requiere una distancia mínima de 20" para asegurar la preparación superficial y la aplicación de la fibra.</p>
-                <input type="text" class="form-control" id="distancia-libre" name="distancia_libre" placeholder='ej. 12" de distancia al piso'>
+                <input type="number" class="form-control" id="distancia-libre" name="distancia_libre" placeholder='ej. 12' min="0">
+              </div>
+
+              <input type="hidden" id="defectos-json" name="defectos_json" value="[]">
+
+              <div id="lista-defectos" class="defectos-lista"></div>
+
+              <div class="form-field-group" style="margin-top: 20px;">
+                <button type="button" id="btn-agregar-defecto" class="btn-secondary-custom">
+                  <span>+</span> Agregar defecto
+                </button>
               </div>
 
             </div>
@@ -280,6 +286,11 @@ import "../assets/css/dashboard.css";
             <div class="form-actions">
               <button type="reset" class="btn-secondary-custom">Limpiar</button>
               <button type="submit" class="btn-primary-custom">Enviar requerimiento</button>
+            </div>
+
+            <div id="form-status" class="form-status">
+              <span class="form-status-icon"></span>
+              <span id="form-status-msg"></span>
             </div>
 
           </form>
@@ -290,23 +301,26 @@ import "../assets/css/dashboard.css";
   </section>
 </Layout>
 
-<script>
-  const radios = document.querySelectorAll<HTMLInputElement>('input[name="estructura_tipo"]');
-  const grupos: Record<string, HTMLElement | null> = {
+<script is:inline>
+  console.log("Script del formulario cargado y ejecutando");
+  
+  const radios = document.querySelectorAll('input[name="estructura_tipo"]');
+  console.log("Radios encontrados:", radios.length);
+  const grupos = {
     tuberia: document.getElementById('campos-tuberia'),
     tanque:  document.getElementById('campos-tanque'),
     otro:    document.getElementById('campos-otro'),
   };
 
-  const configOpciones   = document.querySelectorAll<HTMLElement>('#config-seccion-group [data-config-tipo]');
-  const obstaculoOpciones = document.querySelectorAll<HTMLElement>('#obstaculos-group [data-obstaculo-tipo]');
+  const configOpciones = document.querySelectorAll('#config-seccion-group [data-config-tipo]');
+  const obstaculoOpciones = document.querySelectorAll('#obstaculos-group [data-obstaculo-tipo]');
 
-  function filtrarOpciones(opciones: NodeListOf<HTMLElement>, tipo: string, attrKey: string) {
+  function filtrarOpciones(opciones, tipo, attrKey) {
     opciones.forEach(label => {
-      const val     = (label.dataset as Record<string, string>)[attrKey];
+      const val = label.dataset[attrKey];
       const mostrar = val === 'ambos' || tipo === 'otro' || val === tipo;
       label.style.display = mostrar ? '' : 'none';
-      const cb = label.querySelector<HTMLInputElement>('input');
+      const cb = label.querySelector('input');
       if (cb) {
         if (!mostrar) cb.checked = false;
         cb.disabled = !mostrar;
@@ -314,31 +328,30 @@ import "../assets/css/dashboard.css";
     });
   }
 
-  function filtrarConfigSeccion(tipo: string) {
-    filtrarOpciones(configOpciones,   tipo, 'configTipo');
+  function filtrarConfigSeccion(tipo) {
+    filtrarOpciones(configOpciones, tipo, 'configTipo');
     filtrarOpciones(obstaculoOpciones, tipo, 'obstaculoTipo');
   }
 
-  const btnSubmit = document.querySelector<HTMLButtonElement>('button[type="submit"]');
-
-  const tubUbicacionEl  = document.getElementById('campos-tuberia-ubicacion');
-  const catEl            = document.getElementById('campos-proteccion-catodica');
-  const radiosUbicacion  = document.querySelectorAll<HTMLInputElement>('input[name="tuberia_ubicacion"]');
+  const btnSubmit = document.querySelector('button[type="submit"]');
+  const tubUbicacionEl = document.getElementById('campos-tuberia-ubicacion');
+  const catEl = document.getElementById('campos-proteccion-catodica');
+  const radiosUbicacion = document.querySelectorAll('input[name="tuberia_ubicacion"]');
 
   function resetUbicacionTuberia() {
     radiosUbicacion.forEach(r => { r.checked = false; r.disabled = true; });
     if (catEl) {
       catEl.style.display = 'none';
-      catEl.querySelectorAll<HTMLInputElement>('input').forEach(i => { i.checked = false; i.disabled = true; });
+      catEl.querySelectorAll('input').forEach(i => { i.checked = false; i.disabled = true; });
     }
   }
 
-  function mostrarCampos(tipo: string) {
+  function mostrarCampos(tipo) {
     Object.entries(grupos).forEach(([key, el]) => {
       if (!el) return;
       const visible = key === tipo;
       el.style.display = visible ? (key === 'otro' ? 'block' : 'flex') : 'none';
-      el.querySelectorAll<HTMLInputElement>('input').forEach(input => {
+      el.querySelectorAll('input').forEach(input => {
         input.disabled = !visible;
       });
     });
@@ -360,7 +373,7 @@ import "../assets/css/dashboard.css";
       if (!catEl) return;
       const esEnterrada = radio.value === 'enterrada';
       catEl.style.display = esEnterrada ? 'block' : 'none';
-      catEl.querySelectorAll<HTMLInputElement>('input').forEach(i => {
+      catEl.querySelectorAll('input').forEach(i => {
         i.disabled = !esEnterrada;
         if (!esEnterrada) i.checked = false;
       });
@@ -370,4 +383,173 @@ import "../assets/css/dashboard.css";
   radios.forEach(radio => {
     radio.addEventListener('change', () => mostrarCampos(radio.value));
   });
+
+  const btnAgregarDefecto = document.getElementById('btn-agregar-defecto');
+  const listaDefectosEl = document.getElementById('lista-defectos');
+  const defectosJsonInput = document.getElementById('defectos-json');
+
+  let defectos = [];
+
+  function obtenerValoresSeccion04() {
+    const data = {};
+
+    const configSeccion = document.querySelector('input[name="config_seccion"]:checked');
+    data.configuracion = configSeccion?.value || '';
+
+    const ubicacionDefecto = document.querySelector('input[name="ubicacion_defecto"]:checked');
+    data.ubicacion_defecto = ubicacionDefecto?.value || '';
+
+    const obstaculos = Array.from(document.querySelectorAll('input[name="obstaculos"]:checked')).map(cb => cb.value);
+    data.obstaculos = obstaculos;
+    data.obstaculos_distancia = document.getElementById('obstaculos-distancia')?.value || '';
+
+    const producto = document.querySelector('input[name="producto"]:checked');
+    data.producto = producto?.value || '';
+
+    const tipoDefecto = document.querySelector('input[name="tipo_defecto"]:checked');
+    data.tipo_defecto = tipoDefecto?.value || '';
+
+    data.caracterizacion = document.getElementById('caract-defecto')?.value || '';
+    data.perdida_espesor = document.getElementById('perdida-espesor')?.value || '';
+    data.tiempo_aseguramiento = document.getElementById('tiempo-aseguramiento')?.value || '';
+    data.distancia_libre = document.getElementById('distancia-libre')?.value || '';
+
+    return data;
+  }
+
+  function limpiarSeccion04() {
+    document.querySelectorAll('input[name="config_seccion"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('input[name="ubicacion_defecto"]').forEach(r => r.checked = false);
+    document.querySelectorAll('input[name="obstaculos"]').forEach(cb => cb.checked = false);
+    document.getElementById('obstaculos-distancia').value = '';
+    document.querySelectorAll('input[name="producto"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('input[name="tipo_defecto"]').forEach(cb => cb.checked = false);
+    document.getElementById('caract-defecto').value = '';
+    document.getElementById('perdida-espesor').value = '';
+    document.getElementById('tiempo-aseguramiento').value = '';
+    document.getElementById('distancia-libre').value = '';
+  }
+
+  function renderizarListaDefectos() {
+    if (!listaDefectosEl) return;
+    listaDefectosEl.innerHTML = '';
+
+    defectos.forEach((defecto, index) => {
+      const item = document.createElement('div');
+      item.className = 'defecto-item';
+      item.innerHTML = `
+        <div class="defecto-header">
+          <strong>Defecto #${index + 1}</strong>
+          <button type="button" class="btn-eliminar-defecto" data-index="${index}">×</button>
+        </div>
+        <div class="defecto-detalles">
+          <span>Config: ${defecto.configuracion || '-'}</span>
+          <span>Ubicación: ${defecto.ubicacion_defecto || '-'}</span>
+          <span>Tipo: ${defecto.tipo_defecto || '-'}</span>
+          <span>Caracterización: ${defecto.caracterizacion}</span>
+        </div>
+      `;
+      listaDefectosEl.appendChild(item);
+    });
+
+    document.querySelectorAll('.btn-eliminar-defecto').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = parseInt(e.currentTarget.dataset.index || '0');
+        defectos.splice(idx, 1);
+        renderizarListaDefectos();
+        if (defectosJsonInput) defectosJsonInput.value = JSON.stringify(defectos);
+      });
+    });
+  }
+
+  if (btnAgregarDefecto) {
+    btnAgregarDefecto.addEventListener('click', () => {
+      const datos = obtenerValoresSeccion04();
+
+      const tieneDatos = datos.configuracion || datos.ubicacion_defecto || datos.tipo_defecto || datos.caracterizacion;
+      if (!tieneDatos) {
+        alert('Por favor complete al menos un campo de la sección "Datos de la reparación" antes de agregar.');
+        return;
+      }
+
+      defectos.push(datos);
+      if (defectosJsonInput) defectosJsonInput.value = JSON.stringify(defectos);
+      renderizarListaDefectos();
+      limpiarSeccion04();
+    });
+  }
+
+  // Enviar formulario al API
+  const form = document.querySelector('form');
+  console.log("Formulario encontrado:", !!form);
+  
+  const formStatusEl = document.getElementById('form-status');
+  const formStatusMsg = document.getElementById('form-status-msg');
+
+  function mostrarEstado(tipo, mensaje) {
+    if (!formStatusEl || !formStatusMsg) return;
+    formStatusEl.className = 'form-status ' + tipo;
+    formStatusEl.querySelector('.form-status-icon').textContent = tipo === 'success' ? '✓' : '✕';
+    formStatusMsg.textContent = mensaje;
+    formStatusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      console.log("Submit del formulario activado");
+      e.preventDefault();
+      console.log("preventDefault ejecutado");
+
+      const formData = {
+        fecha: new Date().toISOString().split('T')[0],
+        empresa: document.getElementById('empresa')?.value || '',
+        contacto: document.getElementById('contacto')?.value || '',
+        telefono: document.getElementById('telefono')?.value || '',
+        campo: document.getElementById('campo')?.value || '',
+        nombre_estructura: document.getElementById('estructura-nombre')?.value || '',
+        tipo_estructura: document.querySelector('input[name="estructura_tipo"]:checked')?.value || '',
+        diametro_linea: document.getElementById('diametro')?.value || '',
+        grado_tuberia: document.getElementById('grado-tuberia')?.value || '',
+        schedule: document.getElementById('schedule')?.value || '',
+        dim_tanque: document.getElementById('dim-tanque')?.value || '',
+        grado_material: document.getElementById('grado-material')?.value || '',
+        ubicacion_tuberia: document.querySelector('input[name="tuberia_ubicacion"]:checked')?.value || '',
+        proteccion_catodica: document.querySelector('input[name="proteccion_catodica"]:checked')?.value || '',
+        temp_max_operacion: document.getElementById('temp-max-op')?.value || null,
+        temp_tuberia: document.getElementById('temp-tuberia')?.value || null,
+        temp_diseno: document.getElementById('temp-diseno')?.value || null,
+        presion_max_operacion: document.getElementById('presion-max-op')?.value || null,
+        presion_operacion: document.getElementById('presion-op')?.value || null,
+        presion_diseno: document.getElementById('presion-diseno')?.value || null,
+        defectos: defectos
+      };
+
+      console.log("Datos del formulario:", JSON.stringify(formData, null, 2));
+
+      try {
+        console.log("Iniciando fetch a /api/solicitud");
+        const res = await fetch('/api/solicitud', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        console.log("Respuesta recibida - Status:", res.status, "OK:", res.ok);
+        const result = await res.json();
+        console.log("Respuesta JSON:", result);
+
+        if (res.ok && result.success) {
+          mostrarEstado('success', 'Solicitud guardada correctamente (ID: ' + result.id + '). El equipo técnico de Dilago ha sido notificado.');
+          form.reset();
+          defectos = [];
+          if (defectosJsonInput) defectosJsonInput.value = '[]';
+          renderizarListaDefectos();
+        } else {
+          mostrarEstado('error', 'Error al guardar: ' + (result.error || 'No se pudo guardar la solicitud'));
+        }
+      } catch (err) {
+        mostrarEstado('error', 'Error de conexión: ' + String(err));
+      }
+    });
+  }
 </script>

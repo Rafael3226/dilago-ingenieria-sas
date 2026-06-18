@@ -12,3 +12,167 @@
   height: auto;
   object-fit: contain;
 }
+
+/*[ NAVBAR: switch de logo según estado ]
+///////////////////////////////////////////////////////////
+*/
+
+#header-wrap {
+  transition: background-color 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+/* Navbar transparente (top): logo blanco visible, logo de color oculto */
+#header.transparent-header .logo-colored-version {
+  display: none;
+}
+#header.transparent-header .logo-white-version {
+  display: block;
+}
+
+/* Navbar con fondo blanco (scroll): logo de color visible, logo blanco oculto */
+#header:not(.transparent-header) .logo-white-version {
+  display: none;
+}
+#header:not(.transparent-header) .logo-colored-version {
+  display: block;
+}
+
+/*[ EXPERIENCE GRID: uniform image height ]
+///////////////////////////////////////////////////////////
+*/
+
+.a-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.a-image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.a-image:hover img {
+  transform: scale(1.05);
+}
+
+/*[ CARD GRID: equal height columns ]
+///////////////////////////////////////////////////////////
+*/
+
+.card-col {
+  display: flex;
+}
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+}
+
+.card-inner .card-image {
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-inner .card-image img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card-inner:hover .card-image img {
+  transform: scale(1.04);
+}
+
+.card-inner .card-body-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+}
+
+.card-inner .card-body-content p {
+  text-align: justify;
+  flex: 1;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.card-inner .card-body-content h4 {
+  margin-bottom: 0.75rem;
+}
+
+/*[ SECTION TEXT: justified paragraphs ]
+///////////////////////////////////////////////////////////
+*/
+
+section p,
+.section p {
+  text-align: justify;
+}
+
+/*[ CONTACT SECTION: responsive fix ]
+///////////////////////////////////////////////////////////
+*/
+
+.contact-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.contact-layout .contact-col {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .contact-layout .contact-col {
+    flex: 1 1 100%;
+  }
+}
+
+/*[ SECTION SEPARATOR: consistent top border style ]
+///////////////////////////////////////////////////////////
+*/
+
+.separator-line {
+  border: none;
+  border-top: 2px solid #ec1d25;
+  width: 60px;
+  margin: 0 auto 0.5rem;
+}
+
+/*[ HISTORY SECTION: image sizing ]
+///////////////////////////////////////////////////////////
+*/
+
+#section-history .bo-rad-10.hov-img-zoom {
+  max-height: 420px;
+  overflow: hidden;
+}
+
+#section-history .bo-rad-10.hov-img-zoom img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/*[ GLOBAL: remove body overflow-x ]
+///////////////////////////////////////////////////////////
+*/
+
+body,
+#wrapper {
+  overflow-x: hidden;
+}

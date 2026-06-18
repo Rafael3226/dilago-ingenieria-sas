@@ -1,38 +1,45 @@
 ---
-import Separator from "../../basic/Separator.astro";
-import ImageZoom from "../../basic/ImageZoom.astro";
-import Section from "../../basic/Section.astro";
+import { Image } from "astro:assets";
 import PoliticasImg from "../../../assets/img/historia.jpg";
-import Paragraph from "../../basic/Paragraph.astro";
 
-const id = "section-politicas";
-const title = "Políticas";
-const alt = "historia";
-const politicas = {
-  "Política de calidad": "",
-  "Política de seguridad vial": "",
-  "Política HSE": "",
-  "Política de no alcohol, drogas y tabaquismo": "",
-  "Política de prevención de acoso laboral": "",
-  "Política anticorrupción": "",
-  "Política de responsabilidad socia": "",
-  "Política contratación personal": "",
-  "Política de desconexión laboral": "",
-};
+const politicas = [
+  "Política de calidad",
+  "Política de seguridad vial",
+  "Política HSE",
+  "Política de no alcohol, drogas y tabaquismo",
+  "Política de prevención de acoso laboral",
+  "Política anticorrupción",
+  "Política de responsabilidad social",
+  "Política de contratación de personal",
+  "Política de desconexión laboral",
+];
 ---
 
-<Section id={id}>
-  <Separator slot="separator">{title}</Separator>
-  <div slot="left" class="h-100 d-flex flex-column justify-content-center">
-    <ul class="d-flex row align-items-center gap-1">
-      {
-        Object.entries(politicas).map(([title, text]) => (
-          <li>
-            <Paragraph>{title}</Paragraph>
-          </li>
-        ))
-      }
-    </ul>
+<section id="section-politicas" class="ds-inner-section ds-alt">
+  <div class="ds-inner-wrap">
+    <h2>Políticas Corporativas</h2>
+    <div class="ds-service-grid">
+      <div class="ds-service-text">
+        <p class="ds-inner-h4">Marco normativo interno</p>
+        <p class="ds-inner-p">
+          Operamos bajo un sistema integral de gestión que define nuestros compromisos con la calidad, la seguridad, el medio ambiente y el bienestar de nuestros colaboradores y aliados.
+        </p>
+        <ul class="ds-object-list">
+          {politicas.map((title) => (
+            <li class="ds-object-item">
+              <div class="ds-object-key">{title}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="ds-service-visual">
+        <Image
+          src={PoliticasImg}
+          alt="Equipo de Dilago Ingeniería en campo"
+          style={{ width: "100%", borderRadius: "0.5rem", display: "block" }}
+        />
+        <p class="ds-img-caption">Compromiso permanente con la integridad operacional y la sostenibilidad.</p>
+      </div>
+    </div>
   </div>
-  <ImageZoom slot="right" src={PoliticasImg} alt={alt} />
-</Section>
+</section>

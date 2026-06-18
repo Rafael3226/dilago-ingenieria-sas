@@ -1,7 +1,17 @@
 {
   "name": "dilago",
+  "main": "./dist/_worker.js/index.js",
   "compatibility_date": "2025-07-07",
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
+    "binding": "ASSETS",
     "directory": "./dist"
+  },
+  "vars": {
+    "SUPABASE_URL": "https://wqcvevghjaltsbepieaj.supabase.co",
+    "EMAIL_DESTINO": "fibra.dilago@gmail.com"
   }
-} 
+  // Secrets (configurados en Cloudflare dashboard, no aquí):
+  // - SUPABASE_SERVICE_ROLE_KEY
+  // - RESEND_API_KEY
+}
